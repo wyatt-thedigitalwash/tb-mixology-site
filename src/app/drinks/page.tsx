@@ -3,7 +3,6 @@ import Link from "next/link";
 import SectionLabel from "@/components/SectionLabel";
 import GoldDivider from "@/components/GoldDivider";
 import FadeIn from "@/components/FadeIn";
-import BotanicalOverlay from "@/components/BotanicalOverlay";
 
 export const metadata: Metadata = {
   title: "Drinks | TB Mixology — Tampa Bay Event Bartending",
@@ -90,9 +89,8 @@ export default function DrinksPage() {
   return (
     <main className="pt-28 pb-20 md:pb-28">
       {/* Hero / Intro */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
-        <BotanicalOverlay />
-        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+      <section className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6 text-center">
           <FadeIn>
             <SectionLabel>The Craft</SectionLabel>
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-text mb-6">

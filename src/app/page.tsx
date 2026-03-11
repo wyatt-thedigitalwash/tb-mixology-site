@@ -4,7 +4,6 @@ import SectionLabel from "@/components/SectionLabel";
 import GoldDivider from "@/components/GoldDivider";
 import TierCard from "@/components/TierCard";
 import FadeIn from "@/components/FadeIn";
-import BotanicalOverlay from "@/components/BotanicalOverlay";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -15,6 +14,33 @@ function TikTokIcon({ className }: { className?: string }) {
       className={className}
     >
       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.19 8.19 0 0 0 4.76 1.52V6.79a4.83 4.83 0 0 1-1-.1Z" />
+    </svg>
+  );
+}
+
+function LeafSprig({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M10 50 Q30 30 60 30 Q90 30 110 10" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.3" />
+      <path d="M40 30 Q35 20 45 15" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.25" />
+      <path d="M60 30 Q55 18 65 12" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.25" />
+      <path d="M80 25 Q75 15 85 10" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.25" />
+      <ellipse cx="45" cy="14" rx="5" ry="8" transform="rotate(-20 45 14)" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.15" />
+      <ellipse cx="65" cy="11" rx="5" ry="8" transform="rotate(-15 65 11)" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.15" />
+      <ellipse cx="85" cy="9" rx="4" ry="7" transform="rotate(-10 85 9)" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.15" />
+    </svg>
+  );
+}
+
+function CitrusSlice({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <circle cx="40" cy="40" r="30" stroke="currentColor" strokeWidth="1" opacity="0.2" />
+      <circle cx="40" cy="40" r="24" stroke="currentColor" strokeWidth="0.6" opacity="0.12" />
+      <line x1="40" y1="16" x2="40" y2="64" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
+      <line x1="16" y1="40" x2="64" y2="40" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
+      <line x1="23" y1="23" x2="57" y2="57" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
+      <line x1="57" y1="23" x2="23" y2="57" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
     </svg>
   );
 }
@@ -79,7 +105,13 @@ export default function Home() {
     <main>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center noise-overlay overflow-hidden">
-        <BotanicalOverlay />
+        {/* Botanical decoration */}
+        <div className="absolute top-20 right-8 md:right-16 pointer-events-none">
+          <LeafSprig className="w-40 md:w-56 text-sage" />
+        </div>
+        <div className="absolute bottom-24 left-8 md:left-16 pointer-events-none">
+          <CitrusSlice className="w-24 md:w-32 text-terracotta" />
+        </div>
 
         <div className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
           <FadeIn className="text-center">
@@ -202,6 +234,11 @@ export default function Home() {
 
       {/* ── Social Proof / Vibe ── */}
       <section className="py-20 md:py-28 noise-overlay bg-surface relative overflow-hidden">
+        {/* Botanical accent */}
+        <div className="absolute top-8 left-8 pointer-events-none">
+          <LeafSprig className="w-32 text-sage rotate-180" />
+        </div>
+
         <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
           <FadeIn>
             <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl text-text leading-tight mb-8">
@@ -256,6 +293,10 @@ export default function Home() {
 
       {/* ── CTA Banner ── */}
       <section className="py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute bottom-8 right-8 pointer-events-none">
+          <CitrusSlice className="w-20 text-terracotta" />
+        </div>
+
         <div className="max-w-6xl mx-auto px-6 text-center">
           <FadeIn>
             <SectionLabel>Let&apos;s Plan Together</SectionLabel>
