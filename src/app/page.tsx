@@ -119,7 +119,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay="delay-200" className="text-center">
-            <p className="text-text-muted font-body text-lg md:text-xl mb-10">
+            <p className="text-text-muted font-body text-sm md:text-xl mb-10">
               Serving Tampa · St. Pete · Clearwater · Sarasota
             </p>
           </FadeIn>
@@ -128,13 +128,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#services"
-                className="w-full sm:w-auto border border-terracotta text-terracotta px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-terracotta hover:text-bg transition-colors"
+                className="w-full sm:w-auto border border-terracotta text-terracotta px-8 py-3 sm:py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-terracotta hover:text-bg transition-colors"
               >
                 View Our Services
               </a>
               <Link
                 href="/contact"
-                className="w-full sm:w-auto text-center bg-terracotta text-bg px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
+                className="w-full sm:w-auto text-center bg-terracotta text-bg px-8 py-3 sm:py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
               >
                 Tell Us About Your Event
               </Link>
