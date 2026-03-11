@@ -4,6 +4,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/drinks", label: "Drinks" },
+  { href: "/faq", label: "FAQ" },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,18 +34,15 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="/"
-            className="text-sm font-body text-text-muted hover:text-text transition-colors tracking-wide"
-          >
-            Home
-          </Link>
-          <Link
-            href="/services"
-            className="text-sm font-body text-text-muted hover:text-text transition-colors tracking-wide"
-          >
-            Services
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-body text-text-muted hover:text-text transition-colors tracking-wide"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
             href="/contact"
             className="text-sm font-body text-bg bg-terracotta hover:bg-hover transition-colors px-5 py-2 rounded-md tracking-[0.1em] uppercase"
@@ -58,33 +62,31 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-bg/98 backdrop-blur-md border-t border-sand">
-          <div className="px-6 py-6 flex flex-col gap-5">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-bg/98 backdrop-blur-md border-t border-sand px-6 py-6 flex flex-col gap-5">
+          {navLinks.map((link) => (
             <Link
-              href="/"
+              key={link.href}
+              href={link.href}
               onClick={() => setMenuOpen(false)}
               className="text-sm font-body text-text-muted hover:text-text transition-colors tracking-wide"
             >
-              Home
+              {link.label}
             </Link>
-            <Link
-              href="/services"
-              onClick={() => setMenuOpen(false)}
-              className="text-sm font-body text-text-muted hover:text-text transition-colors tracking-wide"
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="inline-block text-center text-sm font-body text-bg bg-terracotta hover:bg-hover transition-colors px-5 py-3 rounded-md tracking-[0.1em] uppercase"
-            >
-              Book Now
-            </Link>
-          </div>
+          ))}
+          <Link
+            href="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="inline-block text-center text-sm font-body text-bg bg-terracotta hover:bg-hover transition-colors px-5 py-3 rounded-md tracking-[0.1em] uppercase"
+          >
+            Book Now
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }

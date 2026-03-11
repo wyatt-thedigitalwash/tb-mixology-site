@@ -18,7 +18,6 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-{/* Botanical SVG decorations */}
 function LeafSprig({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -105,7 +104,7 @@ export default function Home() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex items-center justify-center noise-overlay overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center noise-overlay overflow-hidden">
         {/* Botanical decoration */}
         <div className="absolute top-20 right-8 md:right-16 pointer-events-none">
           <LeafSprig className="w-40 md:w-56 text-sage" />
@@ -114,36 +113,36 @@ export default function Home() {
           <CitrusSlice className="w-24 md:w-32 text-terracotta" />
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <FadeIn>
+        <div className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
+          <FadeIn className="text-center">
             <SectionLabel>Tampa Bay&apos;s Handcrafted Event Bartending</SectionLabel>
           </FadeIn>
 
-          <FadeIn delay="delay-100">
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-text leading-[1.05] mb-6">
+          <FadeIn delay="delay-100" className="text-center">
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-8xl text-text leading-[1.05] mb-6">
               Fresh Ingredients.
               <br />
               <span className="text-terracotta">Unforgettable Events.</span>
             </h1>
           </FadeIn>
 
-          <FadeIn delay="delay-200">
+          <FadeIn delay="delay-200" className="text-center">
             <p className="text-text-muted font-body text-lg md:text-xl mb-10">
               Serving Tampa · St. Pete · Clearwater · Sarasota
             </p>
           </FadeIn>
 
-          <FadeIn delay="delay-300">
+          <FadeIn delay="delay-300" className="text-center w-full">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#services"
-                className="border border-terracotta text-terracotta px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-terracotta hover:text-bg transition-colors"
+                className="w-full sm:w-auto border border-terracotta text-terracotta px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-terracotta hover:text-bg transition-colors"
               >
                 View Our Services
               </a>
               <Link
                 href="/contact"
-                className="bg-terracotta text-bg px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
+                className="w-full sm:w-auto text-center bg-terracotta text-bg px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
               >
                 Tell Us About Your Event
               </Link>
@@ -155,91 +154,95 @@ export default function Home() {
       <GoldDivider />
 
       {/* ── What We Do ── */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <SectionLabel>What We Do</SectionLabel>
-            <h2 className="font-heading text-4xl md:text-5xl text-text">
-              More Than Just Drinks
-            </h2>
-          </div>
-        </FadeIn>
+      <section className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <SectionLabel>What We Do</SectionLabel>
+              <h2 className="font-heading text-3xl md:text-5xl text-text">
+                More Than Just Drinks
+              </h2>
+            </div>
+          </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: GlassWater,
-              title: "Glassware Rental",
-              description:
-                "Swap the plastic for real glassware — coupes, rocks glasses, highballs. It makes all the difference.",
-            },
-            {
-              icon: Beaker,
-              title: "Batch Cocktails",
-              description:
-                "Handcrafted, perfectly balanced batch cocktails delivered to your door, ready to pour and enjoy.",
-            },
-            {
-              icon: PartyPopper,
-              title: "Cocktail Classes",
-              description:
-                "Hands-on cocktail-making experiences for bachelorette parties, team events, and private gatherings.",
-            },
-          ].map((item, i) => (
-            <FadeIn key={item.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
-              <div className="bg-surface rounded-lg p-8 text-center">
-                <item.icon className="w-10 h-10 text-terracotta mx-auto mb-5" />
-                <h3 className="font-heading text-2xl text-text mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-text-muted text-sm font-body leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: GlassWater,
+                title: "Glassware Rental",
+                description:
+                  "Swap the plastic for real glassware — coupes, rocks glasses, highballs. It makes all the difference.",
+              },
+              {
+                icon: Beaker,
+                title: "Batch Cocktails",
+                description:
+                  "Handcrafted, perfectly balanced batch cocktails delivered to your door, ready to pour and enjoy.",
+              },
+              {
+                icon: PartyPopper,
+                title: "Cocktail Classes",
+                description:
+                  "Hands-on cocktail-making experiences for bachelorette parties, team events, and private gatherings.",
+              },
+            ].map((item, i) => (
+              <FadeIn key={item.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <div className="bg-surface rounded-lg p-8 text-center">
+                  <item.icon className="w-10 h-10 text-terracotta mx-auto mb-5" />
+                  <h3 className="font-heading text-2xl text-text mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-text-muted text-sm font-body leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
       <GoldDivider />
 
       {/* ── Services Overview ── */}
-      <section id="services" className="max-w-7xl mx-auto px-6 py-24">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <SectionLabel>Our Services</SectionLabel>
-            <h2 className="font-heading text-4xl md:text-5xl text-text">
-              Four Tiers, Tailored to You
-            </h2>
-            <p className="text-text-muted font-body mt-4 max-w-2xl mx-auto">
-              Whether you want professional recipes to mix at home or a fully staffed bar
-              with everything handled, there&apos;s a tier that fits your event perfectly.
-            </p>
-          </div>
-        </FadeIn>
+      <section id="services" className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <SectionLabel>Our Services</SectionLabel>
+              <h2 className="font-heading text-3xl md:text-5xl text-text">
+                Four Tiers, Tailored to You
+              </h2>
+              <p className="text-text-muted font-body mt-4 max-w-2xl mx-auto">
+                Whether you want professional recipes to mix at home or a fully staffed bar
+                with everything handled, there&apos;s a tier that fits your event perfectly.
+              </p>
+            </div>
+          </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {tiers.map((tier, i) => (
-            <FadeIn key={tier.tier} delay={i % 2 === 1 ? "delay-100" : ""}>
-              <TierCard {...tier} showLink />
-            </FadeIn>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {tiers.map((tier, i) => (
+              <FadeIn key={tier.tier} delay={i % 2 === 1 ? "delay-100" : ""}>
+                <TierCard {...tier} showLink />
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
       <GoldDivider />
 
       {/* ── Social Proof / Vibe ── */}
-      <section className="py-24 noise-overlay bg-surface relative overflow-hidden">
+      <section className="py-20 md:py-28 noise-overlay bg-surface relative overflow-hidden">
         {/* Botanical accent */}
         <div className="absolute top-8 left-8 pointer-events-none">
           <LeafSprig className="w-32 text-sage rotate-180" />
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
           <FadeIn>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-text leading-tight mb-8">
-              From herb-infused syrups to custom menus,
+            <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl text-text leading-tight mb-8">
+              From the first pour to the last call,
               <br />
               <span className="text-terracotta">every detail is handled with care.</span>
             </h2>
@@ -289,20 +292,20 @@ export default function Home() {
       <GoldDivider />
 
       {/* ── CTA Banner ── */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-20 md:py-28 relative overflow-hidden">
         <div className="absolute bottom-8 right-8 pointer-events-none">
           <CitrusSlice className="w-20 text-terracotta" />
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-6xl mx-auto px-6 text-center">
           <FadeIn>
             <SectionLabel>Let&apos;s Plan Together</SectionLabel>
-            <h2 className="font-heading text-4xl md:text-5xl text-text mb-8">
+            <h2 className="font-heading text-3xl md:text-5xl text-text mb-8">
               Your event deserves a great bar.
             </h2>
             <Link
               href="/contact"
-              className="inline-block bg-terracotta text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
+              className="w-full sm:w-auto inline-block bg-terracotta text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
             >
               Tell Us About Your Event
             </Link>
