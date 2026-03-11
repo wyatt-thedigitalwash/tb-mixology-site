@@ -1,13 +1,24 @@
 export default function CocktailPattern() {
   return (
     <div
-      className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-[0.03] md:opacity-[0.05]"
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+        pointerEvents: "none",
+      }}
+      className="opacity-[0.03] md:opacity-[0.05]"
       aria-hidden="true"
     >
       <svg
         width="100%"
         height="100%"
-        className="block w-full h-full"
+        style={{ display: "block", width: "100%", height: "100%" }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
