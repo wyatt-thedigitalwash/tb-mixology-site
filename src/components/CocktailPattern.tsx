@@ -12,7 +12,7 @@ export default function CocktailPattern() {
         zIndex: 0,
         pointerEvents: "none",
       }}
-      className="opacity-[0.12]"
+      className="opacity-[0.10]"
       aria-hidden="true"
     >
       <svg
