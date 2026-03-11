@@ -105,15 +105,7 @@ export default function Home() {
     <main>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center noise-overlay overflow-hidden">
-        {/* Botanical decoration */}
-        <div className="absolute top-20 right-8 md:right-16 pointer-events-none">
-          <LeafSprig className="w-40 md:w-56 text-sage" />
-        </div>
-        <div className="absolute bottom-24 left-8 md:left-16 pointer-events-none">
-          <CitrusSlice className="w-24 md:w-32 text-terracotta" />
-        </div>
-
-        <div className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
+        <div className="px-6 max-w-4xl mx-auto flex flex-col items-center">
           <FadeIn className="text-center">
             <SectionLabel>Tampa Bay&apos;s Handcrafted Event Bartending</SectionLabel>
           </FadeIn>
