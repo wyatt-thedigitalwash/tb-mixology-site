@@ -18,12 +18,12 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <SectionLabel>Get in Touch</SectionLabel>
             <h1 className="font-heading text-5xl md:text-6xl text-text mb-4">
-              Book Your Event
+              Let&apos;s Plan Your Bar
             </h1>
             <p className="text-text-muted font-body text-lg max-w-xl mx-auto">
-              Tell us about your event and we&apos;ll put together a custom bar
-              experience. The more details the better — but don&apos;t worry if
-              you&apos;re still figuring things out.
+              Share some details about your event and we&apos;ll get back to you
+              with ideas. Still figuring things out? That&apos;s totally fine — we
+              love brainstorming.
             </p>
           </div>
         </FadeIn>

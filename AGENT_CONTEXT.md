@@ -12,26 +12,27 @@
 ### Colors
 | Token            | Value                          |
 |------------------|--------------------------------|
-| `bg`             | `#0a0a0a`                      |
-| `surface`        | `#111111`                      |
-| `surface-light`  | `#1a1a1a`                      |
-| `gold`           | `#c9a84c`                      |
-| `champagne`      | `#e8d5a3`                      |
-| `text`           | `#f5f0e8`                      |
-| `text-muted`     | `#8a8278`                      |
-| `border-gold`    | `rgba(201, 168, 76, 0.2)`     |
+| `bg`             | `#faf7f2` (warm cream/linen)   |
+| `surface`        | `#f0ebe2` (soft sand)          |
+| `terracotta`     | `#c4714f` (primary accent)     |
+| `sage`           | `#7a8c6e` (secondary accent)   |
+| `sand`           | `#e8ddd0` (borders/dividers)   |
+| `text`           | `#2d3a28` (deep olive)         |
+| `text-muted`     | `#7a6e62` (warm taupe-gray)    |
+| `hover`          | `#d4956f` (lighter terracotta) |
 
 ### Typography
-- **Headings:** Cormorant Garamond (serif)
-- **Body:** DM Sans (sans-serif)
-- **Labels:** Uppercase DM Sans, letter-spaced
+- **Headings:** Playfair Display (serif)
+- **Body:** Jost (sans-serif)
+- **Labels:** Uppercase Jost, letter-spaced
 
 ### Aesthetic
-- Dark luxury editorial
-- Subtle noise texture overlays
-- Gold rule dividers between sections
+- Fresh & botanical, craft-forward
+- Subtle linen/paper grain texture overlays
+- Warm sand dividers between sections
 - Fade-in animations on scroll (Intersection Observer)
-- Sharp or very slightly rounded corners — no pill buttons
+- Soft border-radius (6–8px), terracotta buttons with cream text
+- Botanical line-art SVG decorations (leaf sprigs, citrus slices)
 
 ## Pages
 

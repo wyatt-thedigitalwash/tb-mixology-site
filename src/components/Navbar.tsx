@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-bg/95 backdrop-blur-md border-b border-border-gold" : "bg-transparent"
+        scrolled ? "bg-bg/95 backdrop-blur-md border-b border-sand" : "bg-bg/80 backdrop-blur-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -41,7 +41,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/contact"
-            className="text-sm font-body text-bg bg-gold hover:bg-champagne transition-colors px-5 py-2 tracking-[0.1em] uppercase"
+            className="text-sm font-body text-bg bg-terracotta hover:bg-hover transition-colors px-5 py-2 rounded-md tracking-[0.1em] uppercase"
           >
             Book Now
           </Link>
@@ -59,7 +59,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-bg/98 backdrop-blur-md border-t border-border-gold">
+        <div className="md:hidden bg-bg/98 backdrop-blur-md border-t border-sand">
           <div className="px-6 py-6 flex flex-col gap-5">
             <Link
               href="/"
@@ -78,7 +78,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-block text-center text-sm font-body text-bg bg-gold hover:bg-champagne transition-colors px-5 py-3 tracking-[0.1em] uppercase"
+              className="inline-block text-center text-sm font-body text-bg bg-terracotta hover:bg-hover transition-colors px-5 py-3 rounded-md tracking-[0.1em] uppercase"
             >
               Book Now
             </Link>

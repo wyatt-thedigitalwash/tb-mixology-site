@@ -16,7 +16,7 @@ function TikTokIcon({ className }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-border-gold">
+    <footer className="bg-sand border-t border-sand">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
@@ -25,14 +25,14 @@ export default function Footer() {
               TB Mixology
             </h3>
             <p className="text-text-muted text-sm font-body leading-relaxed">
-              Premium event bartending across Tampa Bay. Crafted cocktails,
-              unforgettable experiences.
+              Handcrafted cocktails and thoughtful bar experiences
+              across Tampa Bay. Fresh ingredients, real care, your event.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-xs tracking-[0.25em] uppercase text-gold font-body mb-5">
+            <h4 className="text-xs tracking-[0.25em] uppercase text-sage font-body mb-5">
               Navigation
             </h4>
             <div className="flex flex-col gap-3">
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Contact & Socials */}
           <div>
-            <h4 className="text-xs tracking-[0.25em] uppercase text-gold font-body mb-5">
+            <h4 className="text-xs tracking-[0.25em] uppercase text-sage font-body mb-5">
               Get in Touch
             </h4>
             <div className="flex flex-col gap-3 mb-6">
@@ -67,21 +67,21 @@ export default function Footer() {
                 href="mailto:emma@tbmixology.com"
                 className="text-sm text-text-muted hover:text-text transition-colors font-body flex items-center gap-2"
               >
-                <Mail size={14} className="text-gold" />
+                <Mail size={14} className="text-sage" />
                 emma@tbmixology.com
               </a>
               <a
                 href="tel:+16146341126"
                 className="text-sm text-text-muted hover:text-text transition-colors font-body flex items-center gap-2"
               >
-                <Phone size={14} className="text-gold" />
+                <Phone size={14} className="text-sage" />
                 (614) 634-1126
               </a>
               <a
                 href="tel:+17273374215"
                 className="text-sm text-text-muted hover:text-text transition-colors font-body flex items-center gap-2"
               >
-                <Phone size={14} className="text-gold" />
+                <Phone size={14} className="text-sage" />
                 (727) 337-4215
               </a>
             </div>
@@ -91,7 +91,7 @@ export default function Footer() {
                 href="https://www.instagram.com/tbmixology/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-gold transition-colors"
+                className="text-text-muted hover:text-terracotta transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -100,7 +100,7 @@ export default function Footer() {
                 href="https://www.facebook.com/p/TB-Mixology-100093284260144/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-gold transition-colors"
+                className="text-text-muted hover:text-terracotta transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
@@ -109,7 +109,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@tbmixology"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-gold transition-colors"
+                className="text-text-muted hover:text-terracotta transition-colors"
                 aria-label="TikTok"
               >
                 <TikTokIcon className="w-5 h-5" />
@@ -118,7 +118,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="gold-rule mt-12 mb-8" />
+        <div className="section-rule mt-12 mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-text-muted text-xs font-body">

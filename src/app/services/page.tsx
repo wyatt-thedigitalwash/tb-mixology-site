@@ -9,7 +9,7 @@ import FadeIn from "@/components/FadeIn";
 export const metadata: Metadata = {
   title: "Services | TB Mixology — Tampa Bay Event Bartending",
   description:
-    "From DIY cocktail kits to full luxury open bars — explore our four tiers of event bartending services serving Tampa, St. Pete, Clearwater, and Sarasota.",
+    "From DIY cocktail kits to full-service bars — explore our four tiers of handcrafted event bartending serving Tampa, St. Pete, Clearwater, and Sarasota.",
 };
 
 const tiers = [
@@ -24,7 +24,7 @@ const tiers = [
       "Printable menus to display at your bar",
     ],
     perfectFor:
-      "Hosts who want to run their own bar but with professional recipes and style",
+      "Hosts who love to mix it up themselves — with expert-level recipes and guidance",
   },
   {
     tier: 2,
@@ -39,7 +39,7 @@ const tiers = [
       "Quick setup guide so anyone can serve",
     ],
     perfectFor:
-      "Events where you have someone to pour but want the prep done by pros",
+      "Events where you have someone to pour but want the prep handled by people who care about flavor",
   },
   {
     tier: 3,
@@ -53,7 +53,7 @@ const tiers = [
       "Bar décor and glassware provided",
     ],
     perfectFor:
-      "Hosts who want a stress-free, high-quality bar service without worrying about logistics",
+      "Hosts who want to enjoy the party without worrying about the bar — we take care of everything",
   },
   {
     tier: 4,
@@ -62,10 +62,10 @@ const tiers = [
     features: [
       "Everything in Tier 3",
       "All alcohol provided and curated for your event",
-      "The complete luxury experience from start to finish",
+      "The complete experience from first pour to last call",
     ],
     perfectFor:
-      "The full experience — nothing to think about, everything taken care of",
+      "The full experience — from selecting the spirits to cleaning up, it's all on us",
   },
 ];
 
@@ -77,14 +77,14 @@ export default function ServicesPage() {
         <FadeIn>
           <SectionLabel>Our Services</SectionLabel>
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-text mb-6">
-            Every Event Deserves
+            Great Drinks,
             <br />
-            <span className="text-gold">a Better Bar</span>
+            <span className="text-terracotta">Your Way</span>
           </h1>
           <p className="text-text-muted font-body text-lg max-w-2xl mx-auto">
-            We offer four tiers of service — from professional cocktail recipes you can
-            make yourself, to a fully staffed luxury open bar. Choose the level that fits
-            your event, your budget, and your vibe.
+            We offer four tiers of service — from handcrafted recipes you can
+            make at home to a fully staffed bar with all the details handled.
+            Pick the one that feels right for your event.
           </p>
         </FadeIn>
       </section>
@@ -108,7 +108,7 @@ export default function ServicesPage() {
           <div className="text-center mb-12">
             <SectionLabel>Add-Ons</SectionLabel>
             <h2 className="font-heading text-3xl md:text-4xl text-text">
-              Make It Even Better
+              A Little Something Extra
             </h2>
           </div>
         </FadeIn>
@@ -119,24 +119,24 @@ export default function ServicesPage() {
               icon: GlassWater,
               title: "Glassware Rental",
               description:
-                "Swap the plastic for premium glassware — coupes, rocks glasses, highballs, and more.",
+                "Trade the plastic for real glassware — coupes, rocks glasses, highballs, and more.",
             },
             {
               icon: Beaker,
               title: "Batch Cocktails",
               description:
-                "Add extra batches of signature cocktails to any tier for larger parties.",
+                "Add extra batches of handcrafted cocktails to any tier when you need more to go around.",
             },
             {
               icon: PartyPopper,
               title: "Cocktail Classes",
               description:
-                "Turn your event into an interactive experience with guided cocktail-making.",
+                "Turn your event into a hands-on experience with guided cocktail-making for your group.",
             },
           ].map((addon, i) => (
             <FadeIn key={addon.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
-              <div className="border border-border-gold bg-surface p-6 text-center noise-overlay">
-                <addon.icon className="w-8 h-8 text-gold mx-auto mb-4" />
+              <div className="bg-surface rounded-lg p-6 text-center">
+                <addon.icon className="w-8 h-8 text-terracotta mx-auto mb-4" />
                 <h3 className="font-heading text-xl text-text mb-2">
                   {addon.title}
                 </h3>
@@ -150,7 +150,7 @@ export default function ServicesPage() {
 
         <FadeIn>
           <p className="text-center text-text-muted text-sm font-body mt-8 italic">
-            Ask about add-ons when you book — we&apos;ll tailor the details to your event.
+            Just mention add-ons when you reach out — we&apos;ll work them into your event plan.
           </p>
         </FadeIn>
       </section>
@@ -164,13 +164,13 @@ export default function ServicesPage() {
             Not sure which tier is right for you?
           </h2>
           <p className="text-text-muted font-body mb-8">
-            Let&apos;s talk through your event and find the perfect fit.
+            No problem — tell us about your event and we&apos;ll help you find the perfect fit.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-gold text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body hover:bg-champagne transition-colors"
+            className="inline-block bg-terracotta text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
           >
-            Get in Touch
+            Let&apos;s Plan Your Bar
           </Link>
         </FadeIn>
       </section>

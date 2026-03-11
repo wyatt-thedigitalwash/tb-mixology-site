@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Playfair_Display, Jost } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "TB Mixology | Premium Event Bartending — Tampa Bay",
+  title: "TB Mixology | Handcrafted Event Bartending — Tampa Bay",
   description:
-    "Crafted cocktail bars for weddings, private events, and parties across Tampa, St. Pete, Clearwater, and Sarasota. From DIY cocktail kits to full luxury open bars.",
+    "Fresh ingredients, handcrafted cocktails, and unforgettable events across Tampa, St. Pete, Clearwater, and Sarasota. From DIY cocktail kits to full-service bars.",
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cormorant.variable} ${dmSans.variable} antialiased`}
+        className={`${playfair.variable} ${jost.variable} antialiased`}
       >
         <Navbar />
         {children}

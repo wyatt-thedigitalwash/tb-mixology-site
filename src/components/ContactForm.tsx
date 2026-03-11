@@ -48,7 +48,7 @@ export default function ContactForm() {
   if (submitted) return <SuccessMessage />;
 
   const inputClass =
-    "w-full bg-transparent border-b border-border-gold px-0 py-3 text-text text-sm font-body placeholder:text-text-muted focus:border-gold transition-colors";
+    "w-full bg-transparent border-b border-sand px-0 py-3 text-text text-sm font-body placeholder:text-text-muted focus:border-terracotta transition-colors";
   const labelClass =
     "text-xs tracking-[0.15em] uppercase text-text-muted font-body mb-1 block";
 
@@ -141,7 +141,7 @@ export default function ContactForm() {
               type="date"
               id="eventDate"
               name="eventDate"
-              className={`${inputClass} [color-scheme:dark]`}
+              className={`${inputClass} [color-scheme:light]`}
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -151,7 +151,7 @@ export default function ContactForm() {
                 type="time"
                 id="startTime"
                 name="startTime"
-                className={`${inputClass} [color-scheme:dark]`}
+                className={`${inputClass} [color-scheme:light]`}
               />
             </div>
             <div>
@@ -160,7 +160,7 @@ export default function ContactForm() {
                 type="time"
                 id="endTime"
                 name="endTime"
-                className={`${inputClass} [color-scheme:dark]`}
+                className={`${inputClass} [color-scheme:light]`}
               />
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function ContactForm() {
               type="text"
               id="eventTheme"
               name="eventTheme"
-              placeholder="e.g., Tropical, Great Gatsby, Rustic"
+              placeholder="e.g., Tropical, Garden Party, Rustic"
               className={inputClass}
             />
           </div>
@@ -223,7 +223,7 @@ export default function ContactForm() {
                 Select a tier
               </option>
               {tiers.map((t) => (
-                <option key={t} value={t} className="bg-surface text-text">
+                <option key={t} value={t} className="bg-bg text-text">
                   {t}
                 </option>
               ))}
@@ -276,7 +276,7 @@ export default function ContactForm() {
                     type="radio"
                     name="cupPreference"
                     value={option}
-                    className="accent-gold"
+                    className="accent-terracotta"
                   />
                   {option}
                 </label>
@@ -311,13 +311,13 @@ export default function ContactForm() {
       </div>
 
       {error && (
-        <p className="text-red-400 text-sm font-body">{error}</p>
+        <p className="text-red-600 text-sm font-body">{error}</p>
       )}
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full md:w-auto bg-gold text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body hover:bg-champagne transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full md:w-auto bg-terracotta text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Sending..." : "Send My Event Details"}
       </button>

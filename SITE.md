@@ -16,11 +16,11 @@
 
 ## Components
 
-- `Navbar` — Sticky transparent/solid navbar with mobile menu
-- `Footer` — Logo, nav links, socials, contact info
-- `TierCard` — Reusable service tier card
-- `SectionLabel` — Uppercase gold label above headings
-- `GoldDivider` — Thin gold horizontal rule
+- `Navbar` — Sticky cream navbar with mobile menu
+- `Footer` — Warm sand background, nav links, socials, contact info
+- `TierCard` — Service tier card with sage left border accent
+- `SectionLabel` — Uppercase sage label above headings
+- `GoldDivider` — Thin warm sand horizontal rule
 - `ContactForm` — Event questionnaire with Resend integration
 - `SuccessMessage` — Post-submit confirmation
 - `FadeIn` — Scroll-triggered fade-in animation wrapper
@@ -29,31 +29,32 @@
 
 ### Colors
 
-- Background: `#0a0a0a`
-- Surface: `#111111` / `#1a1a1a`
-- Gold: `#c9a84c`
-- Champagne: `#e8d5a3`
-- Text: `#f5f0e8`
-- Muted: `#8a8278`
-- Border: `rgba(201, 168, 76, 0.2)`
+- Background: `#faf7f2` (warm cream/linen)
+- Surface: `#f0ebe2` (soft sand)
+- Terracotta: `#c4714f` (primary accent)
+- Sage: `#7a8c6e` (secondary accent)
+- Sand: `#e8ddd0` (borders, dividers)
+- Text: `#2d3a28` (deep olive)
+- Muted: `#7a6e62` (warm taupe-gray)
+- Hover: `#d4956f` (lighter terracotta)
 
 ### Typography
 
-- Headings: Cormorant Garamond (serif)
-- Body: DM Sans (sans-serif)
-- Labels: Uppercase letter-spaced DM Sans
+- Headings: Playfair Display (serif)
+- Body: Jost (sans-serif)
+- Labels: Uppercase letter-spaced Jost
 
 ### Spacing / Layout
 
 - Max content width: `max-w-7xl` (1280px)
 - Section padding: `py-24` with `px-6`
-- Gold rule dividers between sections
+- Warm sand dividers between sections
 
 ## Business Info
 
 ### About
 
-Premium event bartending service based in Tampa Bay, FL. Dark luxury editorial brand aesthetic.
+Premium handcrafted event bartending service based in Tampa Bay, FL. Fresh & botanical brand aesthetic.
 
 ### Contact
 

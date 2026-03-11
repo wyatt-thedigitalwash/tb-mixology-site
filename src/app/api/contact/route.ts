@@ -30,7 +30,7 @@ export async function POST(req: Request) {
 
     const htmlContent = `
       <div style="font-family: sans-serif; color: #333; max-width: 600px;">
-        <h1 style="color: #c9a84c; border-bottom: 2px solid #c9a84c; padding-bottom: 8px;">
+        <h1 style="color: #c4714f; border-bottom: 2px solid #c4714f; padding-bottom: 8px;">
           New Event Inquiry
         </h1>
 
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
         <p><strong>Additional Notes:</strong> ${anythingElse || "None"}</p>
         <p><strong>Referral Source:</strong> ${referral || "Not provided"}</p>
 
-        <hr style="border: none; border-top: 1px solid #c9a84c; margin-top: 32px;" />
+        <hr style="border: none; border-top: 1px solid #c4714f; margin-top: 32px;" />
         <p style="color: #999; font-size: 12px;">
           Sent from tbmixology.com contact form
         </p>

@@ -18,18 +18,18 @@ export default function TierCard({
   showLink = false,
 }: TierCardProps) {
   return (
-    <div className="border border-border-gold bg-surface p-8 md:p-10 noise-overlay">
+    <div className="bg-surface border-l-4 border-sage rounded-lg p-8 md:p-10">
       <div className="flex items-center gap-4 mb-6">
-        <span className="text-xs tracking-[0.25em] uppercase text-gold font-body">
+        <span className="text-xs tracking-[0.25em] uppercase text-sage font-body">
           Tier {tier}
         </span>
-        <span className="h-px flex-1 bg-border-gold" />
+        <span className="h-px flex-1 bg-sand" />
       </div>
 
       <h3 className="font-heading text-3xl md:text-4xl text-text mb-2">
         {name}
       </h3>
-      <p className="text-gold text-lg font-body mb-8">{price}</p>
+      <p className="text-terracotta text-lg font-body font-medium mb-8">{price}</p>
 
       <ul className="space-y-3 mb-8">
         {features.map((feature, i) => (
@@ -37,14 +37,14 @@ export default function TierCard({
             key={i}
             className="text-text-muted text-sm font-body flex items-start gap-3"
           >
-            <span className="text-gold mt-1 shrink-0">—</span>
+            <span className="text-sage mt-1 shrink-0">—</span>
             {feature}
           </li>
         ))}
       </ul>
 
-      <div className="border-t border-border-gold pt-6">
-        <p className="text-champagne text-sm italic font-body">
+      <div className="border-t border-sand pt-6">
+        <p className="text-text-muted text-sm italic font-body">
           Perfect for: {perfectFor}
         </p>
       </div>
@@ -52,7 +52,7 @@ export default function TierCard({
       {showLink && (
         <Link
           href="/services"
-          className="inline-block mt-6 text-gold text-sm tracking-[0.15em] uppercase font-body hover:text-champagne transition-colors"
+          className="inline-block mt-6 text-terracotta text-sm tracking-[0.15em] uppercase font-body hover:text-hover transition-colors"
         >
           See Full Details →
         </Link>
