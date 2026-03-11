@@ -4,6 +4,7 @@ import SectionLabel from "@/components/SectionLabel";
 import GoldDivider from "@/components/GoldDivider";
 import TierCard from "@/components/TierCard";
 import FadeIn from "@/components/FadeIn";
+import CocktailPattern from "@/components/CocktailPattern";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -105,7 +106,8 @@ export default function Home() {
     <main>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center noise-overlay overflow-hidden">
-        <div className="px-6 max-w-4xl mx-auto flex flex-col items-center">
+        <CocktailPattern />
+        <div className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
           <FadeIn className="text-center">
             <SectionLabel>Tampa Bay&apos;s Handcrafted Event Bartending</SectionLabel>
           </FadeIn>
