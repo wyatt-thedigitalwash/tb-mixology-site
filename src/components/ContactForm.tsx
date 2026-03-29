@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import SuccessMessage from "./SuccessMessage";
 
 const tiers = [
   "Tier 1 – DIY Bartender",
@@ -45,18 +44,28 @@ export default function ContactForm() {
     }
   }
 
-  if (submitted) return <SuccessMessage />;
+  if (submitted)
+    return (
+      <div className="text-center py-16">
+        <h3 className="font-heading text-2xl text-primary mb-3">
+          Thank You!
+        </h3>
+        <p className="text-warm-gray font-body">
+          Thanks! Emma will be in touch within 1&ndash;2 business days.
+        </p>
+      </div>
+    );
 
   const inputClass =
-    "w-full bg-transparent border-b border-sand px-0 py-3 text-text text-sm font-body placeholder:text-text-muted focus:border-terracotta transition-colors";
+    "w-full bg-transparent border-b border-warm-gray px-0 py-3 text-primary text-sm font-body placeholder:text-warm-gray focus:border-accent transition-colors";
   const labelClass =
-    "text-xs tracking-[0.15em] uppercase text-text-muted font-body mb-1 block";
+    "text-xs tracking-[0.15em] uppercase text-warm-gray font-body mb-1 block";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-12">
       {/* Client Information */}
       <div>
-        <h3 className="font-heading text-2xl text-text mb-6">
+        <h3 className="font-heading text-2xl text-primary mb-6">
           Client Information
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
@@ -109,7 +118,7 @@ export default function ContactForm() {
 
       {/* Event Information */}
       <div>
-        <h3 className="font-heading text-2xl text-text mb-6">
+        <h3 className="font-heading text-2xl text-primary mb-6">
           Event Information
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
@@ -223,7 +232,7 @@ export default function ContactForm() {
                 Select a tier
               </option>
               {tiers.map((t) => (
-                <option key={t} value={t} className="bg-bg text-text">
+                <option key={t} value={t} className="bg-secondary text-primary">
                   {t}
                 </option>
               ))}
@@ -234,7 +243,7 @@ export default function ContactForm() {
 
       {/* Bar Preferences */}
       <div>
-        <h3 className="font-heading text-2xl text-text mb-6">
+        <h3 className="font-heading text-2xl text-primary mb-6">
           Bar Preferences
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
@@ -270,13 +279,13 @@ export default function ContactForm() {
               {cupOptions.map((option) => (
                 <label
                   key={option}
-                  className="flex items-center gap-2 cursor-pointer text-sm text-text-muted font-body hover:text-text transition-colors"
+                  className="flex items-center gap-2 cursor-pointer text-sm text-warm-gray font-body hover:text-primary transition-colors"
                 >
                   <input
                     type="radio"
                     name="cupPreference"
                     value={option}
-                    className="accent-terracotta"
+                    className="accent-accent"
                   />
                   {option}
                 </label>
@@ -317,7 +326,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full md:w-auto bg-terracotta text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full md:w-auto bg-primary text-secondary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Sending..." : "Send My Event Details"}
       </button>

@@ -1,81 +1,60 @@
-# TB Mixology
-
-## Framework
-
-- **Framework:** Next.js 16 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4
-- **Email:** Resend
-- **Icons:** Lucide React
-
-## Pages
-
-- `/` — Home (Hero, What We Do, Services Overview, Social Proof, CTA)
-- `/services` — Services (4 tiers + add-ons)
-- `/contact` — Book Your Event (full event questionnaire form)
-
-## Components
-
-- `Navbar` — Sticky cream navbar with mobile menu
-- `Footer` — Warm sand background, nav links, socials, contact info
-- `TierCard` — Service tier card with sage left border accent
-- `SectionLabel` — Uppercase sage label above headings
-- `GoldDivider` — Thin warm sand horizontal rule
-- `ContactForm` — Event questionnaire with Resend integration
-- `SuccessMessage` — Post-submit confirmation
-- `FadeIn` — Scroll-triggered fade-in animation wrapper
-
-## Design System
-
-### Colors
-
-- Background: `#faf7f2` (warm cream/linen)
-- Surface: `#f0ebe2` (soft sand)
-- Terracotta: `#c4714f` (primary accent)
-- Sage: `#7a8c6e` (secondary accent)
-- Sand: `#e8ddd0` (borders, dividers)
-- Text: `#2d3a28` (deep olive)
-- Muted: `#7a6e62` (warm taupe-gray)
-- Hover: `#d4956f` (lighter terracotta)
-
-### Typography
-
-- Headings: Playfair Display (serif)
-- Body: Jost (sans-serif)
-- Labels: Uppercase letter-spaced Jost
-
-### Spacing / Layout
-
-- Max content width: `max-w-7xl` (1280px)
-- Section padding: `py-24` with `px-6`
-- Warm sand dividers between sections
+# TB Mixology — Website Reference
 
 ## Business Info
-
-### About
-
-Premium handcrafted event bartending service based in Tampa Bay, FL. Fresh & botanical brand aesthetic.
-
-### Contact
-
+- Business Name: TB Mixology
+- Industry: Mobile Event Bartending
+- Location: St. Petersburg, FL (serving Tampa Bay area)
+- Phone: (614) 634-1126 / (727) 337-4215
 - Email: emma@tbmixology.com
-- Phone 1: (614) 634-1126
-- Phone 2: (727) 337-4215
+- Website URL: https://tb-mixology-site.vercel.app
+- Google Business Profile: (to be linked)
+- Instagram: @tbmixology
 
-### Services
+## Brand
+- Primary Color: #1a1a1a (black)
+- Secondary Color: #faf9f7 (warm off-white)
+- Accent Color: #c9a96e (warm gold)
+- Warm Gray: #a89f95
+- Background: #faf9f7
+- Text Color: #1a1a1a
+- Primary Font: Playfair Display (serif, display/headings)
+- Secondary Font: Libre Franklin (sans-serif, body)
+- Accent Font: Cormorant Garamond (serif, subheadings/quotes)
 
-- Tier 1: DIY Bartender ($50+)
-- Tier 2: Batch & Drop ($150+)
-- Tier 3: Full Service Bar ($500+)
-- Tier 4: Luxury Open Bar ($550+ + alcohol)
-- Add-ons: Glassware Rental, Batch Cocktails, Cocktail Classes
+## Pages
+- [x] Home
+- [x] Services (overview)
+- [x] Services / Private Event Bartending
+- [x] Services / Cocktail Classes
+- [x] Services / Batched Cocktails
+- [x] Services / Glassware Rental
+- [x] Drinks (flavor menus)
+- [x] Events (photo galleries)
+- [x] Reviews
+- [x] About
+- [x] FAQ
+- [x] Contact (form + Calendly)
 
-### Hours of Operation
+## Content Status
+- [ ] Copy provided by client (partial — using Emma's brain dump + tier/flavor materials)
+- [ ] Photos provided by client (not yet in repo — using placeholders)
+- [ ] Logo provided by client (using text logo for now)
+- [ ] Domain connected
 
-By appointment / event-based
+## Integrations
+- [ ] Google Analytics (GA4 ID: TBD)
+- [ ] Google Search Console (verified: TBD)
+- [ ] Google Business Profile (linked: TBD)
+- [x] Calendly (https://calendly.com/emmanichter/tb-mixology-consultation)
+- [x] Resend (transactional email for contact form)
+- [ ] Instagram feed embed (placeholder for now)
+- [ ] Google Reviews integration (placeholder for now)
+- [ ] JotForm → Monday.com pipeline (client's existing workflow — form replicates JotForm fields natively)
 
-### Social Media
-
-- Instagram: https://www.instagram.com/tbmixology/
-- Facebook: https://www.facebook.com/p/TB-Mixology-100093284260144/
-- TikTok: https://www.tiktok.com/@tbmixology
+## Notes
+- Client uses JotForm → Monday.com for event tracking. Our native form replicates all JotForm fields. Client may want to keep JotForm integration via webhook or switch to our form → Resend → Monday.
+- Client is fully insured up to $2,000,000
+- Woman-owned & operated — feature prominently
+- Key differentiator: fully custom everything (named cocktails, themed menus, fresh ingredients, creative garnishes)
+- Notable collaborations: Kawha Coffee Roastery, Tampa Bay Rays
+- Target audience: weddings, corporate events, private parties, brand collaborations

@@ -1,45 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #faf7f2;
-  --color-surface: #f0ebe2;
-  --color-terracotta: #c4714f;
-  --color-sage: #7a8c6e;
-  --color-sand: #e8ddd0;
-  --color-text: #2d3a28;
-  --color-text-muted: #7a6e62;
-  --color-hover: #d4956f;
+  --color-primary: #1a1a1a;
+  --color-secondary: #faf9f7;
+  --color-accent: #c9a96e;
+  --color-warm-gray: #a89f95;
+  --color-bg: #faf9f7;
+  --color-text: #1a1a1a;
 
   --font-heading: var(--font-playfair);
-  --font-body: var(--font-jost);
+  --font-body: var(--font-libre);
+  --font-accent: var(--font-cormorant);
 }
 
 body {
-  background-color: #faf7f2;
-  color: #2d3a28;
+  background-color: #faf9f7;
+  color: #1a1a1a;
   font-family: var(--font-body);
-}
-
-/* Linen texture overlay */
-.noise-overlay {
-  position: relative;
-}
-
-.noise-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.04;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-  z-index: 1;
-}
-
-.noise-overlay > * {
-  position: relative;
-  z-index: 2;
 }
 
 /* Fade-in animation */
@@ -54,39 +31,35 @@ body {
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Staggered delays */
 .delay-100 { transition-delay: 0.1s; }
 .delay-200 { transition-delay: 0.2s; }
 .delay-300 { transition-delay: 0.3s; }
 .delay-400 { transition-delay: 0.4s; }
 
-/* Section divider */
-.section-rule {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #e8ddd0 20%,
-    #e8ddd0 80%,
-    transparent
-  );
-}
-
 /* Form input styles */
 input, textarea, select {
   background-color: transparent;
-  border-bottom: 1px solid #e8ddd0;
+  border-bottom: 1px solid #a89f95;
   outline: none;
   transition: border-color 0.3s ease-in-out;
-  color: #2d3a28;
+  color: #1a1a1a;
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: #c4714f;
+  border-color: #c9a96e;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #7a6e62;
+  color: #a89f95;
 }
 
 /* Scrollbar styling */
@@ -95,10 +68,10 @@ input::placeholder, textarea::placeholder {
 }
 
 ::-webkit-scrollbar-track {
-  background: #faf7f2;
+  background: #faf9f7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c4714f;
+  background: #a89f95;
   border-radius: 3px;
 }

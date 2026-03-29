@@ -1,50 +1,58 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { GlassWater, Beaker, PartyPopper, Instagram, Facebook } from "lucide-react";
-import SectionLabel from "@/components/SectionLabel";
-import GoldDivider from "@/components/GoldDivider";
-import TierCard from "@/components/TierCard";
 import FadeIn from "@/components/FadeIn";
-import CocktailPattern from "@/components/CocktailPattern";
+import SectionHeading from "@/components/SectionHeading";
+import ServiceCard from "@/components/ServiceCard";
+import TierCard from "@/components/TierCard";
+import ReviewCard from "@/components/ReviewCard";
+import PlaceholderImage from "@/components/PlaceholderImage";
+import InstagramFeed from "@/components/InstagramFeed";
 
-function TikTokIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-    >
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.19 8.19 0 0 0 4.76 1.52V6.79a4.83 4.83 0 0 1-1-.1Z" />
-    </svg>
-  );
-}
+export const metadata: Metadata = {
+  title: "TB Mixology | Tampa Bay Event Bartending",
+  description:
+    "Woman-owned mobile bartending serving St. Pete, Tampa, Clearwater & Sarasota. Fresh ingredients, custom cocktail menus, and unforgettable bar experiences for every event.",
+  openGraph: {
+    title: "TB Mixology | Tampa Bay Event Bartending",
+    description:
+      "Woman-owned mobile bartending serving St. Pete, Tampa, Clearwater & Sarasota. Fresh ingredients, custom cocktail menus, and unforgettable bar experiences.",
+    url: "https://tb-mixology-site.vercel.app",
+    siteName: "TB Mixology",
+    locale: "en_US",
+    type: "website",
+  },
+};
 
-function LeafSprig({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <path d="M10 50 Q30 30 60 30 Q90 30 110 10" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.3" />
-      <path d="M40 30 Q35 20 45 15" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.25" />
-      <path d="M60 30 Q55 18 65 12" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.25" />
-      <path d="M80 25 Q75 15 85 10" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.25" />
-      <ellipse cx="45" cy="14" rx="5" ry="8" transform="rotate(-20 45 14)" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.15" />
-      <ellipse cx="65" cy="11" rx="5" ry="8" transform="rotate(-15 65 11)" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.15" />
-      <ellipse cx="85" cy="9" rx="4" ry="7" transform="rotate(-10 85 9)" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.15" />
-    </svg>
-  );
-}
-
-function CitrusSlice({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <circle cx="40" cy="40" r="30" stroke="currentColor" strokeWidth="1" opacity="0.2" />
-      <circle cx="40" cy="40" r="24" stroke="currentColor" strokeWidth="0.6" opacity="0.12" />
-      <line x1="40" y1="16" x2="40" y2="64" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
-      <line x1="16" y1="40" x2="64" y2="40" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
-      <line x1="23" y1="23" x2="57" y2="57" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
-      <line x1="57" y1="23" x2="23" y2="57" stroke="currentColor" strokeWidth="0.6" opacity="0.1" />
-    </svg>
-  );
-}
+const services = [
+  {
+    title: "Private Event Bartending",
+    description:
+      "Full-service bartending designed around your event. Custom cocktail menus, seamless service, and a bar experience aligned with your aesthetic.",
+    href: "/services/bartending",
+    imageLabel: "Event bartending photo",
+  },
+  {
+    title: "Cocktail Classes",
+    description:
+      "Interactive, hands-on cocktail classes that are equal parts fun and elevated. Perfect for group events, brand activations, or private parties.",
+    href: "/services/classes",
+    imageLabel: "Cocktail class photo",
+  },
+  {
+    title: "Batched Cocktails",
+    description:
+      "Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Hosting with ease, polished drink experience.",
+    href: "/services/batched",
+    imageLabel: "Batched cocktails photo",
+  },
+  {
+    title: "Glassware Rental",
+    description:
+      "Curated glassware options to match your event\u2019s style. The finishing details that tie your bar setup together.",
+    href: "/services/glassware",
+    imageLabel: "Glassware rental photo",
+  },
+];
 
 const tiers = [
   {
@@ -52,23 +60,23 @@ const tiers = [
     name: "DIY Bartender",
     price: "Starting at $50",
     features: [
-      "Virtual consult",
-      "Custom cocktail menu",
-      "Full instructions & shopping list",
-      "Printable menus",
+      "15-min virtual consultation",
+      "Customized cocktail menu & instructions",
+      "Optional instructional videos",
+      "Shopping list for everything you need",
     ],
     perfectFor:
-      "Hosts who love to mix it up themselves — with expert-level recipes and guidance",
+      "Hosts who love to mix it up themselves \u2014 with expert-level recipes and guidance",
   },
   {
     tier: 2,
     name: "Batch & Drop",
-    price: "Starting at $150",
+    price: "Starting at $120\u2013$150",
     features: [
-      "Everything in Tier 1",
-      "Batches of cocktails delivered",
-      "Bar tools & prepped garnishes",
-      "Quick setup guide",
+      "Everything in Tier 1, plus:",
+      "Batches of prepped cocktails delivered",
+      "Each batch makes ~26\u201330 drinks",
+      "Free delivery in Tampa/St Pete",
     ],
     perfectFor:
       "Events where you want the prep done by people who really care about flavor",
@@ -76,12 +84,12 @@ const tiers = [
   {
     tier: 3,
     name: "Full Service Bar",
-    price: "Starting at $500",
+    price: "Starting at $600+",
     features: [
-      "Everything in Tier 2",
-      "Bartender service (1 or 2)",
-      "Setup, breakdown & ice included",
-      "Bar décor & glassware",
+      "1\u20132 bartenders with full setup",
+      "4\u20136 custom signature cocktails",
+      "All ingredients, ice & garnishes",
+      "Setup, service & breakdown",
     ],
     perfectFor:
       "Hosts who want to enjoy the party without worrying about the bar",
@@ -89,54 +97,80 @@ const tiers = [
   {
     tier: 4,
     name: "Luxury Open Bar",
-    price: "Starting at $550 + alcohol",
+    price: "Starting at $600 + alcohol",
     features: [
       "Everything in Tier 3",
-      "All alcohol provided",
-      "Full luxury experience",
-      "Nothing to think about",
+      "All alcohol provided & transported",
+      "No charge for unopened bottles",
+      "The complete hands-off experience",
     ],
     perfectFor:
-      "The full experience — from first pour to last call, we handle everything",
+      "The full experience \u2014 from selecting the spirits to cleaning up, it\u2019s all on us",
   },
+];
+
+const reviews = [
+  {
+    quote:
+      "TB Mixology made our wedding reception absolutely magical. The custom cocktails were a huge hit and the bartenders were so professional. Guests are still talking about the drinks!",
+    name: "Jessica & Mark",
+    eventType: "Wedding Reception",
+  },
+  {
+    quote:
+      "We hired them for a corporate holiday party and it exceeded every expectation. The cocktail menu was tailored perfectly to our brand colors and theme. Seamless from start to finish.",
+    name: "Lauren M.",
+    eventType: "Corporate Event",
+  },
+  {
+    quote:
+      "The batch cocktails for my birthday were incredible \u2014 fresh, balanced, and beautifully presented. I didn\u2019t have to worry about a thing. Highly recommend for any event!",
+    name: "Danielle R.",
+    eventType: "Birthday Party",
+  },
+];
+
+const highlights = [
+  "Fully custom cocktail menus for every event",
+  "Fresh ingredients \u2014 always, no exceptions",
+  "Creative, handcrafted garnishes",
+  "Cocktails named after the people who matter",
+  "Woman-owned & operated",
+  "Fully insured up to $2,000,000",
 ];
 
 export default function Home() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center noise-overlay overflow-hidden">
-        <CocktailPattern />
-        <div className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
-          <FadeIn className="text-center">
-            <SectionLabel>Tampa Bay&apos;s Handcrafted Event Bartending</SectionLabel>
-          </FadeIn>
-
-          <FadeIn delay="delay-100" className="text-center">
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-8xl text-text leading-[1.05] mb-6">
+      <section className="relative min-h-screen flex items-center justify-center bg-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <PlaceholderImage label="Hero background photo" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
+          <FadeIn>
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-secondary leading-tight mb-6">
               Fresh Ingredients.
               <br />
-              <span className="text-terracotta">Unforgettable Events.</span>
+              Unforgettable Events.
             </h1>
           </FadeIn>
-
-          <FadeIn delay="delay-200" className="text-center">
-            <p className="text-text-muted font-body text-sm md:text-xl mb-10">
-              Serving Tampa · St. Pete · Clearwater · Sarasota
+          <FadeIn delay="delay-100">
+            <p className="font-body text-white/70 text-base md:text-xl mb-10 max-w-2xl mx-auto">
+              Woman-owned &amp; operated mobile bartending &mdash; St. Pete, Tampa, Clearwater, Sarasota
             </p>
           </FadeIn>
-
-          <FadeIn delay="delay-300" className="text-center w-full">
+          <FadeIn delay="delay-200">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#services"
-                className="w-full sm:w-auto border border-terracotta text-terracotta px-8 py-3 sm:py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-terracotta hover:text-bg transition-colors"
+                className="border border-secondary text-secondary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-secondary hover:text-primary transition-colors"
               >
                 View Our Services
               </a>
               <Link
                 href="/contact"
-                className="w-full sm:w-auto text-center bg-terracotta text-bg px-8 py-3 sm:py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
+                className="bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors text-center"
               >
                 Tell Us About Your Event
               </Link>
@@ -145,167 +179,159 @@ export default function Home() {
         </div>
       </section>
 
-      <GoldDivider />
-
-      {/* ── What We Do ── */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <SectionLabel>What We Do</SectionLabel>
-              <h2 className="font-heading text-3xl md:text-5xl text-text">
-                More Than Just Drinks
-              </h2>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: GlassWater,
-                title: "Glassware Rental",
-                description:
-                  "Swap the plastic for real glassware — coupes, rocks glasses, highballs. It makes all the difference.",
-              },
-              {
-                icon: Beaker,
-                title: "Batch Cocktails",
-                description:
-                  "Handcrafted, perfectly balanced batch cocktails delivered to your door, ready to pour and enjoy.",
-              },
-              {
-                icon: PartyPopper,
-                title: "Cocktail Classes",
-                description:
-                  "Hands-on cocktail-making experiences for bachelorette parties, team events, and private gatherings.",
-              },
-            ].map((item, i) => (
-              <FadeIn key={item.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
-                <div className="bg-surface rounded-lg p-8 text-center">
-                  <item.icon className="w-10 h-10 text-terracotta mx-auto mb-5" />
-                  <h3 className="font-heading text-2xl text-text mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-text-muted text-sm font-body leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <GoldDivider />
-
       {/* ── Services Overview ── */}
-      <section id="services" className="py-20 md:py-28">
+      <section id="services" className="py-20 md:py-28 bg-secondary">
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
-            <div className="text-center mb-16">
-              <SectionLabel>Our Services</SectionLabel>
-              <h2 className="font-heading text-3xl md:text-5xl text-text">
-                Four Tiers, Tailored to You
-              </h2>
-              <p className="text-text-muted font-body mt-4 max-w-2xl mx-auto">
-                Whether you want professional recipes to mix at home or a fully staffed bar
-                with everything handled, there&apos;s a tier that fits your event perfectly.
-              </p>
-            </div>
+            <SectionHeading label="What We Do" title="Our Services" />
           </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tiers.map((tier, i) => (
-              <FadeIn key={tier.tier} delay={i % 2 === 1 ? "delay-100" : ""}>
-                <TierCard {...tier} showLink />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {services.map((s, i) => (
+              <FadeIn key={s.title} delay={i % 2 === 1 ? "delay-100" : ""}>
+                <ServiceCard {...s} />
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      <GoldDivider />
-
-      {/* ── Social Proof / Vibe ── */}
-      <section className="py-20 md:py-28 noise-overlay bg-surface relative overflow-hidden">
-        {/* Botanical accent */}
-        <div className="absolute top-8 left-8 pointer-events-none">
-          <LeafSprig className="w-32 text-sage rotate-180" />
-        </div>
-
-        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+      {/* ── Tier Preview ── */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
-            <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl text-text leading-tight mb-8">
-              From the first pour to the last call,
-              <br />
-              <span className="text-terracotta">every detail is handled with care.</span>
-            </h2>
+            <SectionHeading label="Pricing" title="Four Tiers, Tailored to You" />
           </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {tiers.map((t, i) => (
+              <FadeIn key={t.tier} delay={i % 2 === 1 ? "delay-100" : ""}>
+                <TierCard {...t} showLink />
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* ── Differentiator ── */}
+      <section className="py-20 md:py-28 bg-primary">
+        <div className="max-w-4xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading title="Not Your Average Mobile Bar" light />
+          </FadeIn>
           <FadeIn delay="delay-100">
-            <p className="text-text-muted font-body text-lg mb-10">
-              Follow along for seasonal cocktail ideas, fresh event setups,
-              and behind-the-scenes moments from Tampa Bay&apos;s favorite mobile bar.
-            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5">
+              {highlights.map((h) => (
+                <li
+                  key={h}
+                  className="flex items-start gap-3 font-body text-white/80 text-sm md:text-base"
+                >
+                  <span className="text-accent mt-0.5 shrink-0">&#10003;</span>
+                  {h}
+                </li>
+              ))}
+            </ul>
           </FadeIn>
+        </div>
+      </section>
 
+      {/* ── Reviews ── */}
+      {/* TODO: integrate Google Places Reviews API */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading label="Testimonials" title="What Our Clients Say" />
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {reviews.map((r, i) => (
+              <FadeIn key={r.name} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <ReviewCard {...r} />
+              </FadeIn>
+            ))}
+          </div>
           <FadeIn delay="delay-200">
-            <div className="flex justify-center gap-6">
+            <div className="text-center mt-10">
+              <Link
+                href="/reviews"
+                className="font-body text-sm text-primary hover:text-accent transition-colors tracking-wide"
+              >
+                Read More Reviews &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Instagram Feed ── */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading
+              label="@tbmixology"
+              title="Follow the Pour"
+            />
+          </FadeIn>
+          <FadeIn delay="delay-100">
+            <InstagramFeed />
+          </FadeIn>
+          <FadeIn delay="delay-200">
+            <div className="text-center mt-10">
               <a
-                href="https://www.instagram.com/tbmixology/"
+                href="https://instagram.com/tbmixology"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-terracotta transition-colors"
-                aria-label="Instagram"
+                className="font-body text-sm text-primary hover:text-accent transition-colors tracking-wide"
               >
-                <Instagram size={28} />
-              </a>
-              <a
-                href="https://www.facebook.com/p/TB-Mixology-100093284260144/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-terracotta transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={28} />
-              </a>
-              <a
-                href="https://www.tiktok.com/@tbmixology"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-terracotta transition-colors"
-                aria-label="TikTok"
-              >
-                <TikTokIcon className="w-7 h-7" />
+                Follow Us on Instagram &rarr;
               </a>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      <GoldDivider />
-
-      {/* ── CTA Banner ── */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute bottom-8 right-8 pointer-events-none">
-          <CitrusSlice className="w-20 text-terracotta" />
-        </div>
-
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      {/* ── CTA Section ── */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
-            <SectionLabel>Let&apos;s Plan Together</SectionLabel>
-            <h2 className="font-heading text-3xl md:text-5xl text-text mb-8">
+            <h2 className="font-heading text-3xl md:text-5xl text-primary mb-8">
               Your event deserves a great bar.
             </h2>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-block bg-terracotta text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
+              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors"
             >
               Tell Us About Your Event
             </Link>
           </FadeIn>
         </div>
       </section>
+
+      {/* ── LocalBusiness JSON-LD ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "TB Mixology",
+            description:
+              "Woman-owned mobile bartending serving Tampa Bay. Custom cocktails, private event bartending, cocktail classes, and batched cocktails.",
+            url: "https://tb-mixology-site.vercel.app",
+            telephone: "",
+            areaServed: [
+              { "@type": "City", name: "Tampa" },
+              { "@type": "City", name: "St. Petersburg" },
+              { "@type": "City", name: "Clearwater" },
+              { "@type": "City", name: "Sarasota" },
+            ],
+            priceRange: "$$",
+            image: "",
+            sameAs: [
+              "https://instagram.com/tbmixology",
+              "https://www.facebook.com/p/TB-Mixology-100093284260144/",
+              "https://www.tiktok.com/@tbmixology",
+            ],
+          }),
+        }}
+      />
     </main>
   );
 }

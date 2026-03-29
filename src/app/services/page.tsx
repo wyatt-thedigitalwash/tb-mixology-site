@@ -1,178 +1,181 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { GlassWater, Beaker, PartyPopper } from "lucide-react";
-import SectionLabel from "@/components/SectionLabel";
-import GoldDivider from "@/components/GoldDivider";
-import TierCard from "@/components/TierCard";
 import FadeIn from "@/components/FadeIn";
+import SectionHeading from "@/components/SectionHeading";
+import ServiceCard from "@/components/ServiceCard";
 
 export const metadata: Metadata = {
-  title: "Services | TB Mixology — Tampa Bay Event Bartending",
+  title: "Our Services | TB Mixology — Tampa Bay Event Bartending",
   description:
-    "From DIY cocktail kits to full-service bars — explore our four tiers of handcrafted event bartending serving Tampa, St. Pete, Clearwater, and Sarasota.",
+    "From DIY cocktail kits to luxury open bars, cocktail classes, batched cocktails, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
+  openGraph: {
+    title: "Our Services | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "From DIY cocktail kits to luxury open bars, cocktail classes, batched cocktails, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
+  },
 };
 
-const tiers = [
+const services = [
   {
-    tier: 1,
-    name: "DIY Bartender",
-    price: "Starting at $50",
-    features: [
-      "Virtual consult to build your custom cocktail menu",
-      "Full instructions for each drink",
-      "Shopping list — alcohol, mixers, and garnishes",
-      "Printable menus to display at your bar",
-    ],
-    perfectFor:
-      "Hosts who love to mix it up themselves — with expert-level recipes and guidance",
+    title: "Private Event Bartending",
+    description:
+      "Four tiers of service from DIY recipes to a fully staffed luxury open bar — tailored to your event and guest count.",
+    href: "/services/bartending",
+    imageLabel: "Photo — Event Bartending",
   },
   {
-    tier: 2,
-    name: "Batch & Drop",
-    price: "Starting at $150",
-    features: [
-      "Everything in Tier 1",
-      "Batches of cocktails mixed and delivered to your door",
-      "Bar tools provided for the event",
-      "Prepped garnishes ready to go",
-      "Printable menus included",
-      "Quick setup guide so anyone can serve",
-    ],
-    perfectFor:
-      "Events where you have someone to pour but want the prep handled by people who care about flavor",
+    title: "Cocktail Classes",
+    description:
+      "Interactive, hands-on cocktail classes in a guided social setting. Equal parts fun and elevated.",
+    href: "/services/classes",
+    imageLabel: "Photo — Cocktail Class",
   },
   {
-    tier: 3,
-    name: "Full Service Bar",
-    price: "Starting at $500",
-    features: [
-      "Everything in Tier 2",
-      "Professional bartender service (1 or 2 bartenders)",
-      "Full setup and breakdown",
-      "Ice, mixers, and garnishes included",
-      "Bar décor and glassware provided",
-    ],
-    perfectFor:
-      "Hosts who want to enjoy the party without worrying about the bar — we take care of everything",
+    title: "Batched Cocktails",
+    description:
+      "Handcrafted cocktail batches mixed, prepped, and delivered to your door — ready to pour and enjoy.",
+    href: "/services/batched",
+    imageLabel: "Photo — Batched Cocktails",
   },
   {
-    tier: 4,
-    name: "Luxury Open Bar",
-    price: "Starting at $550 + cost of alcohol",
-    features: [
-      "Everything in Tier 3",
-      "All alcohol provided and curated for your event",
-      "The complete experience from first pour to last call",
-    ],
-    perfectFor:
-      "The full experience — from selecting the spirits to cleaning up, it's all on us",
+    title: "Glassware Rental",
+    description:
+      "Trade the plastic for real glassware — coupes, rocks glasses, highballs, and more for your event.",
+    href: "/services/glassware",
+    imageLabel: "Photo — Glassware Rental",
   },
+];
+
+const experienceAddOns = [
+  { name: "Caviar Service", note: "An elevated tasting experience" },
+  { name: "Champagne Toast", note: null },
+  { name: "Cocktail Smoker", note: "Theatrical smoked cocktails" },
+  { name: "Bubble Gun", note: "Fun playful moments for photos" },
+  { name: "Branding Tool", note: "Custom branded orange slices" },
+  { name: "Mid-Event Restock", note: "Fresh supplies delivered during your event" },
+];
+
+const equipmentAddOns = [
+  { name: "Cocktail shaker & strainer set", price: "$5/each" },
+  { name: "Glass beverage dispenser", price: "$20/each" },
+  { name: "Garnish tray", price: "$10/each" },
+  { name: "Marble menu & instruction holder", price: "$5" },
+  { name: "Additional flavors", price: "$5\u2013$10/each" },
+  { name: "Disposable cups", price: "Pricing varies" },
+  { name: "Delivery outside Tampa Bay/St Pete", price: "$10/30 min" },
 ];
 
 export default function ServicesPage() {
   return (
     <main className="pt-28 pb-24">
-      {/* Header */}
-      <section className="max-w-4xl mx-auto px-6 text-center mb-16">
-        <FadeIn>
-          <SectionLabel>Our Services</SectionLabel>
-          <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-text mb-6">
-            Great Drinks,
-            <br />
-            <span className="text-terracotta">Your Way</span>
-          </h1>
-          <p className="text-text-muted font-body text-lg max-w-2xl mx-auto">
-            We offer four tiers of service — from handcrafted recipes you can
-            make at home to a fully staffed bar with all the details handled.
-            Pick the one that feels right for your event.
-          </p>
-        </FadeIn>
-      </section>
-
-      <GoldDivider />
-
-      {/* Tiers */}
-      <section className="max-w-4xl mx-auto px-6 py-16 space-y-8">
-        {tiers.map((tier, i) => (
-          <FadeIn key={tier.tier} delay={i % 2 === 1 ? "delay-100" : ""}>
-            <TierCard {...tier} />
+      {/* Hero */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <FadeIn>
+            <p className="text-xs tracking-[0.25em] uppercase font-body mb-3 text-warm-gray">
+              What We Offer
+            </p>
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary mb-6">
+              Our Services
+            </h1>
+            <p className="font-accent text-lg md:text-xl text-warm-gray max-w-2xl mx-auto">
+              From handcrafted recipes and batched cocktails to fully staffed bars
+              and hands-on classes — TB Mixology has everything you need to
+              elevate your next event.
+            </p>
           </FadeIn>
-        ))}
-      </section>
-
-      <GoldDivider />
-
-      {/* Add-ons */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
-        <FadeIn>
-          <div className="text-center mb-12">
-            <SectionLabel>Add-Ons</SectionLabel>
-            <h2 className="font-heading text-3xl md:text-4xl text-text">
-              A Little Something Extra
-            </h2>
-          </div>
-        </FadeIn>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              icon: GlassWater,
-              title: "Glassware Rental",
-              description:
-                "Trade the plastic for real glassware — coupes, rocks glasses, highballs, and more.",
-            },
-            {
-              icon: Beaker,
-              title: "Batch Cocktails",
-              description:
-                "Add extra batches of handcrafted cocktails to any tier when you need more to go around.",
-            },
-            {
-              icon: PartyPopper,
-              title: "Cocktail Classes",
-              description:
-                "Turn your event into a hands-on experience with guided cocktail-making for your group.",
-            },
-          ].map((addon, i) => (
-            <FadeIn key={addon.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
-              <div className="bg-surface rounded-lg p-6 text-center">
-                <addon.icon className="w-8 h-8 text-terracotta mx-auto mb-4" />
-                <h3 className="font-heading text-xl text-text mb-2">
-                  {addon.title}
-                </h3>
-                <p className="text-text-muted text-sm font-body leading-relaxed">
-                  {addon.description}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
         </div>
-
-        <FadeIn>
-          <p className="text-center text-text-muted text-sm font-body mt-8 italic">
-            Just mention add-ons when you reach out — we&apos;ll work them into your event plan.
-          </p>
-        </FadeIn>
       </section>
 
-      <GoldDivider />
+      {/* Service Cards Grid */}
+      <section className="py-20 md:py-28 bg-primary">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, i) => (
+              <FadeIn key={service.title} delay={i > 0 ? `delay-${i * 100}` : ""}>
+                <ServiceCard {...service} />
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Add-Ons */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading
+              label="Add-Ons"
+              title="Enhance Your Event"
+              subtitle="Take your event to the next level with curated extras and premium touches."
+            />
+          </FadeIn>
+
+          {/* Experience Add-Ons */}
+          <FadeIn>
+            <h3 className="font-heading text-2xl text-primary mb-6">
+              Experience Add-Ons
+            </h3>
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+            {experienceAddOns.map((addon, i) => (
+              <FadeIn key={addon.name} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                <div className="border border-warm-gray/30 rounded-sm p-5 hover:border-accent/50 transition-colors">
+                  <h4 className="font-heading text-lg text-primary mb-1">
+                    {addon.name}
+                  </h4>
+                  {addon.note && (
+                    <p className="text-warm-gray font-body text-sm">
+                      {addon.note}
+                    </p>
+                  )}
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Equipment & Extras */}
+          <FadeIn>
+            <h3 className="font-heading text-2xl text-primary mb-6">
+              Equipment &amp; Extras
+            </h3>
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {equipmentAddOns.map((addon, i) => (
+              <FadeIn key={addon.name} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                <div className="border border-warm-gray/30 rounded-sm p-5 hover:border-accent/50 transition-colors flex justify-between items-start gap-4">
+                  <h4 className="font-body text-sm text-primary">
+                    {addon.name}
+                  </h4>
+                  <span className="font-accent text-accent text-sm whitespace-nowrap">
+                    {addon.price}
+                  </span>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
-      <section className="max-w-4xl mx-auto px-6 py-16 text-center">
-        <FadeIn>
-          <h2 className="font-heading text-3xl md:text-4xl text-text mb-4">
-            Not sure which tier is right for you?
-          </h2>
-          <p className="text-text-muted font-body mb-8">
-            No problem — tell us about your event and we&apos;ll help you find the perfect fit.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-terracotta text-bg px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-hover transition-colors"
-          >
-            Let&apos;s Plan Your Bar
-          </Link>
-        </FadeIn>
+      <section className="py-20 md:py-28 bg-primary">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <FadeIn>
+            <h2 className="font-heading text-3xl md:text-4xl text-secondary mb-4">
+              Ready to Elevate Your Event?
+            </h2>
+            <p className="font-body text-secondary/70 mb-8 max-w-xl mx-auto">
+              Tell us about your event and we&apos;ll build the perfect bar
+              experience for you.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors"
+            >
+              Get in Touch
+            </Link>
+          </FadeIn>
+        </div>
       </section>
     </main>
   );

@@ -7,6 +7,7 @@ interface TierCardProps {
   features: string[];
   perfectFor: string;
   showLink?: boolean;
+  compact?: boolean;
 }
 
 export default function TierCard({
@@ -16,45 +17,39 @@ export default function TierCard({
   features,
   perfectFor,
   showLink = false,
+  compact = false,
 }: TierCardProps) {
   return (
-    <div className="bg-surface border-l-4 border-sage rounded-lg p-8 md:p-10">
-      <div className="flex items-center gap-4 mb-6">
-        <span className="text-xs tracking-[0.25em] uppercase text-sage font-body">
+    <div className="border border-warm-gray/30 p-6 md:p-8 rounded-sm hover:border-accent/50 transition-colors">
+      <div className="flex items-baseline gap-3 mb-1">
+        <span className="text-xs tracking-[0.2em] uppercase text-warm-gray font-body">
           Tier {tier}
         </span>
-        <span className="h-px flex-1 bg-sand" />
       </div>
-
-      <h3 className="font-heading text-3xl md:text-4xl text-text mb-2">
+      <h3 className="font-heading text-2xl md:text-3xl text-primary mb-1">
         {name}
       </h3>
-      <p className="text-terracotta text-lg font-body font-medium mb-8">{price}</p>
+      <p className="font-accent text-lg text-accent mb-5">{price}</p>
 
-      <ul className="space-y-3 mb-8">
-        {features.map((feature, i) => (
-          <li
-            key={i}
-            className="text-text-muted text-sm font-body flex items-start gap-3"
-          >
-            <span className="text-sage mt-1 shrink-0">—</span>
-            {feature}
+      <ul className={`space-y-2 mb-5 ${compact ? "text-sm" : ""}`}>
+        {features.map((f) => (
+          <li key={f} className="text-warm-gray font-body text-sm flex items-start gap-2">
+            <span className="text-accent mt-1 shrink-0">&#8226;</span>
+            {f}
           </li>
         ))}
       </ul>
 
-      <div className="border-t border-sand pt-6">
-        <p className="text-text-muted text-sm italic font-body">
-          Perfect for: {perfectFor}
-        </p>
-      </div>
+      <p className="text-sm font-accent italic text-warm-gray">
+        Perfect for: {perfectFor}
+      </p>
 
       {showLink && (
         <Link
-          href="/services"
-          className="inline-block mt-6 text-terracotta text-sm tracking-[0.15em] uppercase font-body hover:text-hover transition-colors"
+          href="/services/bartending"
+          className="inline-block mt-5 text-sm font-body text-primary hover:text-accent transition-colors tracking-wide"
         >
-          See Full Details →
+          See Full Details &rarr;
         </Link>
       )}
     </div>
