@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
 import ReviewCard from "@/components/ReviewCard";
-import PlaceholderImage from "@/components/PlaceholderImage";
 import InstagramFeed from "@/components/InstagramFeed";
 import { services, addOnServices, packages, homeReviews, highlights } from "@/lib/data/home";
 
@@ -28,8 +28,15 @@ export default function Home() {
     <main>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <PlaceholderImage label="Hero background photo" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 opacity-40">
+          <Image
+            src="/images/espresso-martini-pour-closeup-full.webp"
+            alt="Bartender pouring an espresso martini at a TB Mixology event"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
         </div>
         <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
           <FadeIn>

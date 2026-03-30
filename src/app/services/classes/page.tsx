@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import { perfectFor } from "@/lib/data/classes";
 
@@ -33,8 +34,12 @@ export default function ClassesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <PlaceholderImage
-                label="Photo — Cocktail Class in Action"
+              <Image
+                src="/images/gimlet-lime-garnish-bar-counter-full.webp"
+                alt="Freshly crafted gimlet cocktail with lime garnish on the bar counter"
+                width={1300}
+                height={1920}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="rounded-sm"
               />
             </FadeIn>

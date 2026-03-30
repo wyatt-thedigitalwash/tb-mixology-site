@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import { team, values } from "@/lib/data/about";
 
@@ -27,10 +28,13 @@ export default function AboutPage() {
       <section className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <PlaceholderImage
-              label="Team photo — replace"
-              aspect="portrait"
-              className="rounded-lg"
+            <Image
+              src="/images/bartender-pouring-cocktails-event-full.webp"
+              alt="TB Mixology bartender preparing cocktails at a private event"
+              width={1534}
+              height={1920}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-lg object-cover aspect-[3/4]"
             />
             <div>
               <SectionHeading label="Our Story" title="How It Started" />

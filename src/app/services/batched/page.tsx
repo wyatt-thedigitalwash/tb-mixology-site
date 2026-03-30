@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import { details } from "@/lib/data/batched";
 
@@ -58,8 +59,12 @@ export default function BatchedPage() {
               </Link>
             </FadeIn>
             <FadeIn delay="delay-100">
-              <PlaceholderImage
-                label="Photo — Batched Cocktails"
+              <Image
+                src="/images/mimosa-bloody-mary-bar-setup-full.webp"
+                alt="Batch cocktail bar setup with fresh juices, bottles, and garnishes ready to serve"
+                width={1920}
+                height={1081}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="rounded-sm"
               />
             </FadeIn>

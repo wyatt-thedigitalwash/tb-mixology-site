@@ -5,6 +5,10 @@ export const services = [
       "Full-service bartending designed around your event. Custom cocktail menus, seamless service, and a bar experience aligned with your aesthetic.",
     href: "/services/bartending",
     imageLabel: "Event bartending photo",
+    imageSrc: "/images/bartender-pouring-cocktails-event-md.webp",
+    imageWidth: 640,
+    imageHeight: 800,
+    imageAlt: "TB Mixology bartender preparing cocktails at a private event",
   },
   {
     title: "Batch Cocktails",
@@ -12,6 +16,10 @@ export const services = [
       "Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Hosting with ease, polished drink experience.",
     href: "/services/batched",
     imageLabel: "Batched cocktails photo",
+    imageSrc: "/images/mimosa-bloody-mary-bar-setup-md.webp",
+    imageWidth: 800,
+    imageHeight: 451,
+    imageAlt: "Mimosa and Bloody Mary bar setup with fresh juices and garnishes",
   },
   {
     title: "Cocktail Classes",
@@ -19,6 +27,10 @@ export const services = [
       "Interactive, hands-on cocktail classes that are equal parts fun and elevated. Perfect for group events, brand activations, or private parties.",
     href: "/services/classes",
     imageLabel: "Cocktail class photo",
+    imageSrc: "/images/spicy-paloma-tajin-rim-closeup-md.webp",
+    imageWidth: 451,
+    imageHeight: 800,
+    imageAlt: "Spicy paloma cocktail with Tajín rim and grapefruit garnish",
   },
 ];
 
