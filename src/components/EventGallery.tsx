@@ -3,90 +3,7 @@
 import { useState } from "react";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import FadeIn from "@/components/FadeIn";
-
-const categories = [
-  "All",
-  "Weddings",
-  "Corporate",
-  "Private Parties",
-  "Brand Collaborations",
-] as const;
-
-type Category = (typeof categories)[number];
-
-interface EventData {
-  title: string;
-  category: Exclude<Category, "All">;
-  images: string[];
-}
-
-const events: EventData[] = [
-  {
-    title: "Yacht Party",
-    category: "Private Parties",
-    images: [
-      "Yacht party photo 1 — replace",
-      "Yacht party photo 2 — replace",
-      "Yacht party photo 3 — replace",
-      "Yacht party photo 4 — replace",
-    ],
-  },
-  {
-    title: "Halloween Soirée",
-    category: "Private Parties",
-    images: [
-      "Halloween soirée photo 1 — replace",
-      "Halloween soirée photo 2 — replace",
-      "Halloween soirée photo 3 — replace",
-    ],
-  },
-  {
-    title: "Corporate Event",
-    category: "Corporate",
-    images: [
-      "Corporate event photo 1 — replace",
-      "Corporate event photo 2 — replace",
-      "Corporate event photo 3 — replace",
-    ],
-  },
-  {
-    title: "Wedding Reception",
-    category: "Weddings",
-    images: [
-      "Wedding reception photo 1 — replace",
-      "Wedding reception photo 2 — replace",
-      "Wedding reception photo 3 — replace",
-      "Wedding reception photo 4 — replace",
-    ],
-  },
-  {
-    title: "Bachelorette Party",
-    category: "Private Parties",
-    images: [
-      "Bachelorette party photo 1 — replace",
-      "Bachelorette party photo 2 — replace",
-      "Bachelorette party photo 3 — replace",
-    ],
-  },
-  {
-    title: "Kawha Coffee Collaboration",
-    category: "Brand Collaborations",
-    images: [
-      "Kawha Coffee collab photo 1 — replace",
-      "Kawha Coffee collab photo 2 — replace",
-      "Kawha Coffee collab photo 3 — replace",
-    ],
-  },
-  {
-    title: "Tampa Bay Rays Event",
-    category: "Brand Collaborations",
-    images: [
-      "Tampa Bay Rays event photo 1 — replace",
-      "Tampa Bay Rays event photo 2 — replace",
-      "Tampa Bay Rays event photo 3 — replace",
-    ],
-  },
-];
+import { categories, events, type Category } from "@/lib/data/events";
 
 export default function EventGallery() {
   const [active, setActive] = useState<Category>("All");
@@ -104,7 +21,7 @@ export default function EventGallery() {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`px-5 py-2 text-sm font-body tracking-wide transition-colors rounded-sm ${
+            className={`px-5 py-2 text-sm font-body tracking-wide transition-colors duration-200 ease-out rounded-sm ${
               active === cat
                 ? "bg-accent text-white"
                 : "border border-warm-gray/30 text-warm-gray hover:border-accent hover:text-accent"

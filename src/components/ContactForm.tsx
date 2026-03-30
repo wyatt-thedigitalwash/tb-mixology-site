@@ -1,16 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-
-const tiers = [
-  "Tier 1 – DIY Bartender",
-  "Tier 2 – Batch & Drop",
-  "Tier 3 – Full Service Bar",
-  "Tier 4 – Luxury Open Bar",
-  "Not sure yet",
-];
-
-const cupOptions = ["Plastic Cups", "Glassware Rental", "Not sure yet"];
+import { tiers, cupOptions } from "@/lib/data/contact";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -57,7 +48,7 @@ export default function ContactForm() {
     );
 
   const inputClass =
-    "w-full bg-transparent border-b border-warm-gray px-0 py-3 text-primary text-sm font-body placeholder:text-warm-gray focus:border-accent transition-colors";
+    "w-full bg-transparent border-b border-warm-gray px-0 py-3 text-primary text-sm font-body placeholder:text-warm-gray focus:border-accent transition-colors duration-200 ease-out";
   const labelClass =
     "text-xs tracking-[0.15em] uppercase text-warm-gray font-body mb-1 block";
 
@@ -279,7 +270,7 @@ export default function ContactForm() {
               {cupOptions.map((option) => (
                 <label
                   key={option}
-                  className="flex items-center gap-2 cursor-pointer text-sm text-warm-gray font-body hover:text-primary transition-colors"
+                  className="flex items-center gap-2 cursor-pointer text-sm text-warm-gray font-body hover:text-primary transition-colors duration-200 ease-out"
                 >
                   <input
                     type="radio"
@@ -326,7 +317,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full md:w-auto bg-primary text-secondary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full md:w-auto bg-primary text-secondary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-accent active:bg-accent transition-colors duration-200 ease-out disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Sending..." : "Send My Event Details"}
       </button>

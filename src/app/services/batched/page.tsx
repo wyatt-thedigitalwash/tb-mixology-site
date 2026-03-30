@@ -3,6 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import { details } from "@/lib/data/batched";
 
 export const metadata: Metadata = {
   title: "Batched Cocktails | TB Mixology — Tampa Bay Event Bartending",
@@ -14,16 +15,6 @@ export const metadata: Metadata = {
       "Handcrafted batched cocktails mixed, prepped, and delivered to your door in Tampa & St. Pete. Each batch makes 26\u201330 drinks.",
   },
 };
-
-const details = [
-  "Each batch makes ~26\u201330 drinks",
-  "Free delivery in Tampa & St. Pete",
-  "Glass bottles with pour spouts",
-  "Pickup next day at your convenience",
-  "Happy to assist with setup",
-  "All garnishes included & prepped",
-  "Custom printed recipe & instruction cards",
-];
 
 export default function BatchedPage() {
   return (
@@ -70,7 +61,7 @@ export default function BatchedPage() {
               </ul>
               <Link
                 href="/drinks"
-                className="inline-block text-accent font-body text-sm tracking-wide hover:text-accent/80 transition-colors"
+                className="inline-block text-accent font-body text-sm tracking-wide hover:text-accent/80 transition-colors duration-200 ease-out"
               >
                 View Full Flavor Menu &rarr;
               </Link>
@@ -109,21 +100,21 @@ export default function BatchedPage() {
                 </thead>
                 <tbody className="font-body text-sm text-primary">
                   <tr className="border-b border-warm-gray/15">
-                    <td className="px-6 py-4">1 batch (~26\u201330 drinks)</td>
+                    <td className="px-6 py-4">1 batch (~26–30 drinks)</td>
                     <td className="px-6 py-4 text-right font-accent text-accent">
-                      $120\u2013$150
+                      $120–$150
                     </td>
                   </tr>
                   <tr className="border-b border-warm-gray/15">
                     <td className="px-6 py-4">2+ batches (each)</td>
                     <td className="px-6 py-4 text-right font-accent text-accent">
-                      $110\u2013$130
+                      $110–$130
                     </td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4">Half batch</td>
                     <td className="px-6 py-4 text-right font-accent text-accent">
-                      $70\u2013$85
+                      $70–$85
                     </td>
                   </tr>
                 </tbody>
@@ -164,7 +155,7 @@ export default function BatchedPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors"
+              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
             >
               Place an Order
             </Link>

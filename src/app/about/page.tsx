@@ -2,36 +2,11 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import { team, values } from "@/lib/data/about";
 
 export const metadata: Metadata = {
   title: "About | TB Mixology — Tampa Bay Event Bartending",
 };
-
-const team = [
-  { name: "Emma Nichter", role: "Director of Operations", img: "Headshot — replace" },
-  { name: "Brooke", role: "Lead Bartender", img: "Headshot — replace" },
-  { name: "Your Bartender", role: "Growing Team", img: "Headshot — replace" },
-];
-
-const values = [
-  {
-    title: "Fully Custom Everything",
-    description: "Every cocktail menu is created from scratch for your event.",
-  },
-  {
-    title: "Fresh Ingredients Always",
-    description:
-      "No cheap mixes or shortcuts — real fruit, real herbs, real flavor.",
-  },
-  {
-    title: "Woman-Owned & Operated",
-    description: "Built by women who care deeply about the details.",
-  },
-  {
-    title: "Fully Insured",
-    description: "Covered up to $2,000,000 for your peace of mind.",
-  },
-];
 
 export default function AboutPage() {
   return (

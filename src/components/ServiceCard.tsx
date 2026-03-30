@@ -20,10 +20,10 @@ export default function ServiceCard({
         {/* REPLACE: service photo */}
         <PlaceholderImage
           label={imageLabel}
-          className="group-hover:scale-105 transition-transform duration-500"
+          className="group-hover:scale-105 transition-transform duration-500 ease-out"
         />
       </div>
-      <h3 className="font-heading text-xl md:text-2xl text-primary mt-5 mb-2 group-hover:text-accent transition-colors">
+      <h3 className="font-heading text-xl md:text-2xl text-primary mt-5 mb-2 group-hover:text-accent transition-colors duration-200 ease-out">
         {title}
       </h3>
       <p className="text-warm-gray font-body text-sm leading-relaxed">

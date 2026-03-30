@@ -3,6 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import { glasswareTypes } from "@/lib/data/glassware";
 
 export const metadata: Metadata = {
   title: "Glassware Rental | TB Mixology — Tampa Bay Event Bartending",
@@ -14,19 +15,6 @@ export const metadata: Metadata = {
       "Rent real glassware for your event — coupes, rocks glasses, highballs, martini glasses, and more. Serving Tampa, St. Pete, and surrounding areas.",
   },
 };
-
-const glasswareTypes = [
-  "Coupe",
-  "Rocks Glass",
-  "Highball",
-  "Martini Glass",
-  "Wine Glass",
-  "Champagne Flute",
-  "Collins Glass",
-  "Nick & Nora",
-  "Copper Mug",
-  "Mason Jar",
-];
 
 export default function GlasswarePage() {
   return (
@@ -78,7 +66,7 @@ export default function GlasswarePage() {
                 <div className="text-center group">
                   <PlaceholderImage
                     label={glass}
-                    className="rounded-sm group-hover:opacity-80 transition-opacity"
+                    className="rounded-sm group-hover:opacity-80 transition-opacity duration-200 ease-out"
                     aspect="square"
                   />
                   <h3 className="font-heading text-lg text-secondary mt-3">
@@ -123,7 +111,7 @@ export default function GlasswarePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors"
+              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
             >
               Get a Quote
             </Link>

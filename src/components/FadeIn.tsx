@@ -2,6 +2,29 @@
 
 import { useEffect, useRef } from "react";
 
+let observer: IntersectionObserver | null = null;
+const callbacks = new Map<Element, () => void>();
+
+function getObserver() {
+  if (observer) return observer;
+  observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const cb = callbacks.get(entry.target);
+          if (cb) {
+            cb();
+            callbacks.delete(entry.target);
+            observer!.unobserve(entry.target);
+          }
+        }
+      }
+    },
+    { threshold: 0.15 }
+  );
+  return observer;
+}
+
 interface FadeInProps {
   children: React.ReactNode;
   className?: string;
@@ -15,18 +38,14 @@ export default function FadeIn({ children, className = "", delay = "" }: FadeInP
     const el = ref.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("visible");
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15 }
-    );
+    const obs = getObserver();
+    callbacks.set(el, () => el.classList.add("visible"));
+    obs.observe(el);
 
-    observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      callbacks.delete(el);
+      obs.unobserve(el);
+    };
   }, []);
 
   return (

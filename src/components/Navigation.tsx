@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -28,7 +28,16 @@ export default function Navigation() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -43,12 +52,14 @@ export default function Navigation() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,border-color] duration-300 ease-out ${
         scrolled
           ? "bg-secondary/95 backdrop-blur-md border-b border-warm-gray/20"
-          : "bg-secondary/80 backdrop-blur-sm"
+          : "bg-secondary/80 backdrop-blur-sm border-b border-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -63,12 +74,12 @@ export default function Navigation() {
               <div key={link.href} ref={dropdownRef} className="relative">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-sm font-body text-warm-gray hover:text-primary transition-colors tracking-wide flex items-center gap-1"
+                  className="text-sm font-body text-warm-gray hover:text-primary transition-colors duration-200 ease-out tracking-wide flex items-center gap-1"
                 >
                   {link.label}
                   <ChevronDown
                     size={14}
-                    className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-200 ease-out ${dropdownOpen ? "rotate-180" : ""}`}
                   />
                 </button>
                 {dropdownOpen && (
@@ -76,7 +87,7 @@ export default function Navigation() {
                     <Link
                       href="/services"
                       onClick={() => setDropdownOpen(false)}
-                      className="block px-4 py-2 text-sm font-body text-primary hover:text-accent hover:bg-primary/5 transition-colors"
+                      className="block px-4 py-2 text-sm font-body text-primary hover:text-accent hover:bg-primary/5 transition-colors duration-200 ease-out"
                     >
                       All Services
                     </Link>
@@ -86,7 +97,7 @@ export default function Navigation() {
                         key={s.href}
                         href={s.href}
                         onClick={() => setDropdownOpen(false)}
-                        className="block px-4 py-2 text-sm font-body text-warm-gray hover:text-accent hover:bg-primary/5 transition-colors"
+                        className="block px-4 py-2 text-sm font-body text-warm-gray hover:text-accent hover:bg-primary/5 transition-colors duration-200 ease-out"
                       >
                         {s.label}
                       </Link>
@@ -98,7 +109,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-body text-warm-gray hover:text-primary transition-colors tracking-wide"
+                className="text-sm font-body text-warm-gray hover:text-primary transition-colors duration-200 ease-out tracking-wide"
               >
                 {link.label}
               </Link>
@@ -106,7 +117,7 @@ export default function Navigation() {
           )}
           <Link
             href="/contact"
-            className="text-sm font-body text-secondary bg-primary hover:bg-accent transition-colors px-5 py-2 rounded-sm tracking-[0.1em] uppercase"
+            className="text-sm font-body text-secondary bg-primary hover:bg-accent transition-colors duration-200 ease-out px-5 py-2 rounded-sm tracking-[0.1em] uppercase"
           >
             Book Now
           </Link>
@@ -114,7 +125,7 @@ export default function Navigation() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-primary"
+          className="md:hidden text-primary active:opacity-70"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -124,17 +135,20 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden absolute top-full left-0 right-0 transition-[opacity,transform] duration-300 ease-out ${
+          menuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
+        aria-hidden={!menuOpen}
       >
         <div className="bg-secondary/98 backdrop-blur-md border-t border-warm-gray/20 px-6 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <div key={link.href}>
               <Link
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-sm font-body text-warm-gray hover:text-primary transition-colors tracking-wide"
+                onClick={closeMenu}
+                className="text-sm font-body text-warm-gray hover:text-primary active:text-primary transition-colors duration-200 ease-out tracking-wide"
               >
                 {link.label}
               </Link>
@@ -144,8 +158,8 @@ export default function Navigation() {
                     <Link
                       key={s.href}
                       href={s.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="text-sm font-body text-warm-gray/70 hover:text-primary transition-colors"
+                      onClick={closeMenu}
+                      className="text-sm font-body text-warm-gray/70 hover:text-primary active:text-primary transition-colors duration-200 ease-out"
                     >
                       {s.label}
                     </Link>
@@ -156,8 +170,8 @@ export default function Navigation() {
           ))}
           <Link
             href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="inline-block text-center text-sm font-body text-secondary bg-primary hover:bg-accent transition-colors px-5 py-3 rounded-sm tracking-[0.1em] uppercase mt-2"
+            onClick={closeMenu}
+            className="inline-block text-center text-sm font-body text-secondary bg-primary hover:bg-accent active:bg-accent transition-colors duration-200 ease-out px-5 py-3 rounded-sm tracking-[0.1em] uppercase mt-2"
           >
             Book Now
           </Link>

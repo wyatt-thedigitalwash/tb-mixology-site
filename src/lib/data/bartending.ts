@@ -1,0 +1,55 @@
+export const tiers = [
+  {
+    tier: 1,
+    name: "DIY Bartender",
+    price: "$50",
+    features: [
+      "15-minute virtual consultation",
+      "Customized printable cocktail menu & instructions",
+      "Optional instructional videos",
+      "Complete shopping list for alcohol, mixers, and garnishes",
+    ],
+    perfectFor: "Hosts who love to mix it up themselves with expert-level recipes",
+  },
+  {
+    tier: 2,
+    name: "Batch & Drop",
+    price: "Starting at $120",
+    features: [
+      "Each batch makes ~26\u201330 drinks",
+      "Free delivery in Tampa & St. Pete",
+      "Glass bottles with pour spouts",
+      "All garnishes included & prepped",
+      "Pickup next day at your convenience",
+      "Custom printed recipe & instruction cards",
+    ],
+    perfectFor: "Events where you have someone to pour but want the prep handled",
+  },
+  {
+    tier: 3,
+    name: "Full Service Bar",
+    price: "Starting at $600",
+    features: [
+      "Virtual consultation to plan your menu",
+      "1\u20132 professional bartenders",
+      "Full setup and breakdown",
+      "Custom cocktail menus",
+      "4\u20136 signature cocktails",
+      "Ice, mixers, and garnishes included",
+      "Optional glassware rental",
+    ],
+    perfectFor: "Hosts who want to enjoy the party without worrying about the bar",
+  },
+  {
+    tier: 4,
+    name: "Luxury Open Bar",
+    price: "Starting at $600 + cost of alcohol",
+    features: [
+      "Everything in Full Service Bar",
+      "All alcohol provided, curated, and transported",
+      "No charge for unopened bottles",
+      "The complete experience from first pour to last call",
+    ],
+    perfectFor: "The full experience \u2014 from selecting the spirits to cleaning up, it\u2019s all on us",
+  },
+];

@@ -21,17 +21,17 @@ export default function FaqAccordion({ question, answer }: FaqAccordionProps) {
         <h3 className="font-heading text-lg md:text-xl text-primary">{question}</h3>
         <ChevronDown
           size={20}
-          className={`text-warm-gray shrink-0 transition-transform duration-300 ${
+          className={`text-warm-gray shrink-0 transition-transform duration-300 ease-out ${
             open ? "rotate-180" : ""
           }`}
         />
       </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ${
-          open ? "max-h-96 pb-5" : "max-h-0"
-        }`}
-      >
-        <p className="text-warm-gray font-body text-sm leading-relaxed">{answer}</p>
+      <div className="accordion-body" data-open={open}>
+        <div>
+          <p className="text-warm-gray font-body text-sm leading-relaxed pb-5">
+            {answer}
+          </p>
+        </div>
       </div>
     </div>
   );

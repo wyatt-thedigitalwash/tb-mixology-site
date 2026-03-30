@@ -3,6 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import { perfectFor } from "@/lib/data/classes";
 
 export const metadata: Metadata = {
   title: "Cocktail Classes | TB Mixology — Tampa Bay Event Bartending",
@@ -14,13 +15,6 @@ export const metadata: Metadata = {
       "Interactive, hands-on cocktail classes for bachelorette parties, team events, brand activations, and private parties in Tampa Bay.",
   },
 };
-
-const perfectFor = [
-  "Bachelorette parties",
-  "Team events",
-  "Brand activations",
-  "Private parties",
-];
 
 export default function ClassesPage() {
   return (
@@ -89,7 +83,7 @@ export default function ClassesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {perfectFor.map((item, i) => (
               <FadeIn key={item} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : i === 3 ? "delay-300" : ""}>
-                <div className="border border-warm-gray/30 rounded-sm p-6 text-center hover:border-accent/50 transition-colors">
+                <div className="border border-warm-gray/30 rounded-sm p-6 text-center hover:border-accent/50 transition-colors duration-200 ease-out">
                   <h3 className="font-heading text-lg text-primary">{item}</h3>
                 </div>
               </FadeIn>
@@ -133,7 +127,7 @@ export default function ClassesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors"
+              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
             >
               Book a Class
             </Link>

@@ -20,7 +20,7 @@ export default function TierCard({
   compact = false,
 }: TierCardProps) {
   return (
-    <div className="border border-warm-gray/30 p-6 md:p-8 rounded-sm hover:border-accent/50 transition-colors">
+    <div className="border border-warm-gray/30 p-6 md:p-8 rounded-sm hover:border-accent/50 transition-colors duration-200 ease-out">
       <div className="flex items-baseline gap-3 mb-1">
         <span className="text-xs tracking-[0.2em] uppercase text-warm-gray font-body">
           Tier {tier}
@@ -47,7 +47,7 @@ export default function TierCard({
       {showLink && (
         <Link
           href="/services/bartending"
-          className="inline-block mt-5 text-sm font-body text-primary hover:text-accent transition-colors tracking-wide"
+          className="inline-block mt-5 text-sm font-body text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
         >
           See Full Details &rarr;
         </Link>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import TierCard from "@/components/TierCard";
+import { tiers } from "@/lib/data/bartending";
 
 export const metadata: Metadata = {
   title: "Private Event Bartending | TB Mixology — Tampa Bay Event Bartending",
@@ -14,62 +15,6 @@ export const metadata: Metadata = {
       "Four tiers of private event bartending — from DIY cocktail recipes to luxury open bars. Serving Tampa, St. Pete, Clearwater, and Sarasota.",
   },
 };
-
-const tiers = [
-  {
-    tier: 1,
-    name: "DIY Bartender",
-    price: "$50",
-    features: [
-      "15-minute virtual consultation",
-      "Customized printable cocktail menu & instructions",
-      "Optional instructional videos",
-      "Complete shopping list for alcohol, mixers, and garnishes",
-    ],
-    perfectFor: "Hosts who love to mix it up themselves with expert-level recipes",
-  },
-  {
-    tier: 2,
-    name: "Batch & Drop",
-    price: "Starting at $120",
-    features: [
-      "Each batch makes ~26\u201330 drinks",
-      "Free delivery in Tampa & St. Pete",
-      "Glass bottles with pour spouts",
-      "All garnishes included & prepped",
-      "Pickup next day at your convenience",
-      "Custom printed recipe & instruction cards",
-    ],
-    perfectFor: "Events where you have someone to pour but want the prep handled",
-  },
-  {
-    tier: 3,
-    name: "Full Service Bar",
-    price: "Starting at $600",
-    features: [
-      "Virtual consultation to plan your menu",
-      "1\u20132 professional bartenders",
-      "Full setup and breakdown",
-      "Custom cocktail menus",
-      "4\u20136 signature cocktails",
-      "Ice, mixers, and garnishes included",
-      "Optional glassware rental",
-    ],
-    perfectFor: "Hosts who want to enjoy the party without worrying about the bar",
-  },
-  {
-    tier: 4,
-    name: "Luxury Open Bar",
-    price: "Starting at $600 + cost of alcohol",
-    features: [
-      "Everything in Full Service Bar",
-      "All alcohol provided, curated, and transported",
-      "No charge for unopened bottles",
-      "The complete experience from first pour to last call",
-    ],
-    perfectFor: "The full experience \u2014 from selecting the spirits to cleaning up, it\u2019s all on us",
-  },
-];
 
 export default function BartendingPage() {
   return (
@@ -136,16 +81,16 @@ export default function BartendingPage() {
                 </thead>
                 <tbody className="font-body text-sm text-primary">
                   <tr className="border-b border-warm-gray/15">
-                    <td className="px-6 py-4">1 batch (~26\u201330 drinks)</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent">$120\u2013$150</td>
+                    <td className="px-6 py-4">1 batch (~26–30 drinks)</td>
+                    <td className="px-6 py-4 text-right font-accent text-accent">$120–$150</td>
                   </tr>
                   <tr className="border-b border-warm-gray/15">
                     <td className="px-6 py-4">2+ batches (each)</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent">$110\u2013$130</td>
+                    <td className="px-6 py-4 text-right font-accent text-accent">$110–$130</td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4">Half batch</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent">$70\u2013$85</td>
+                    <td className="px-6 py-4 text-right font-accent text-accent">$70–$85</td>
                   </tr>
                 </tbody>
               </table>
@@ -183,8 +128,8 @@ export default function BartendingPage() {
                     <td className="px-6 py-4 text-right font-accent text-accent">$600+</td>
                   </tr>
                   <tr className="border-b border-warm-gray/15">
-                    <td className="px-6 py-4">Medium (20\u201340 guests)</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent">$600\u2013$1,200+</td>
+                    <td className="px-6 py-4">Medium (20–40 guests)</td>
+                    <td className="px-6 py-4 text-right font-accent text-accent">$600–$1,200+</td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4">Large (40+ guests)</td>
@@ -210,7 +155,7 @@ export default function BartendingPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors"
+              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
             >
               Let&apos;s Plan Your Bar
             </Link>
