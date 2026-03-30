@@ -26,6 +26,14 @@ export default function GlasswarePage() {
           title="Glassware Rental"
           subtitle="Elevate your bar with real glassware — coupes, rocks glasses, highballs, and more. Available as an add-on to any bartending package at $3–$5 per person."
         />
+        <div className="text-center mt-8">
+          <Link
+            href="/contact"
+            className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+          >
+            Get a Quote
+          </Link>
+        </div>
       </section>
 
       {/* Glassware Grid */}

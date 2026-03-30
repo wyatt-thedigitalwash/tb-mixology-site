@@ -27,6 +27,14 @@ export default function ClassesPage() {
           title="Cocktail Classes"
           subtitle="Interactive, hands-on cocktail classes in a guided social setting. Equal parts fun and elevated."
         />
+        <div className="text-center mt-8">
+          <Link
+            href="/contact"
+            className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+          >
+            Book a Class
+          </Link>
+        </div>
       </section>
 
       {/* Image + Description */}

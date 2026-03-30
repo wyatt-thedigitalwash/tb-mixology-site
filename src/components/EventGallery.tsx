@@ -11,16 +11,34 @@ import {
   type EventImage,
 } from "@/lib/data/events";
 
-function GalleryImage({ img, className }: { img: EventImage; className?: string }) {
+function Img({ img, sizes, className }: { img: EventImage; sizes: string; className?: string }) {
   return (
     <div className={`overflow-hidden rounded-sm relative ${className || ""}`}>
       <Image
         src={img.src}
         alt={img.alt}
         fill
-        sizes="(max-width: 768px) 100vw, 50vw"
+        sizes={sizes}
         className="object-cover hover:scale-105 transition-transform duration-500 ease-out"
       />
+    </div>
+  );
+}
+
+function MobileStack({ images }: { images: EventImage[] }) {
+  return (
+    <div className="flex flex-col gap-3 md:hidden">
+      {images.map((img) => (
+        <div key={img.src} className="overflow-hidden rounded-sm relative aspect-[3/2]">
+          <Image
+            src={img.src}
+            alt={img.alt}
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+      ))}
     </div>
   );
 }
@@ -29,123 +47,91 @@ function EventGrid({ event }: { event: EventData }) {
   const imgs = event.images;
 
   switch (event.layout) {
-    /* 4 landscape images in a 2x2 grid */
     case "grid-2x2":
       return (
-        <div className="grid grid-cols-2 gap-3 aspect-[2/1]">
-          {imgs.map((img) => (
-            <GalleryImage key={img.src} img={img} />
-          ))}
-        </div>
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-2 gap-3 aspect-[2/1]">
+            {imgs.map((img) => (
+              <Img key={img.src} img={img} sizes="50vw" />
+            ))}
+          </div>
+        </>
       );
 
-    /* Portrait left spanning 2 rows, 2 landscapes stacked right, 1 landscape full-width bottom */
     case "portrait-left-3":
       return (
-        <div className="grid grid-cols-2 grid-rows-[1fr_1fr_auto] gap-3" style={{ aspectRatio: "3/2" }}>
-          <div className="row-span-2 overflow-hidden rounded-sm relative">
-            <Image src={imgs[0].src} alt={imgs[0].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-2 grid-rows-[1fr_1fr_auto] gap-3" style={{ aspectRatio: "3/2" }}>
+            <Img img={imgs[0]} sizes="50vw" className="row-span-2" />
+            <Img img={imgs[1]} sizes="50vw" />
+            <Img img={imgs[2]} sizes="50vw" />
+            {imgs[3] && <Img img={imgs[3]} sizes="100vw" className="col-span-2 aspect-[3/1]" />}
           </div>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[1].src} alt={imgs[1].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[2].src} alt={imgs[2].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          {imgs[3] && (
-            <div className="col-span-2 overflow-hidden rounded-sm relative aspect-[3/1]">
-              <Image src={imgs[3].src} alt={imgs[3].alt} fill sizes="100vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-            </div>
-          )}
-        </div>
+        </>
       );
 
-    /* 2 landscapes stacked left, portrait right spanning 2 rows, 1 landscape full-width bottom */
     case "portrait-right-3":
       return (
-        <div className="grid grid-cols-2 grid-rows-[1fr_1fr_auto] gap-3" style={{ aspectRatio: "3/2" }}>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[0].src} alt={imgs[0].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-2 grid-rows-[1fr_1fr_auto] gap-3" style={{ aspectRatio: "3/2" }}>
+            <Img img={imgs[0]} sizes="50vw" />
+            <Img img={imgs[2]} sizes="50vw" className="row-span-2" />
+            <Img img={imgs[1]} sizes="50vw" />
+            {imgs[3] && <Img img={imgs[3]} sizes="100vw" className="col-span-2 aspect-[3/1]" />}
           </div>
-          <div className="row-span-2 overflow-hidden rounded-sm relative">
-            <Image src={imgs[2].src} alt={imgs[2].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[1].src} alt={imgs[1].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          {imgs[3] && (
-            <div className="col-span-2 overflow-hidden rounded-sm relative aspect-[3/1]">
-              <Image src={imgs[3].src} alt={imgs[3].alt} fill sizes="100vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-            </div>
-          )}
-        </div>
+        </>
       );
 
-    /* Portrait left, 2 landscapes stacked right */
     case "portrait-left-2":
       return (
-        <div className="grid grid-cols-2 grid-rows-2 gap-3" style={{ aspectRatio: "2/1.2" }}>
-          <div className="row-span-2 overflow-hidden rounded-sm relative">
-            <Image src={imgs[0].src} alt={imgs[0].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-2 grid-rows-2 gap-3" style={{ aspectRatio: "2/1.2" }}>
+            <Img img={imgs[0]} sizes="50vw" className="row-span-2" />
+            <Img img={imgs[1]} sizes="50vw" />
+            <Img img={imgs[2]} sizes="50vw" />
           </div>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[1].src} alt={imgs[1].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[2].src} alt={imgs[2].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-        </div>
+        </>
       );
 
-    /* 2 portraits on the sides, 2 landscapes stacked in the middle */
     case "two-portrait-two-landscape":
       return (
-        <div className="grid grid-cols-3 grid-rows-2 gap-3" style={{ aspectRatio: "3/1.6" }}>
-          <div className="row-span-2 overflow-hidden rounded-sm relative">
-            <Image src={imgs[0].src} alt={imgs[0].alt} fill sizes="33vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-3 grid-rows-2 gap-3" style={{ aspectRatio: "3/1.6" }}>
+            <Img img={imgs[0]} sizes="33vw" className="row-span-2" />
+            <Img img={imgs[1]} sizes="33vw" />
+            <Img img={imgs[3]} sizes="33vw" className="row-span-2" />
+            <Img img={imgs[2]} sizes="33vw" />
           </div>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[1].src} alt={imgs[1].alt} fill sizes="33vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          <div className="row-span-2 overflow-hidden rounded-sm relative">
-            <Image src={imgs[3].src} alt={imgs[3].alt} fill sizes="33vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          <div className="overflow-hidden rounded-sm relative">
-            <Image src={imgs[2].src} alt={imgs[2].alt} fill sizes="33vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-        </div>
+        </>
       );
 
-    /* 1 landscape full-width hero top, 2 landscape half-width bottom */
     case "hero-top-2":
       return (
-        <div className="grid grid-cols-2 gap-3">
-          <div className="col-span-2 overflow-hidden rounded-sm relative aspect-[2.5/1]">
-            <Image src={imgs[0].src} alt={imgs[0].alt} fill sizes="100vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-2 gap-3">
+            <Img img={imgs[0]} sizes="100vw" className="col-span-2 aspect-[2.5/1]" />
+            <Img img={imgs[1]} sizes="50vw" className="aspect-[3/2]" />
+            <Img img={imgs[2]} sizes="50vw" className="aspect-[3/2]" />
           </div>
-          <div className="overflow-hidden rounded-sm relative aspect-[3/2]">
-            <Image src={imgs[1].src} alt={imgs[1].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          <div className="overflow-hidden rounded-sm relative aspect-[3/2]">
-            <Image src={imgs[2].src} alt={imgs[2].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-        </div>
+        </>
       );
 
-    /* 1 landscape full-width top, 2 portraits side by side bottom */
     case "landscape-top-2-portrait":
       return (
-        <div className="grid grid-cols-2 gap-3">
-          <div className="col-span-2 overflow-hidden rounded-sm relative aspect-[2.5/1]">
-            <Image src={imgs[0].src} alt={imgs[0].alt} fill sizes="100vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-2 gap-3">
+            <Img img={imgs[0]} sizes="100vw" className="col-span-2 aspect-[2.5/1]" />
+            <Img img={imgs[1]} sizes="50vw" className="aspect-[3/4]" />
+            <Img img={imgs[2]} sizes="50vw" className="aspect-[3/4]" />
           </div>
-          <div className="overflow-hidden rounded-sm relative aspect-[3/4]">
-            <Image src={imgs[1].src} alt={imgs[1].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-          <div className="overflow-hidden rounded-sm relative aspect-[3/4]">
-            <Image src={imgs[2].src} alt={imgs[2].alt} fill sizes="50vw" className="object-cover hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-        </div>
+        </>
       );
 
     default:

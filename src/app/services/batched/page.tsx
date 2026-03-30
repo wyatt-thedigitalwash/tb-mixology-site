@@ -27,6 +27,14 @@ export default function BatchedPage() {
           title="Batched Cocktails"
           subtitle="Handcrafted cocktail batches mixed, prepped, and delivered to your door — ready to pour and enjoy."
         />
+        <div className="text-center mt-8">
+          <Link
+            href="/contact"
+            className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+          >
+            Place an Order
+          </Link>
+        </div>
       </section>
 
       {/* Details + Image */}
