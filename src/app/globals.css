@@ -19,6 +19,11 @@ body {
   font-family: var(--font-body);
 }
 
+/* Collapse doubled padding between consecutive same-background sections */
+main > section:not(.bg-primary) + section:not(.bg-primary) {
+  padding-top: 0;
+}
+
 /* Fade-in animation */
 .fade-in {
   opacity: 0;
