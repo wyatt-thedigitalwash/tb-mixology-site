@@ -211,15 +211,28 @@ export default function Home() {
       </section>
 
       {/* ── CTA Section ── */}
-      <section className="py-20 md:py-28 bg-secondary">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/cocktails-highrise-marina-ocean-view.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-heading text-3xl md:text-5xl text-primary mb-8">
-              Your event deserves a great bar.
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
+              Your Event Deserves a Great Bar
             </h2>
+            <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
+              Let&rsquo;s build something unforgettable together.
+            </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+              className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
             >
               Tell Us About Your Event
             </Link>

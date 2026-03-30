@@ -71,7 +71,13 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>
             link.dropdown ? (
-              <div key={link.href} ref={dropdownRef} className="relative">
+              <div
+                key={link.href}
+                ref={dropdownRef}
+                className="relative"
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   className="text-sm font-body text-warm-gray hover:text-primary transition-colors duration-200 ease-out tracking-wide flex items-center gap-1"

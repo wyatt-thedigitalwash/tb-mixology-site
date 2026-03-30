@@ -134,6 +134,45 @@ function EventGrid({ event }: { event: EventData }) {
         </>
       );
 
+    case "three-equal":
+      return (
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-3 gap-3">
+            {imgs.map((img) => (
+              <Img key={img.src} img={img} sizes="33vw" className="aspect-[3/2]" />
+            ))}
+          </div>
+        </>
+      );
+
+    case "three-top-portrait-bottom":
+      return (
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:flex md:flex-col gap-3">
+            <div className="grid grid-cols-3 gap-3">
+              {imgs.slice(0, 3).map((img) => (
+                <Img key={img.src} img={img} sizes="33vw" className="aspect-[3/2]" />
+              ))}
+            </div>
+            {imgs[3] && (
+              <div className="flex justify-center">
+                <div className="overflow-hidden rounded-sm relative w-1/3 aspect-[3/4]">
+                  <Image
+                    src={imgs[3].src}
+                    alt={imgs[3].alt}
+                    fill
+                    sizes="33vw"
+                    className="object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        </>
+      );
+
     default:
       return null;
   }

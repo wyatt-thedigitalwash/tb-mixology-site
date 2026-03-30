@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Star } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import ReviewCard from "@/components/ReviewCard";
@@ -95,18 +96,33 @@ export default function ReviewsPage() {
         </section>
 
         {/* CTA */}
-        <section className="px-6 pb-32 md:pb-40 text-center">
-          <FadeIn>
-            <p className="font-accent text-xl md:text-2xl text-warm-gray italic mb-8">
-              Ready to experience it yourself?
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-accent text-white font-body text-sm tracking-widest uppercase px-10 py-4 hover:bg-accent/90 transition-colors duration-200 ease-out"
-            >
-              Get in Touch
-            </Link>
-          </FadeIn>
+        <section className="relative py-24 md:py-32 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/friends-laughing-cheers-cocktails-night.webp"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-primary/80" />
+          </div>
+          <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+            <FadeIn>
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
+                Ready to Experience It?
+              </h2>
+              <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
+                Join the list of happy hosts.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
+              >
+                Get in Touch
+              </Link>
+            </FadeIn>
+          </div>
         </section>
       </main>
     </>

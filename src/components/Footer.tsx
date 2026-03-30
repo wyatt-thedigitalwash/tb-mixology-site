@@ -1,29 +1,5 @@
-import Link from "next/link";
 import { Instagram, Phone, Mail } from "lucide-react";
-
-const navColumns = [
-  {
-    title: "Services",
-    links: [
-      { href: "/services", label: "All Services" },
-      { href: "/services/bartending", label: "Bartending Services" },
-      { href: "/services/batched", label: "Batch Cocktails" },
-      { href: "/services/classes", label: "Cocktail Classes" },
-      { href: "/services/glassware", label: "Glassware Rental" },
-    ],
-  },
-  {
-    title: "Explore",
-    links: [
-      { href: "/drinks", label: "Drinks" },
-      { href: "/events", label: "Events" },
-      { href: "/reviews", label: "Reviews" },
-      { href: "/about", label: "About" },
-      { href: "/faq", label: "FAQ" },
-      { href: "/contact", label: "Contact" },
-    ],
-  },
-];
+import FooterNav from "./FooterNav";
 
 export default function Footer() {
   return (
@@ -73,24 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Nav columns */}
-          {navColumns.map((col) => (
-            <div key={col.title}>
-              <h4 className="text-xs tracking-[0.25em] uppercase text-white/40 font-body mb-5">
-                {col.title}
-              </h4>
-              <div className="flex flex-col gap-3">
-                {col.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-sm text-white/60 hover:text-accent transition-colors font-body"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
+          <FooterNav />
         </div>
 
         <div className="h-px bg-white/10 mt-12 mb-8" />
@@ -104,6 +63,17 @@ export default function Footer() {
           </p>
           <p className="text-white/40 text-xs font-body">
             Fully insured up to $2,000,000
+          </p>
+          <p className="text-white/30 text-xs font-body">
+            Website by{" "}
+            <a
+              href="https://thedigitalwash.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white/50 transition-colors"
+            >
+              The Digital Wash
+            </a>
           </p>
         </div>
       </div>

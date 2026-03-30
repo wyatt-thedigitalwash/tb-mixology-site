@@ -22,7 +22,9 @@ export type EventLayout =
   | "two-portrait-two-landscape"
   | "portrait-left-2"
   | "hero-top-2"
-  | "landscape-top-2-portrait";
+  | "landscape-top-2-portrait"
+  | "three-equal"
+  | "three-top-portrait-bottom";
 
 export interface EventData {
   title: string;
@@ -46,12 +48,12 @@ export const events: EventData[] = [
   {
     title: "Halloween Soir\u00e9e",
     category: "Private Parties",
-    layout: "portrait-left-3",
+    layout: "three-top-portrait-bottom",
     images: [
-      { src: "/images/pirate-skeleton-cocktail-menu-display.webp", alt: "Pirate skeleton holding a themed cocktail menu", width: 675, height: 1200 },
       { src: "/images/halloween-red-martini-skull-decor.webp", alt: "Halloween-themed red martini with dry ice smoke and skull decor", width: 1200, height: 800 },
       { src: "/images/halloween-layered-purple-martini-pour.webp", alt: "Layered purple martini being poured at a Halloween party", width: 1200, height: 800 },
       { src: "/images/halloween-group-cocktail-party.webp", alt: "Large group at a Halloween cocktail party at night", width: 1200, height: 800 },
+      { src: "/images/pirate-skeleton-cocktail-menu-display.webp", alt: "Pirate skeleton holding a themed cocktail menu", width: 675, height: 1200 },
     ],
   },
   {
@@ -89,7 +91,7 @@ export const events: EventData[] = [
   {
     title: "Kawha Coffee Collaboration",
     category: "Brand Collaborations",
-    layout: "hero-top-2",
+    layout: "three-equal",
     images: [
       { src: "/images/cocktail-class-setup-kahwa-station.webp", alt: "Cocktail class setup at Kawha coffee shop bar station", width: 1200, height: 800 },
       { src: "/images/bartenders-cheers-colorful-cocktail-lineup.webp", alt: "Bartenders cheersing with a colorful cocktail lineup", width: 1200, height: 800 },
@@ -99,7 +101,7 @@ export const events: EventData[] = [
   {
     title: "Costume Party",
     category: "Private Parties",
-    layout: "landscape-top-2-portrait",
+    layout: "three-equal",
     images: [
       { src: "/images/costume-party-guests-craft-cocktails.webp", alt: "Guests in costume holding craft cocktails at a themed party", width: 1200, height: 800 },
       { src: "/images/green-cocktail-spiral-garnish.webp", alt: "Green cocktail with spiral garnish closeup", width: 800, height: 1200 },

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import FadeIn from "@/components/FadeIn";
 import DrinkMenu from "@/components/DrinkMenu";
@@ -43,20 +44,28 @@ export default function DrinksPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-primary">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/craft-cocktails-trio-closeup.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-heading text-3xl md:text-5xl text-secondary mb-4">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
               Love What You See?
             </h2>
-            <p className="font-body text-secondary/70 mb-8 max-w-xl mx-auto">
-              Every cocktail menu is fully customized for your event. Tell us
-              what you&apos;re looking for and we&apos;ll build something
-              special.
+            <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
+              Every menu is fully customized for your event.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+              className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
             >
               Tell Us About Your Event
             </Link>

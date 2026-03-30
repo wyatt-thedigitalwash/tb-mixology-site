@@ -48,17 +48,33 @@ export default function MenuExamples() {
       {/* Lightbox */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 md:p-8"
           onClick={() => setLightbox(null)}
         >
-          {/* Close */}
-          <button
-            onClick={() => setLightbox(null)}
-            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10"
-            aria-label="Close lightbox"
+          {/* Modal container */}
+          <div
+            className="relative max-w-[500px] w-full max-h-[90vh] overflow-y-auto rounded-sm"
+            onClick={(e) => e.stopPropagation()}
           >
-            <X size={28} />
-          </button>
+            {/* Close button — inside modal */}
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-3 right-3 z-10 bg-black/60 rounded-full p-1.5 text-white/80 hover:text-white transition-colors"
+              aria-label="Close lightbox"
+            >
+              <X size={20} />
+            </button>
+
+            <Image
+              src={menuExamples[lightbox].src}
+              alt={menuExamples[lightbox].alt}
+              width={menuExamples[lightbox].width}
+              height={menuExamples[lightbox].height}
+              sizes="500px"
+              className="w-full h-auto"
+              priority
+            />
+          </div>
 
           {/* Prev */}
           <button
@@ -66,27 +82,11 @@ export default function MenuExamples() {
               e.stopPropagation();
               setLightbox((lightbox - 1 + menuExamples.length) % menuExamples.length);
             }}
-            className="absolute left-4 md:left-8 text-white/50 hover:text-white transition-colors z-10"
+            className="absolute left-4 md:left-8 text-white/50 hover:text-white transition-colors"
             aria-label="Previous menu"
           >
             <ChevronLeft size={36} />
           </button>
-
-          {/* Image */}
-          <div
-            className="relative max-h-[85vh] max-w-[90vw] md:max-w-[500px]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={menuExamples[lightbox].src}
-              alt={menuExamples[lightbox].alt}
-              width={menuExamples[lightbox].width}
-              height={menuExamples[lightbox].height}
-              sizes="500px"
-              className="max-h-[85vh] w-auto object-contain"
-              priority
-            />
-          </div>
 
           {/* Next */}
           <button
@@ -94,7 +94,7 @@ export default function MenuExamples() {
               e.stopPropagation();
               setLightbox((lightbox + 1) % menuExamples.length);
             }}
-            className="absolute right-4 md:right-8 text-white/50 hover:text-white transition-colors z-10"
+            className="absolute right-4 md:right-8 text-white/50 hover:text-white transition-colors"
             aria-label="Next menu"
           >
             <ChevronRight size={36} />

@@ -148,19 +148,28 @@ export default function BatchedPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/mimosa-bloody-mary-bar-setup.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-heading text-3xl md:text-4xl text-primary mb-4">
-              Order Batched Cocktails
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
+              Order Batch Cocktails
             </h2>
-            <p className="font-body text-warm-gray mb-8 max-w-xl mx-auto">
-              Tell us how many guests you&apos;re expecting and we&apos;ll
-              recommend the right number of batches and flavors.
+            <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
+              Tell us how many guests and we&rsquo;ll recommend the perfect flavors.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+              className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
             >
               Place an Order
             </Link>

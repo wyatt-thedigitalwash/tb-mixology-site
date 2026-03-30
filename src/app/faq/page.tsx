@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -55,20 +56,33 @@ export default function FaqPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-primary py-20 md:py-28 px-6 text-center">
-          <FadeIn>
-            <SectionHeading
-              title="Still Have Questions?"
-              centered
-              light
+        <section className="relative py-24 md:py-32 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/old-fashioned-berry-cocktail-fireside.webp"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
-            <Link
-              href="/contact"
-              className="mt-8 inline-block bg-accent text-primary px-10 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-md hover:bg-accent/90 transition-colors duration-200 ease-out"
-            >
-              Get in Touch
-            </Link>
-          </FadeIn>
+            <div className="absolute inset-0 bg-primary/80" />
+          </div>
+          <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+            <FadeIn>
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
+                Still Have Questions?
+              </h2>
+              <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
+                We&rsquo;d love to hear about your event.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
+              >
+                Get in Touch
+              </Link>
+            </FadeIn>
+          </div>
         </section>
       </main>
     </>
