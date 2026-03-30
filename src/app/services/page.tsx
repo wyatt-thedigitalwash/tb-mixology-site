@@ -3,18 +3,30 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import { services, experienceAddOns, equipmentAddOns } from "@/lib/data/services";
+import {
+  services,
+  addOnServices,
+  barSetupAddOns,
+  serviceEnhancements,
+  experienceAddOns,
+} from "@/lib/data/services";
 
 export const metadata: Metadata = {
   title: "Our Services | TB Mixology — Tampa Bay Event Bartending",
   description:
-    "From DIY cocktail kits to luxury open bars, cocktail classes, batched cocktails, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
+    "Bartending services, batch cocktails, cocktail classes, caviar service, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
   openGraph: {
     title: "Our Services | TB Mixology — Tampa Bay Event Bartending",
     description:
-      "From DIY cocktail kits to luxury open bars, cocktail classes, batched cocktails, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
+      "Bartending services, batch cocktails, cocktail classes, caviar service, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
   },
 };
+
+const addOnCategories = [
+  { title: "Bar Set Up & Essentials", items: barSetupAddOns },
+  { title: "Service Enhancements", items: serviceEnhancements },
+  { title: "Experience Add-Ons", items: experienceAddOns },
+];
 
 export default function ServicesPage() {
   return (
@@ -24,16 +36,19 @@ export default function ServicesPage() {
         <SectionHeading
           label="What We Offer"
           title="Our Services"
-          subtitle="From handcrafted recipes and batched cocktails to fully staffed bars and hands-on classes — TB Mixology has everything you need to elevate your next event."
+          subtitle="From full-service bartending and batch cocktails to hands-on classes and premium add-ons — TB Mixology has everything you need to elevate your next event."
         />
       </section>
 
-      {/* Service Cards Grid */}
+      {/* Core Services */}
       <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <FadeIn>
+            <SectionHeading label="Core Services" title="What We Do" light />
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, i) => (
-              <FadeIn key={service.title} delay={i > 0 ? `delay-${i * 100}` : ""}>
+              <FadeIn key={service.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
                 <ServiceCard {...service} />
               </FadeIn>
             ))}
@@ -41,56 +56,51 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Add-Ons */}
+      {/* Add-On Services */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading
-              label="Add-Ons"
-              title="Enhance Your Event"
-              subtitle="Take your event to the next level with curated extras and premium touches."
-            />
+            <SectionHeading label="Add-On Services" title="Enhance Your Event" />
           </FadeIn>
-
-          {/* Experience Add-Ons */}
-          <FadeIn>
-            <h3 className="font-heading text-2xl text-primary mb-6">
-              Experience Add-Ons
-            </h3>
-          </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
-            {experienceAddOns.map((addon, i) => (
-              <FadeIn key={addon.name} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
-                <div className="border border-warm-gray/30 rounded-sm p-5 hover:border-accent/50 transition-colors duration-200 ease-out">
-                  <h4 className="font-heading text-lg text-primary mb-1">
-                    {addon.name}
-                  </h4>
-                  {addon.note && (
-                    <p className="text-warm-gray font-body text-sm">
-                      {addon.note}
-                    </p>
-                  )}
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {addOnServices.map((service, i) => (
+              <FadeIn key={service.title} delay={i === 1 ? "delay-100" : ""}>
+                <ServiceCard {...service} />
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Equipment & Extras */}
+      {/* Add-Ons Pricing */}
+      <section className="py-20 md:py-28 bg-primary">
+        <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <h3 className="font-heading text-2xl text-primary mb-6">
-              Equipment &amp; Extras
-            </h3>
+            <SectionHeading label="Pricing" title="Add-Ons & Extras" light />
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {equipmentAddOns.map((addon, i) => (
-              <FadeIn key={addon.name} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
-                <div className="border border-warm-gray/30 rounded-sm p-5 hover:border-accent/50 transition-colors duration-200 ease-out flex justify-between items-start gap-4">
-                  <h4 className="font-body text-sm text-primary">
-                    {addon.name}
-                  </h4>
-                  <span className="font-accent text-accent text-sm whitespace-nowrap">
-                    {addon.price}
-                  </span>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {addOnCategories.map((category) => (
+              <FadeIn key={category.title}>
+                <div>
+                  <h3 className="font-heading text-xl text-secondary mb-5">
+                    {category.title}
+                  </h3>
+                  <div className="space-y-3">
+                    {category.items.map((addon) => (
+                      <div
+                        key={addon.name}
+                        className="border border-white/15 rounded-sm p-4 flex justify-between items-start gap-4"
+                      >
+                        <span className="font-body text-sm text-secondary/80">
+                          {addon.name}
+                        </span>
+                        <span className="font-accent text-accent text-sm whitespace-nowrap">
+                          {addon.price}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -99,13 +109,13 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-primary">
+      <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-heading text-3xl md:text-4xl text-secondary mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl text-primary mb-4">
               Ready to Elevate Your Event?
             </h2>
-            <p className="font-body text-secondary/70 mb-8 max-w-xl mx-auto">
+            <p className="font-body text-warm-gray mb-8 max-w-xl mx-auto">
               Tell us about your event and we&apos;ll build the perfect bar
               experience for you.
             </p>

@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       eventTheme,
       guestCount,
       beverageTypes,
-      tier,
+      serviceType,
       budget,
       specificDrinks,
       cupPreference,
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
         <p><strong>Beverages:</strong> ${beverageTypes || "Not provided"}</p>
 
         <h2 style="font-size: 16px; color: #c9a96e; text-transform: uppercase; letter-spacing: 2px; margin-top: 24px;">Service & Preferences</h2>
-        <p><strong>Tier Interest:</strong> ${tier || "Not provided"}</p>
+        <p><strong>Service Interest:</strong> ${serviceType || "Not provided"}</p>
         <p><strong>Budget:</strong> ${budget || "Not provided"}</p>
         <p><strong>Specific Drinks:</strong> ${specificDrinks || "Not provided"}</p>
         <p><strong>Cup Preference:</strong> ${cupPreference || "Not provided"}</p>

@@ -17,17 +17,17 @@ export const faqs = [
   {
     question: "How long does setup/breakdown take?",
     answer:
-      "For Tier 3 & 4, we arrive 1\u20131.5 hours early and stay for breakdown.",
+      "We typically arrive 1\u20131.5 hours early for setup and stay for full breakdown after the event.",
   },
   {
-    question: "I\u2019m not sure which tier is right for me?",
+    question: "How do I know which package is right for me?",
     answer:
-      "That\u2019s what our consultation is for! Fill out the event questionnaire and Emma will walk you through options.",
+      "That\u2019s what our consultation is for! Fill out the event questionnaire and Emma will walk you through the best option based on your guest count and budget.",
   },
   {
     question: "Do you provide the alcohol?",
     answer:
-      "Tier 4 includes all alcohol. Tiers 1\u20133 we provide everything except alcohol, with a detailed shopping list.",
+      "Alcohol purchase and transport is available as an add-on at cost + 10%. Otherwise, we provide everything except the alcohol and include a detailed shopping list.",
   },
   {
     question: "Can you accommodate non-drinkers?",
@@ -45,7 +45,7 @@ export const faqs = [
   {
     question: "Do you bring your own bar setup and glassware?",
     answer:
-      "Tier 3 & 4 include bar d\u00e9cor and glassware. Also available as standalone rental add-on.",
+      "We bring a full bar setup. Glassware rental is available as an add-on at $3\u2013$5 per person, or we can provide disposable cups.",
   },
   {
     question: "Can you create a custom themed cocktail menu?",
@@ -68,7 +68,7 @@ export const faqs = [
       "Everything is fully custom. Our menus are made for each event with named cocktails, themed garnishes, and fresh ingredients. We put more work into it than companies that show up with liquor and soda and cheap juices.",
   },
   {
-    question: "How does the Batch & Drop service work?",
+    question: "How does the batch cocktail service work?",
     answer:
       "We deliver handcrafted batch cocktails in glass bottles with pour spouts. Free delivery in Tampa/St Pete. We pick up bottles the next day.",
   },

@@ -1,10 +1,17 @@
 export const services = [
   {
-    title: "Private Event Bartending",
+    title: "Bartending Services",
     description:
-      "Four tiers of service from DIY recipes to a fully staffed luxury open bar — tailored to your event and guest count.",
+      "Full-service bartending with custom cocktail menus, professional bartenders, and complete setup — tailored to your event and guest count.",
     href: "/services/bartending",
     imageLabel: "Photo — Event Bartending",
+  },
+  {
+    title: "Batch Cocktails",
+    description:
+      "Handcrafted cocktail batches mixed, prepped, and delivered to your door — ready to pour and enjoy.",
+    href: "/services/batched",
+    imageLabel: "Photo — Batched Cocktails",
   },
   {
     title: "Cocktail Classes",
@@ -13,12 +20,15 @@ export const services = [
     href: "/services/classes",
     imageLabel: "Photo — Cocktail Class",
   },
+];
+
+export const addOnServices = [
   {
-    title: "Batched Cocktails",
+    title: "Caviar Service",
     description:
-      "Handcrafted cocktail batches mixed, prepped, and delivered to your door — ready to pour and enjoy.",
-    href: "/services/batched",
-    imageLabel: "Photo — Batched Cocktails",
+      "An all-inclusive, elevated tasting experience. The perfect premium add-on for any event.",
+    href: "/services/bartending",
+    imageLabel: "Photo — Caviar Service",
   },
   {
     title: "Glassware Rental",
@@ -29,21 +39,22 @@ export const services = [
   },
 ];
 
-export const experienceAddOns = [
-  { name: "Caviar Service", note: "An elevated tasting experience" },
-  { name: "Champagne Toast", note: null },
-  { name: "Cocktail Smoker", note: "Theatrical smoked cocktails" },
-  { name: "Bubble Gun", note: "Fun playful moments for photos" },
-  { name: "Branding Tool", note: "Custom branded orange slices" },
-  { name: "Mid-Event Restock", note: "Fresh supplies delivered during your event" },
+export const barSetupAddOns = [
+  { name: "Alcohol Purchase & Transport", price: "Cost + 10%" },
+  { name: "Glassware Rental", price: "$3\u2013$5/pp" },
+  { name: "Large Ice Cubes", price: "$50+" },
+  { name: "Water Station", price: "$75" },
 ];
 
-export const equipmentAddOns = [
-  { name: "Cocktail shaker & strainer set", price: "$5/each" },
-  { name: "Glass beverage dispenser", price: "$20/each" },
-  { name: "Garnish tray", price: "$10/each" },
-  { name: "Marble menu & instruction holder", price: "$5" },
-  { name: "Additional flavors", price: "$5\u2013$10/each" },
-  { name: "Disposable cups", price: "Pricing varies" },
-  { name: "Delivery outside Tampa Bay/St Pete", price: "$10/30 min" },
+export const serviceEnhancements = [
+  { name: "Additional Bartender", price: "$50/hr" },
+  { name: "Bar Back", price: "$50/hr" },
+  { name: "Custom 4\u2019 Wooden Bar", price: "$200" },
+];
+
+export const experienceAddOns = [
+  { name: "All-Inclusive Caviar Service", price: "$25\u2013$40/pp" },
+  { name: "Smoker", price: "$25" },
+  { name: "Bubble Machine", price: "$35" },
+  { name: "Citrus Branding", price: "$80+" },
 ];

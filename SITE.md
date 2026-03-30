@@ -24,7 +24,7 @@
 ## Pages
 - [x] Home
 - [x] Services (overview)
-- [x] Services / Private Event Bartending
+- [x] Services / Bartending Services
 - [x] Services / Cocktail Classes
 - [x] Services / Batched Cocktails
 - [x] Services / Glassware Rental

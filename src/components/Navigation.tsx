@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const services = [
-  { href: "/services/bartending", label: "Private Event Bartending" },
+  { href: "/services/bartending", label: "Bartending Services" },
+  { href: "/services/batched", label: "Batch Cocktails" },
   { href: "/services/classes", label: "Cocktail Classes" },
-  { href: "/services/batched", label: "Batched Cocktails" },
   { href: "/services/glassware", label: "Glassware Rental" },
 ];
 

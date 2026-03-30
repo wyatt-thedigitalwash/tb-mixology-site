@@ -1,10 +1,17 @@
 export const services = [
   {
-    title: "Private Event Bartending",
+    title: "Bartending Services",
     description:
       "Full-service bartending designed around your event. Custom cocktail menus, seamless service, and a bar experience aligned with your aesthetic.",
     href: "/services/bartending",
     imageLabel: "Event bartending photo",
+  },
+  {
+    title: "Batch Cocktails",
+    description:
+      "Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Hosting with ease, polished drink experience.",
+    href: "/services/batched",
+    imageLabel: "Batched cocktails photo",
   },
   {
     title: "Cocktail Classes",
@@ -13,12 +20,15 @@ export const services = [
     href: "/services/classes",
     imageLabel: "Cocktail class photo",
   },
+];
+
+export const addOnServices = [
   {
-    title: "Batched Cocktails",
+    title: "Caviar Service",
     description:
-      "Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Hosting with ease, polished drink experience.",
-    href: "/services/batched",
-    imageLabel: "Batched cocktails photo",
+      "An all-inclusive, elevated tasting experience for your guests. The perfect premium add-on.",
+    href: "/services/bartending",
+    imageLabel: "Caviar service photo",
   },
   {
     title: "Glassware Rental",
@@ -29,58 +39,30 @@ export const services = [
   },
 ];
 
-export const tiers = [
+export const packages = [
   {
-    tier: 1,
-    name: "DIY Bartender",
-    price: "Starting at $50",
-    features: [
-      "15-min virtual consultation",
-      "Customized cocktail menu & instructions",
-      "Optional instructional videos",
-      "Shopping list for everything you need",
-    ],
-    perfectFor:
-      "Hosts who love to mix it up themselves \u2014 with expert-level recipes and guidance",
+    guests: "1\u201325 Guests",
+    bartenders: "1 Bartender",
+    rate: "$125/hr + $100 service fee",
+    starting: "Starting at $600",
   },
   {
-    tier: 2,
-    name: "Batch & Drop",
-    price: "Starting at $120\u2013$150",
-    features: [
-      "Everything in Tier 1, plus:",
-      "Batches of prepped cocktails delivered",
-      "Each batch makes ~26\u201330 drinks",
-      "Free delivery in Tampa/St Pete",
-    ],
-    perfectFor:
-      "Events where you want the prep done by people who really care about flavor",
+    guests: "26\u201350 Guests",
+    bartenders: "1\u20132 Bartenders",
+    rate: "$200\u2013$250/hr + $200 service fee",
+    starting: "Starting at $1,000",
   },
   {
-    tier: 3,
-    name: "Full Service Bar",
-    price: "Starting at $600+",
-    features: [
-      "1\u20132 bartenders with full setup",
-      "4\u20136 custom signature cocktails",
-      "All ingredients, ice & garnishes",
-      "Setup, service & breakdown",
-    ],
-    perfectFor:
-      "Hosts who want to enjoy the party without worrying about the bar",
+    guests: "51\u201380 Guests",
+    bartenders: "2 Bartenders",
+    rate: "$300\u2013$350/hr + $200 service fee",
+    starting: "Starting at $1,600",
   },
   {
-    tier: 4,
-    name: "Luxury Open Bar",
-    price: "Starting at $600 + alcohol",
-    features: [
-      "Everything in Tier 3",
-      "All alcohol provided & transported",
-      "No charge for unopened bottles",
-      "The complete hands-off experience",
-    ],
-    perfectFor:
-      "The full experience \u2014 from selecting the spirits to cleaning up, it\u2019s all on us",
+    guests: "81\u2013100+ Guests",
+    bartenders: "2\u20133+ Bartenders + Bar Back",
+    rate: "$400+/hr + $300 service fee",
+    starting: "Starting at $1,900",
   },
 ];
 

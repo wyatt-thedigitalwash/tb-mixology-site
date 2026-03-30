@@ -1,8 +1,10 @@
-export const tiers = [
-  "Tier 1 \u2013 DIY Bartender",
-  "Tier 2 \u2013 Batch & Drop",
-  "Tier 3 \u2013 Full Service Bar",
-  "Tier 4 \u2013 Luxury Open Bar",
+export const serviceOptions = [
+  "1\u201325 Guests",
+  "26\u201350 Guests",
+  "51\u201380 Guests",
+  "81\u2013100+ Guests",
+  "Batch Cocktails Only",
+  "Cocktail Class",
   "Not sure yet",
 ];
 

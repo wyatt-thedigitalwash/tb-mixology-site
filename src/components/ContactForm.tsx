@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { tiers, cupOptions } from "@/lib/data/contact";
+import { serviceOptions, cupOptions } from "@/lib/data/contact";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -210,21 +210,21 @@ export default function ContactForm() {
             />
           </div>
           <div className="md:col-span-2">
-            <label htmlFor="tier" className={labelClass}>
-              Which tier are you most interested in?
+            <label htmlFor="serviceType" className={labelClass}>
+              What service are you interested in?
             </label>
             <select
-              id="tier"
-              name="tier"
+              id="serviceType"
+              name="serviceType"
               className={`${inputClass} cursor-pointer`}
               defaultValue=""
             >
               <option value="" disabled>
-                Select a tier
+                Select a service
               </option>
-              {tiers.map((t) => (
-                <option key={t} value={t} className="bg-secondary text-primary">
-                  {t}
+              {serviceOptions.map((opt) => (
+                <option key={opt} value={opt} className="bg-secondary text-primary">
+                  {opt}
                 </option>
               ))}
             </select>

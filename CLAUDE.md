@@ -10,9 +10,9 @@
 
 ## Pages
 
-- `/` — Home (Hero, Services Overview, Tier Preview, Differentiator, Reviews, Instagram, CTA)
-- `/services` — Services overview (4 services + add-ons)
-- `/services/bartending` — Private Event Bartending (4 tiers with full pricing)
+- `/` — Home (Hero, Services Overview, Bartending Packages, Differentiator, Reviews, Instagram, CTA)
+- `/services` — Services overview (3 core services + 2 add-on services + add-ons pricing)
+- `/services/bartending` — Bartending Services (guest-count packages + add-ons)
 - `/services/classes` — Cocktail Classes
 - `/services/batched` — Batched Cocktails (pricing + details)
 - `/services/glassware` — Glassware Rental (10 types)
@@ -31,7 +31,7 @@
 - `SectionHeading` — Section header with optional label, title, subtitle
 - `PlaceholderImage` — Dark gray placeholder div with centered label
 - `ServiceCard` — Service preview card with image, title, description, link
-- `TierCard` — Service tier display card
+- (TierCard removed — replaced by package-based pricing)
 - `ReviewCard` — Review display with stars
 - `FaqAccordion` — Expandable FAQ item
 - `CalendlyEmbed` — Calendly inline widget wrapper (client component)
@@ -77,11 +77,11 @@ Woman-owned & operated mobile bartending company based in St. Pete, FL. Speciali
 
 ### Services
 
-- Tier 1: DIY Bartender ($50+)
-- Tier 2: Batch & Drop ($120–$150)
-- Tier 3: Full Service Bar ($600+)
-- Tier 4: Luxury Open Bar ($600+ + alcohol)
-- Add-ons: Glassware Rental, Cocktail Classes, Caviar Service, Cocktail Smoker, etc.
+- Bartending Services (packages by guest count: 1–25 from $600, 26–50 from $1,000, 51–80 from $1,600, 81–100+ from $1,900)
+- Batch Cocktails ($120–$150/batch)
+- Cocktail Classes
+- Caviar Service (add-on, $25–$40/pp)
+- Glassware Rental (add-on, $3–$5/pp)
 
 ### Social Media
 

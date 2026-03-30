@@ -6,9 +6,9 @@ const navColumns = [
     title: "Services",
     links: [
       { href: "/services", label: "All Services" },
-      { href: "/services/bartending", label: "Private Event Bartending" },
+      { href: "/services/bartending", label: "Bartending Services" },
+      { href: "/services/batched", label: "Batch Cocktails" },
       { href: "/services/classes", label: "Cocktail Classes" },
-      { href: "/services/batched", label: "Batched Cocktails" },
       { href: "/services/glassware", label: "Glassware Rental" },
     ],
   },

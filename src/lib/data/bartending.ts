@@ -1,55 +1,45 @@
-export const tiers = [
+export const packages = [
   {
-    tier: 1,
-    name: "DIY Bartender",
-    price: "$50",
-    features: [
-      "15-minute virtual consultation",
-      "Customized printable cocktail menu & instructions",
-      "Optional instructional videos",
-      "Complete shopping list for alcohol, mixers, and garnishes",
-    ],
-    perfectFor: "Hosts who love to mix it up themselves with expert-level recipes",
+    guests: "1\u201325 Guests",
+    bartenders: "1 Bartender",
+    rate: "$125/hr + $100 service fee",
+    starting: "Starting at $600",
   },
   {
-    tier: 2,
-    name: "Batch & Drop",
-    price: "Starting at $120",
-    features: [
-      "Each batch makes ~26\u201330 drinks",
-      "Free delivery in Tampa & St. Pete",
-      "Glass bottles with pour spouts",
-      "All garnishes included & prepped",
-      "Pickup next day at your convenience",
-      "Custom printed recipe & instruction cards",
-    ],
-    perfectFor: "Events where you have someone to pour but want the prep handled",
+    guests: "26\u201350 Guests",
+    bartenders: "1\u20132 Bartenders",
+    rate: "$200\u2013$250/hr + $200 service fee",
+    starting: "Starting at $1,000",
   },
   {
-    tier: 3,
-    name: "Full Service Bar",
-    price: "Starting at $600",
-    features: [
-      "Virtual consultation to plan your menu",
-      "1\u20132 professional bartenders",
-      "Full setup and breakdown",
-      "Custom cocktail menus",
-      "4\u20136 signature cocktails",
-      "Ice, mixers, and garnishes included",
-      "Optional glassware rental",
-    ],
-    perfectFor: "Hosts who want to enjoy the party without worrying about the bar",
+    guests: "51\u201380 Guests",
+    bartenders: "2 Bartenders",
+    rate: "$300\u2013$350/hr + $200 service fee",
+    starting: "Starting at $1,600",
   },
   {
-    tier: 4,
-    name: "Luxury Open Bar",
-    price: "Starting at $600 + cost of alcohol",
-    features: [
-      "Everything in Full Service Bar",
-      "All alcohol provided, curated, and transported",
-      "No charge for unopened bottles",
-      "The complete experience from first pour to last call",
-    ],
-    perfectFor: "The full experience \u2014 from selecting the spirits to cleaning up, it\u2019s all on us",
+    guests: "81\u2013100+ Guests",
+    bartenders: "2\u20133+ Bartenders + Bar Back",
+    rate: "$400+/hr + $300 service fee",
+    starting: "Starting at $1,900",
   },
+];
+
+export const included = [
+  "Virtual consultation to plan your event",
+  "Custom cocktail menu designed for your theme",
+  "Professional bartender service",
+  "Full bar setup and breakdown",
+  "Ice, mixers, and garnishes",
+  "Custom printed cocktail menus",
+];
+
+export const bartendingAddOns = [
+  { name: "Alcohol Purchase & Transport", price: "Cost + 10%" },
+  { name: "Glassware Rental", price: "$3\u2013$5/pp" },
+  { name: "Large Ice Cubes", price: "$50+" },
+  { name: "Water Station", price: "$75" },
+  { name: "Additional Bartender", price: "$50/hr" },
+  { name: "Bar Back", price: "$50/hr" },
+  { name: "Custom 4\u2019 Wooden Bar", price: "$200" },
 ];

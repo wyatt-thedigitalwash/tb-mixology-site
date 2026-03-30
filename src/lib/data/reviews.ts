@@ -13,13 +13,13 @@ export const reviews = [
   },
   {
     quote:
-      "The Batch & Drop service was a game-changer for our housewarming. Fresh, delicious, and so easy. Will definitely order again!",
+      "The batch cocktails for our housewarming were a game-changer. Fresh, delicious, and so easy. Will definitely order again!",
     name: "Rachel K.",
     eventType: "Housewarming Party",
   },
   {
     quote:
-      "We booked the Full Service Bar for our daughter's engagement party and it was worth every penny. The themed cocktails were a huge hit.",
+      "We booked bartending for our daughter's engagement party and it was worth every penny. The themed cocktails were a huge hit.",
     name: "Linda P.",
     eventType: "Engagement Party",
   },

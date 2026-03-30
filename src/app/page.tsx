@@ -3,11 +3,10 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import TierCard from "@/components/TierCard";
 import ReviewCard from "@/components/ReviewCard";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import InstagramFeed from "@/components/InstagramFeed";
-import { services, tiers, homeReviews, highlights } from "@/lib/data/home";
+import { services, addOnServices, packages, homeReviews, highlights } from "@/lib/data/home";
 
 export const metadata: Metadata = {
   title: "TB Mixology | Tampa Bay Event Bartending",
@@ -70,9 +69,16 @@ export default function Home() {
           <FadeIn>
             <SectionHeading label="What We Do" title="Our Services" />
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {services.map((s, i) => (
-              <FadeIn key={s.title} delay={i % 2 === 1 ? "delay-100" : ""}>
+              <FadeIn key={s.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <ServiceCard {...s} />
+              </FadeIn>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 max-w-3xl mx-auto">
+            {addOnServices.map((s, i) => (
+              <FadeIn key={s.title} delay={i === 1 ? "delay-100" : ""}>
                 <ServiceCard {...s} />
               </FadeIn>
             ))}
@@ -80,19 +86,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Tier Preview ── */}
+      {/* ── Bartending Packages ── */}
       <section className="py-20 md:py-28 bg-secondary">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="Pricing" title="Four Tiers, Tailored to You" />
+            <SectionHeading label="Pricing" title="Bartending Packages" subtitle="Pricing based on a 4-hour event. Built to ensure fast, seamless service." />
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {tiers.map((t, i) => (
-              <FadeIn key={t.tier} delay={i % 2 === 1 ? "delay-100" : ""}>
-                <TierCard {...t} showLink />
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {packages.map((pkg) => (
+                <div
+                  key={pkg.guests}
+                  className="border border-warm-gray/30 p-6 rounded-sm hover:border-accent/50 transition-colors duration-200 ease-out"
+                >
+                  <h3 className="font-heading text-xl text-primary mb-1">{pkg.guests}</h3>
+                  <p className="font-body text-sm text-warm-gray mb-3">{pkg.bartenders}</p>
+                  <p className="font-body text-sm text-primary mb-1">{pkg.rate}</p>
+                  <p className="font-accent text-lg text-accent">{pkg.starting}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+          <FadeIn delay="delay-100">
+            <div className="text-center mt-8">
+              <Link
+                href="/services/bartending"
+                className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
+              >
+                See Full Details &rarr;
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -149,10 +173,7 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-secondary">
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading
-              label="@tbmixology"
-              title="Follow the Pour"
-            />
+            <SectionHeading label="@tbmixology" title="Follow the Pour" />
           </FadeIn>
           <FadeIn delay="delay-100">
             <InstagramFeed />
@@ -198,7 +219,7 @@ export default function Home() {
             "@type": "LocalBusiness",
             name: "TB Mixology",
             description:
-              "Woman-owned mobile bartending serving Tampa Bay. Custom cocktails, private event bartending, cocktail classes, and batched cocktails.",
+              "Woman-owned mobile bartending serving Tampa Bay. Custom cocktails, private event bartending, cocktail classes, and batch cocktails.",
             url: "https://tb-mixology-site.vercel.app",
             telephone: "",
             areaServed: [

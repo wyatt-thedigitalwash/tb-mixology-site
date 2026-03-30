@@ -22,9 +22,9 @@ export default function GlasswarePage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
-          label="Services"
+          label="Add-On Service"
           title="Glassware Rental"
-          subtitle="Trade the plastic for real glassware. Elevate the look and feel of your bar with curated glass options for every type of cocktail."
+          subtitle="Elevate your bar with real glassware — coupes, rocks glasses, highballs, and more. Available as an add-on to any bartending package at $3–$5 per person."
         />
       </section>
 
@@ -82,8 +82,8 @@ export default function GlasswarePage() {
           <FadeIn>
             <SectionHeading
               label="Pricing"
-              title="Pricing Coming Soon"
-              subtitle="We're finalizing our rental pricing. In the meantime, reach out and we'll put together a custom quote based on your event size and glassware needs."
+              title="$3–$5 Per Person"
+              subtitle="Pricing is based on guest count and glassware selection. Reach out and we'll put together a custom quote for your event."
             />
           </FadeIn>
         </div>
