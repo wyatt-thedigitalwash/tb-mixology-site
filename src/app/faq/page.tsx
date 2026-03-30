@@ -32,12 +32,12 @@ export default function FaqPage() {
 
       <main className="bg-secondary">
         {/* Hero */}
-        <section className="py-24 md:py-32 text-center px-6">
-          <FadeIn>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary">
-              Frequently Asked Questions
-            </h1>
-          </FadeIn>
+        <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
+          <SectionHeading
+            label="Support"
+            title="Frequently Asked Questions"
+            subtitle="Everything you need to know about working with TB Mixology"
+          />
         </section>
 
         {/* FAQ List */}
