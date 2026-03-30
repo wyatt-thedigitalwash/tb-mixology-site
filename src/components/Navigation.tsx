@@ -16,6 +16,7 @@ const navLinks = [
   { href: "/services", label: "Services", dropdown: true },
   { href: "/drinks", label: "Drinks" },
   { href: "/events", label: "Events" },
+  { href: "/events#menus", label: "Menus" },
   { href: "/reviews", label: "Reviews" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
