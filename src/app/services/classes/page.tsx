@@ -35,10 +35,10 @@ export default function ClassesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
               <Image
-                src="/images/gimlet-lime-garnish-bar-counter-full.webp"
-                alt="Freshly crafted gimlet cocktail with lime garnish on the bar counter"
-                width={1300}
-                height={1920}
+                src="/images/cocktail-class-group-espresso-martinis-full.webp"
+                alt="Group of women at a TB Mixology cocktail class holding espresso martinis"
+                width={1920}
+                height={1280}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="rounded-sm"
               />

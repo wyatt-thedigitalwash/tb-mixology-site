@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import PlaceholderImage from "@/components/PlaceholderImage";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import { categories, events, type Category } from "@/lib/data/events";
 
@@ -43,12 +43,17 @@ export default function EventGallery() {
               {event.category}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {event.images.map((label, i) => (
-                <PlaceholderImage
-                  key={i}
-                  label={label}
-                  aspect="square"
-                />
+              {event.images.map((img) => (
+                <div key={img.src} className="overflow-hidden rounded-sm aspect-square relative">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={img.width}
+                    height={img.height}
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                </div>
               ))}
             </div>
           </FadeIn>

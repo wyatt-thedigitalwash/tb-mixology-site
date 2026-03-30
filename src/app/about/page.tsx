@@ -29,10 +29,10 @@ export default function AboutPage() {
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Image
-              src="/images/bartender-pouring-cocktails-event-full.webp"
-              alt="TB Mixology bartender preparing cocktails at a private event"
-              width={1534}
-              height={1920}
+              src="/images/tb-mixology-founders-outdoor-bar-service-full.webp"
+              alt="TB Mixology founders working behind a portable bar at an outdoor event"
+              width={1920}
+              height={1280}
               sizes="(max-width: 768px) 100vw, 50vw"
               className="rounded-lg object-cover aspect-[3/4]"
             />

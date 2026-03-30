@@ -1,79 +1,71 @@
 # Image Processing Log
 
-Generated: 2026-03-29
+Generated: 2026-03-30
 Quality: 80 (photos), 90 (menus/text)
 Format: WebP, EXIF stripped
+Sizes: full (max 1920px), md (max 800px), thumb (max 400px)
 
-## Event Photos (`public/images/`)
+## Event Photos — Batch 1 (`public/images/`)
 
-### mimosa-bloody-mary-bar-setup
-- **Original:** IMG_5390.jpg (2730x1536, 1.1MB)
-- **Description:** Mimosa and Bloody Mary bar setup with juice bottles, glassware, fresh fruit garnishes, and hydrangea flowers on marble countertop
-- **Sizes:**
-  - `mimosa-bloody-mary-bar-setup-full.webp` — 1920x1081, 149K
-  - `mimosa-bloody-mary-bar-setup-md.webp` — 800x451, 38K
-  - `mimosa-bloody-mary-bar-setup-thumb.webp` — 400x226, 12K
+| Name | Original | Orig Size | Description |
+|---|---|---|---|
+| mimosa-bloody-mary-bar-setup | IMG_5390.jpg | 2730x1536 | Mimosa/Bloody Mary bar setup with juices, glassware, garnishes |
+| pirate-theme-cocktail-menu-display | IMG_5769.jpg | 1536x2730 | Pirate skeleton holding cocktail menu at themed party |
+| spicy-paloma-tajin-rim-closeup | IMG_5810.jpg | 1536x2730 | Spicy paloma with Tajín rim and grapefruit garnish |
+| bartender-pouring-cocktails-event | IMG_9636_Original.jpg | 1636x2048 | Bartender preparing cocktails at a private event |
+| espresso-martini-pour-closeup | IMG_9799_Original.jpg | 1536x2424 | Espresso martini pour from shaker into martini glass |
+| gimlet-lime-garnish-bar-counter | IMG_9805_Original.jpg | 1536x2270 | Gimlet with lime garnish on marble bar counter |
 
-### pirate-theme-cocktail-menu-display
-- **Original:** IMG_5769.jpg (1536x2730, 1.8MB)
-- **Description:** Pirate skeleton decoration holding a cocktail menu card at a themed party, with tropical palm backdrop
-- **Sizes:**
-  - `pirate-theme-cocktail-menu-display-full.webp` — 1081x1920, 376K
-  - `pirate-theme-cocktail-menu-display-md.webp` — 451x800, 104K
-  - `pirate-theme-cocktail-menu-display-thumb.webp` — 226x400, 30K
+## Event Photos — Batch 2 (`public/images/`)
 
-### spicy-paloma-tajin-rim-closeup
-- **Original:** IMG_5810.jpg (1536x2730, 749K)
-- **Description:** Hand holding a spicy paloma cocktail with Tajín rim and grapefruit garnish at an outdoor event
-- **Sizes:**
-  - `spicy-paloma-tajin-rim-closeup-full.webp` — 1081x1920, 75K
-  - `spicy-paloma-tajin-rim-closeup-md.webp` — 451x800, 25K
-  - `spicy-paloma-tajin-rim-closeup-thumb.webp` — 226x400, 11K
-
-### bartender-pouring-cocktails-event
-- **Original:** IMG_9636_Original.jpg (1636x2048, 683K)
-- **Description:** TB Mixology bartender preparing cocktails behind the bar at a private event, guests visible in background
-- **Sizes:**
-  - `bartender-pouring-cocktails-event-full.webp` — 1534x1920, 153K
-  - `bartender-pouring-cocktails-event-md.webp` — 640x800, 50K
-  - `bartender-pouring-cocktails-event-thumb.webp` — 320x400, 20K
-
-### espresso-martini-pour-closeup
-- **Original:** IMG_9799_Original.jpg (1536x2424, 737K)
-- **Description:** Bartender pouring an espresso martini from a cocktail shaker into a martini glass, jigger and bar tools visible
-- **Sizes:**
-  - `espresso-martini-pour-closeup-full.webp` — 1217x1920, 101K
-  - `espresso-martini-pour-closeup-md.webp` — 507x800, 30K
-  - `espresso-martini-pour-closeup-thumb.webp` — 254x400, 13K
-
-### gimlet-lime-garnish-bar-counter
-- **Original:** IMG_9805_Original.jpg (1536x2270, 615K)
-- **Description:** Finished gimlet cocktail with lime garnish on a marble bar counter, custom cocktail menu card visible
-- **Sizes:**
-  - `gimlet-lime-garnish-bar-counter-full.webp` — 1300x1920, 92K
-  - `gimlet-lime-garnish-bar-counter-md.webp` — 542x800, 28K
-  - `gimlet-lime-garnish-bar-counter-thumb.webp` — 271x400, 11K
+| Name | Original | Orig Size | Description |
+|---|---|---|---|
+| halloween-themed-red-martini-skull-decor | IMG_0130.JPG | 6000x4000 | Red martini with dry ice, skull decor, black roses, candles |
+| strawberry-margaritas-tajin-rim-closeup | IMG_0257.JPG | 2304x1536 | Two strawberry margaritas with Tajín rims |
+| friends-cheers-cocktails-upscale-venue | IMG_0282.JPG | 2304x1536 | Four friends cheersing cocktails at upscale venue |
+| tb-mixology-team-cheers-hedge-wall | IMG_0303.JPG | 2304x1536 | TB Mixology team in branded uniforms cheersing cocktails |
+| guests-cocktails-ocean-view-rooftop | IMG_0312.JPG | 2304x1536 | Three women with cocktails at oceanview rooftop |
+| cocktail-cheers-closeup-ocean-backdrop | IMG_0315.JPG | 2304x1536 | Close-up cheers of four cocktails with ocean backdrop |
+| costume-party-guests-craft-cocktails | IMG_0320.JPG | 2304x1536 | Costumed guests holding craft cocktails |
+| craft-cocktails-trio-closeup-party | IMG_0339.JPG | 2304x1536 | Three hands holding garnished cocktails at party |
+| cocktails-highrise-marina-ocean-view | IMG_0341.JPG | 2304x1536 | Two cocktails overlooking marina from high-rise |
+| cocktail-class-setup-kahwa-bar-station | IMG_0361.JPG | 2304x1536 | Cocktail class bar station setup at Kawha coffee |
+| green-cocktail-spiral-garnish-closeup | IMG_0552.JPG | 6000x4000 | Green cocktail with spiral garnish closeup |
+| girlfriends-cheers-evening-patio-party | IMG_0659.JPG | 6000x4000 | Girlfriends cheersing at evening patio party |
+| wedding-party-toast-formal-reception | IMG_0670.JPG | 6000x4000 | Wedding party raising drinks in formal toast |
+| bartender-torching-cocktail-event | IMG_0682.JPG | 6000x4000 | Bartender torching a cocktail at dark venue |
+| bride-wedding-reception-dance-floor | IMG_0726.JPG | 6000x4000 | Bride at wedding reception dance floor |
+| halloween-group-cocktail-party-night | IMG_1420.JPG | 6000x4000 | Large group at Halloween cocktail party |
+| bartender-shaking-cocktail-mobile-bar-setup | IMG_1483.JPG | 6000x4000 | Bartender shaking cocktail at mobile bar |
+| halloween-layered-purple-martini-pour | IMG_1487.JPG | 6000x4000 | Layered purple martini pour with Halloween decor |
+| martini-glasses-event-setup-red-tablecloth | IMG_2336.JPG | 1536x2304 | Rows of martini and rocks glasses on red tablecloth |
+| old-fashioned-berry-cocktail-fireside | IMG_2411.JPG | 2304x1536 | Old fashioned and berry cocktail by fireplace |
+| espresso-martinis-pair-bar-ambiance | IMG_2413.JPG | 2304x1536 | Two espresso martinis with warm ambient lighting |
+| holiday-cocktails-rosemary-espresso-martini | IMG_2423.JPG | 2304x1536 | Holiday cocktails with rosemary and espresso martini |
+| friends-laughing-cheers-cocktails-night | IMG_2427.JPG | 2304x1536 | Friends laughing and cheersing cocktails at night |
+| bartenders-cheers-colorful-cocktail-lineup | IMG_6519.JPG | 2304x1536 | Bartenders cheersing with colorful cocktail lineup |
+| pink-cocktail-lineup-lime-garnish-bar | IMG_6658.JPG | 2304x1536 | Pink cocktail lineup with lime garnishes on bar |
+| beverage-dispenser-station-fruit-garnishes | IMG_7079.JPG | 1536x2048 | Self-serve beverage dispensers with fresh fruit |
+| tb-mixology-team-selfie-outdoor-bar-setup | IMG_8467.JPG | 4032x2268 | Team selfie behind portable bar at outdoor event |
+| gentlemen-cheers-cocktails-beer-formal | IMG_9715.JPG | 1536x2048 | Gentlemen cheersing cocktails and beer in suits |
+| cocktail-class-group-espresso-martinis | cocktail-class.JPG | 2304x1536 | Cocktail class group holding espresso martinis |
+| tb-mixology-founders-outdoor-bar-service | founders.JPG | 6000x4000 | Founders working behind portable bar outdoors |
 
 ## Menu Examples (`public/menu-examples/`)
 
-| New Filename | Original | Dimensions | Size | Description |
-|---|---|---|---|---|
-| cocktail-menu-green-gold-formal.webp | 13C49423...png | 534x800 | 87K | Green and gold formal cocktail menu with ornate border |
-| cocktail-menu-pirate-theme.webp | 4FD87D19...png | 572x800 | 62K | Pirate-themed cocktail menu on aged parchment with swords |
-| cocktail-menu-halloween-spooky.webp | 883220A6...png | 572x800 | 106K | Halloween cocktail menu with spiderwebs on dark chalkboard |
-| cocktail-menu-holiday-berry-winter.webp | AB7138C7...png | 619x800 | 77K | Holiday cocktail menu with red berry and evergreen border |
-| cocktail-menu-autumn-leaves-rustic.webp | C06BA0F6...png | 619x800 | 54K | Autumn cocktail menu with oak leaf illustrations |
-| cocktail-menu-minimal-elegant.webp | C08B39E8...png | 619x800 | 22K | Minimal black and white elegant cocktail menu |
-| cocktail-menu-gold-frame-wedding.webp | Icon.png | 619x800 | 50K | Wedding-style cocktail menu with gold frame border |
+| Name | Original | Description |
+|---|---|---|
+| cocktail-menu-green-gold-formal | 13C49423...png | Green and gold formal menu with ornate border |
+| cocktail-menu-pirate-theme | 4FD87D19...png | Pirate-themed menu on aged parchment |
+| cocktail-menu-halloween-spooky | 883220A6...png | Halloween menu with spiderwebs on chalkboard |
+| cocktail-menu-holiday-berry-winter | AB7138C7...png | Holiday menu with red berry and evergreen |
+| cocktail-menu-autumn-leaves-rustic | C06BA0F6...png | Autumn menu with oak leaf illustrations |
+| cocktail-menu-minimal-elegant | C08B39E8...png | Minimal black and white elegant menu |
+| cocktail-menu-gold-frame-wedding | Icon.png | Wedding-style menu with gold frame |
+| custom-cocktail-menu-nautical-theme | Debra.PNG | Nautical themed menu with ship wheel |
 
 ## Logo (`public/assets/`)
 
-| New Filename | Original | Dimensions | Size | Description |
-|---|---|---|---|---|
-| tb-mixology-logo.webp | tb-mixology-logo.jpg | 400x400 | 18K | TB Mixology circular logo — cocktail glass with "Tampa Bay Mixology" text on black |
-
-## Total Savings
-
-- **Original total:** ~16.3 MB
-- **Optimized total (all sizes):** ~2.0 MB
-- **Savings:** ~88%
+| Name | Original | Description |
+|---|---|---|
+| tb-mixology-logo | tb-mixology-logo.jpg | Circular logo with cocktail glass on black |
