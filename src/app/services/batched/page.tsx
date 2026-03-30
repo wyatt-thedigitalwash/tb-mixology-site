@@ -18,23 +18,14 @@ export const metadata: Metadata = {
 
 export default function BatchedPage() {
   return (
-    <main className="pt-28 pb-24">
+    <main className="bg-secondary">
       {/* Hero */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <FadeIn>
-            <p className="text-xs tracking-[0.25em] uppercase font-body mb-3 text-warm-gray">
-              Services
-            </p>
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary mb-6">
-              Batched Cocktails
-            </h1>
-            <p className="font-accent text-lg md:text-xl text-warm-gray max-w-2xl mx-auto">
-              Handcrafted cocktail batches mixed, prepped, and delivered to your
-              door — ready to pour and enjoy.
-            </p>
-          </FadeIn>
-        </div>
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
+        <SectionHeading
+          label="Services"
+          title="Batched Cocktails"
+          subtitle="Handcrafted cocktail batches mixed, prepped, and delivered to your door — ready to pour and enjoy."
+        />
       </section>
 
       {/* Details + Image */}

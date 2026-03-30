@@ -18,23 +18,14 @@ export const metadata: Metadata = {
 
 export default function GlasswarePage() {
   return (
-    <main className="pt-28 pb-24">
+    <main className="bg-secondary">
       {/* Hero */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <FadeIn>
-            <p className="text-xs tracking-[0.25em] uppercase font-body mb-3 text-warm-gray">
-              Services
-            </p>
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary mb-6">
-              Glassware Rental
-            </h1>
-            <p className="font-accent text-lg md:text-xl text-warm-gray max-w-2xl mx-auto">
-              Trade the plastic for real glassware. Elevate the look and feel of
-              your bar with curated glass options for every type of cocktail.
-            </p>
-          </FadeIn>
-        </div>
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
+        <SectionHeading
+          label="Services"
+          title="Glassware Rental"
+          subtitle="Trade the plastic for real glassware. Elevate the look and feel of your bar with curated glass options for every type of cocktail."
+        />
       </section>
 
       {/* Glassware Grid */}
