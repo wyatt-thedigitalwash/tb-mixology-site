@@ -48,7 +48,7 @@ export const events: EventData[] = [
   {
     title: "Halloween Soir\u00e9e",
     category: "Private Parties",
-    layout: "three-top-portrait-bottom",
+    layout: "grid-2x2",
     images: [
       { src: "/images/halloween-red-martini-skull-decor.webp", alt: "Halloween-themed red martini with dry ice smoke and skull decor", width: 1200, height: 800 },
       { src: "/images/halloween-layered-purple-martini-pour.webp", alt: "Layered purple martini being poured at a Halloween party", width: 1200, height: 800 },

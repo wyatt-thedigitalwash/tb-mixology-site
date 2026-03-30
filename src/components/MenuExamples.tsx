@@ -53,27 +53,30 @@ export default function MenuExamples() {
         >
           {/* Modal container */}
           <div
-            className="relative max-w-[500px] w-full max-h-[90vh] overflow-y-auto rounded-sm"
+            className="relative bg-black rounded-sm overflow-hidden"
+            style={{ maxWidth: "min(500px, 90vw)", maxHeight: "90vh" }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close button — inside modal */}
+            {/* Close button */}
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-3 right-3 z-10 bg-black/60 rounded-full p-1.5 text-white/80 hover:text-white transition-colors"
+              className="absolute top-3 right-3 z-10 bg-black/70 rounded-full p-2 text-white/80 hover:text-white transition-colors"
               aria-label="Close lightbox"
             >
-              <X size={20} />
+              <X size={22} />
             </button>
 
-            <Image
-              src={menuExamples[lightbox].src}
-              alt={menuExamples[lightbox].alt}
-              width={menuExamples[lightbox].width}
-              height={menuExamples[lightbox].height}
-              sizes="500px"
-              className="w-full h-auto"
-              priority
-            />
+            <div className="overflow-y-auto" style={{ maxHeight: "90vh" }}>
+              <Image
+                src={menuExamples[lightbox].src}
+                alt={menuExamples[lightbox].alt}
+                width={menuExamples[lightbox].width}
+                height={menuExamples[lightbox].height}
+                sizes="500px"
+                className="w-full h-auto block"
+                priority
+              />
+            </div>
           </div>
 
           {/* Prev */}

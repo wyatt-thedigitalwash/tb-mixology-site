@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -56,18 +55,8 @@ export default function FaqPage() {
         </section>
 
         {/* CTA */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/old-fashioned-berry-cocktail-fireside.webp"
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-primary/80" />
-          </div>
-          <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <section className="py-24 md:py-32 bg-primary">
+          <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn>
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
                 Still Have Questions?

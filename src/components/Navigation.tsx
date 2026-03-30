@@ -89,7 +89,8 @@ export default function Navigation() {
                   />
                 </button>
                 {dropdownOpen && (
-                  <div className="absolute top-full left-0 mt-3 bg-secondary border border-warm-gray/20 rounded-sm shadow-lg py-2 min-w-[220px]">
+                  <div className="absolute top-full left-0 pt-2 bg-transparent">
+                  <div className="bg-secondary border border-warm-gray/20 rounded-sm shadow-lg py-2 min-w-[220px]">
                     <Link
                       href="/services"
                       onClick={() => setDropdownOpen(false)}
@@ -108,6 +109,7 @@ export default function Navigation() {
                         {s.label}
                       </Link>
                     ))}
+                  </div>
                   </div>
                 )}
               </div>
