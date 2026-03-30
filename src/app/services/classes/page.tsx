@@ -34,14 +34,15 @@ export default function ClassesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <Image
-                src="/images/cocktail-class-group-espresso-martinis-full.webp"
-                alt="Group of women at a TB Mixology cocktail class holding espresso martinis"
-                width={1920}
-                height={1280}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="rounded-sm"
-              />
+              <div className="relative aspect-video rounded-sm overflow-hidden">
+                <Image
+                  src="/images/cocktail-class-group-espresso-martinis.webp"
+                  alt="Group of women at a TB Mixology cocktail class holding espresso martinis"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </FadeIn>
             <FadeIn delay="delay-100">
               <p className="text-xs tracking-[0.25em] uppercase font-body mb-3 text-accent">

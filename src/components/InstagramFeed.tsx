@@ -3,12 +3,12 @@
 import Image from "next/image";
 
 const posts = [
-  { src: "/images/espresso-martini-pour-closeup-thumb.webp", alt: "Espresso martini being poured into a martini glass", width: 254, height: 400 },
-  { src: "/images/cocktails-highrise-marina-ocean-view-thumb.webp", alt: "Cocktails with a marina and ocean view", width: 400, height: 267 },
-  { src: "/images/halloween-themed-red-martini-skull-decor-thumb.webp", alt: "Halloween themed cocktail with skull decor", width: 400, height: 267 },
-  { src: "/images/bartender-shaking-cocktail-mobile-bar-setup-thumb.webp", alt: "Bartender shaking a cocktail at a mobile bar", width: 400, height: 267 },
-  { src: "/images/cocktail-class-group-espresso-martinis-thumb.webp", alt: "Group at a cocktail class holding espresso martinis", width: 400, height: 267 },
-  { src: "/images/pink-cocktail-lineup-lime-garnish-bar-thumb.webp", alt: "Pink cocktail lineup with lime garnishes", width: 400, height: 267 },
+  { src: "/images/espresso-martini-pour-closeup.webp", alt: "Espresso martini being poured into a martini glass", width: 1080, height: 1706 },
+  { src: "/images/cocktails-highrise-marina-ocean-view.webp", alt: "Cocktails with a marina and ocean view", width: 1200, height: 800 },
+  { src: "/images/halloween-red-martini-skull-decor.webp", alt: "Halloween themed cocktail with skull decor", width: 1200, height: 800 },
+  { src: "/images/bartender-shaking-cocktail-mobile-bar.webp", alt: "Bartender shaking a cocktail at a mobile bar", width: 800, height: 533 },
+  { src: "/images/cocktail-class-group-espresso-martinis.webp", alt: "Group at a cocktail class holding espresso martinis", width: 800, height: 533 },
+  { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes", width: 1200, height: 800 },
 ];
 
 export default function InstagramFeed() {

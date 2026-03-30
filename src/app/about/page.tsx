@@ -28,14 +28,15 @@ export default function AboutPage() {
       <section className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <Image
-              src="/images/tb-mixology-founders-outdoor-bar-service-full.webp"
-              alt="TB Mixology founders working behind a portable bar at an outdoor event"
-              width={1920}
-              height={1280}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-lg object-cover aspect-[3/4]"
-            />
+            <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+              <Image
+                src="/images/tb-mixology-founders-outdoor-bar.webp"
+                alt="TB Mixology founders working behind a portable bar at an outdoor event"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
             <div>
               <SectionHeading label="Our Story" title="How It Started" />
               {/* REPLACE: Emma to fill in personal story */}

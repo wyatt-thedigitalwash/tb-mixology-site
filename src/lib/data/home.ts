@@ -5,10 +5,8 @@ export const services = [
       "Full-service bartending designed around your event. Custom cocktail menus, seamless service, and a bar experience aligned with your aesthetic.",
     href: "/services/bartending",
     imageLabel: "Event bartending photo",
-    imageSrc: "/images/bartender-shaking-cocktail-mobile-bar-setup-md.webp",
-    imageWidth: 800,
-    imageHeight: 533,
-    imageAlt: "TB Mixology bartender shaking a cocktail at a mobile bar setup",
+    imageSrc: "/images/bartender-shaking-cocktail-mobile-bar.webp",
+    imageAlt: "TB Mixology bartender shaking a cocktail at a mobile bar",
   },
   {
     title: "Batch Cocktails",
@@ -16,10 +14,8 @@ export const services = [
       "Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Hosting with ease, polished drink experience.",
     href: "/services/batched",
     imageLabel: "Batched cocktails photo",
-    imageSrc: "/images/mimosa-bloody-mary-bar-setup-md.webp",
-    imageWidth: 800,
-    imageHeight: 451,
-    imageAlt: "Mimosa and Bloody Mary bar setup with fresh juices and garnishes",
+    imageSrc: "/images/beverage-dispenser-station-fruit-garnishes.webp",
+    imageAlt: "Beverage dispenser station with fresh fruit garnishes",
   },
   {
     title: "Cocktail Classes",
@@ -27,10 +23,8 @@ export const services = [
       "Interactive, hands-on cocktail classes that are equal parts fun and elevated. Perfect for group events, brand activations, or private parties.",
     href: "/services/classes",
     imageLabel: "Cocktail class photo",
-    imageSrc: "/images/cocktail-class-group-espresso-martinis-md.webp",
-    imageWidth: 800,
-    imageHeight: 533,
-    imageAlt: "Group at a hands-on cocktail class holding espresso martinis",
+    imageSrc: "/images/cocktail-class-group-espresso-martinis.webp",
+    imageAlt: "Group at a cocktail class holding espresso martinis",
   },
 ];
 
@@ -41,6 +35,8 @@ export const addOnServices = [
       "An all-inclusive, elevated tasting experience for your guests. The perfect premium add-on.",
     href: "/services/bartending",
     imageLabel: "Caviar service photo",
+    imageSrc: "/images/bartender-torching-cocktail-event.webp",
+    imageAlt: "TB Mixology bartender preparing a torched cocktail",
   },
   {
     title: "Glassware Rental",
@@ -48,6 +44,8 @@ export const addOnServices = [
       "Curated glassware options to match your event\u2019s style. The finishing details that tie your bar setup together.",
     href: "/services/glassware",
     imageLabel: "Glassware rental photo",
+    imageSrc: "/images/martini-glasses-event-setup.webp",
+    imageAlt: "Rows of martini glasses set up for an event",
   },
 ];
 

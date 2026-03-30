@@ -59,14 +59,15 @@ export default function BatchedPage() {
               </Link>
             </FadeIn>
             <FadeIn delay="delay-100">
-              <Image
-                src="/images/mimosa-bloody-mary-bar-setup-full.webp"
-                alt="Batch cocktail bar setup with fresh juices, bottles, and garnishes ready to serve"
-                width={1920}
-                height={1081}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="rounded-sm"
-              />
+              <div className="relative aspect-video rounded-sm overflow-hidden">
+                <Image
+                  src="/images/mimosa-bloody-mary-bar-setup.webp"
+                  alt="Batch cocktail bar setup with fresh juices, bottles, and garnishes ready to serve"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </FadeIn>
           </div>
         </div>

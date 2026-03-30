@@ -29,12 +29,22 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 opacity-40">
+          {/* Desktop hero */}
           <Image
-            src="/images/espresso-martini-pour-closeup-full.webp"
-            alt="Bartender pouring an espresso martini at a TB Mixology event"
+            src="/images/espresso-martinis-pair-bar-ambiance.webp"
+            alt="Two espresso martinis with warm ambient bar lighting"
             fill
             sizes="100vw"
-            className="object-cover"
+            className="object-cover hidden md:block"
+            priority
+          />
+          {/* Mobile hero */}
+          <Image
+            src="/images/espresso-martini-pour-closeup.webp"
+            alt="Bartender pouring an espresso martini"
+            fill
+            sizes="100vw"
+            className="object-cover md:hidden"
             priority
           />
         </div>

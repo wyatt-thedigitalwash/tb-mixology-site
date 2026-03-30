@@ -8,8 +8,6 @@ interface ServiceCardProps {
   href: string;
   imageLabel: string;
   imageSrc?: string;
-  imageWidth?: number;
-  imageHeight?: number;
   imageAlt?: string;
 }
 
@@ -19,21 +17,18 @@ export default function ServiceCard({
   href,
   imageLabel,
   imageSrc,
-  imageWidth,
-  imageHeight,
   imageAlt,
 }: ServiceCardProps) {
   return (
     <Link href={href} className="group block">
-      <div className="overflow-hidden rounded-sm aspect-video relative">
+      <div className="overflow-hidden rounded-sm aspect-[3/2] relative">
         {imageSrc ? (
           <Image
             src={imageSrc}
             alt={imageAlt || title}
-            width={imageWidth || 800}
-            height={imageHeight || 451}
+            fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         ) : (
           <PlaceholderImage

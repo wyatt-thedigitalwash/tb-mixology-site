@@ -42,16 +42,19 @@ export default function EventGallery() {
             <p className="font-body text-sm text-warm-gray mb-6">
               {event.category}
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="columns-2 md:columns-3 gap-4 space-y-4">
               {event.images.map((img) => (
-                <div key={img.src} className="overflow-hidden rounded-sm aspect-square relative">
+                <div
+                  key={img.src}
+                  className="break-inside-avoid overflow-hidden rounded-sm"
+                >
                   <Image
                     src={img.src}
                     alt={img.alt}
                     width={img.width}
                     height={img.height}
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-out"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="w-full h-auto hover:scale-105 transition-transform duration-500 ease-out"
                   />
                 </div>
               ))}
