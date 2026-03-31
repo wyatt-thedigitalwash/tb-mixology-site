@@ -200,14 +200,22 @@ export default function Home() {
             <InstagramFeed />
           </FadeIn>
           <FadeIn delay="delay-200">
-            <div className="text-center mt-10">
+            <div className="flex justify-center gap-8 mt-10">
               <a
                 href="https://instagram.com/tbmixology"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
               >
-                Follow Us on Instagram &rarr;
+                Instagram &rarr;
+              </a>
+              <a
+                href="https://www.tiktok.com/@tbmixology"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
+              >
+                TikTok &rarr;
               </a>
             </div>
           </FadeIn>
