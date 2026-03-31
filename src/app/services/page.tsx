@@ -89,7 +89,7 @@ export default function ServicesPage() {
                         key={addon.name}
                         className="border border-warm-gray/30 rounded-sm p-4 flex justify-between items-start gap-4"
                       >
-                        <span className="font-body text-sm text-primary">
+                        <span className="font-body text-base text-primary">
                           {addon.name}
                         </span>
                         <span className="font-accent text-accent text-lg whitespace-nowrap">

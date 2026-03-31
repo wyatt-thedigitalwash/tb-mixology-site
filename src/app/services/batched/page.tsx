@@ -105,19 +105,19 @@ export default function BatchedPage() {
                 <tbody className="font-body text-base text-primary">
                   <tr className="border-b border-warm-gray/15">
                     <td className="px-6 py-4">1 batch (~26–30 drinks)</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent text-xl md:text-2xl">
+                    <td className="px-6 py-4 text-right font-accent text-accent text-lg">
                       $120–$150
                     </td>
                   </tr>
                   <tr className="border-b border-warm-gray/15">
                     <td className="px-6 py-4">2+ batches (each)</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent text-xl md:text-2xl">
+                    <td className="px-6 py-4 text-right font-accent text-accent text-lg">
                       $110–$130
                     </td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4">Half batch</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent text-xl md:text-2xl">
+                    <td className="px-6 py-4 text-right font-accent text-accent text-lg">
                       $70–$85
                     </td>
                   </tr>

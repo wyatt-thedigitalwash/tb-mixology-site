@@ -118,8 +118,8 @@ export default function Home() {
                 >
                   <h3 className="font-heading text-xl text-primary mb-1">{pkg.guests}</h3>
                   <p className="font-body text-sm text-warm-gray mb-3">{pkg.bartenders}</p>
-                  <p className="font-body text-sm text-primary mb-1">{pkg.rate}</p>
-                  <p className="font-accent text-xl md:text-2xl text-accent">{pkg.starting}</p>
+                  <p className="font-body text-base text-primary mb-1">{pkg.rate}</p>
+                  <p className="font-accent text-lg text-accent">{pkg.starting}</p>
                 </div>
               ))}
             </div>
