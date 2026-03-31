@@ -39,10 +39,10 @@ export const events: EventData[] = [
     category: "Private Parties",
     layout: "grid-2x2",
     images: [
-      { src: "/images/cocktails-highrise-marina-ocean-view.webp", alt: "Cocktails with marina and ocean view from a high-rise rooftop", width: 1145, height: 763 },
-      { src: "/images/guests-cocktails-ocean-view-rooftop.webp", alt: "Guests enjoying cocktails at an oceanview rooftop party", width: 1032, height: 688 },
-      { src: "/images/cocktail-cheers-closeup-ocean-backdrop.webp", alt: "Cocktail cheers closeup with ocean backdrop", width: 1291, height: 861 },
-      { src: "/images/craft-cocktails-trio-closeup.webp", alt: "Three handcrafted cocktails held up at a rooftop party", width: 1510, height: 1006 },
+      { src: "/images/cocktails-highrise-marina-ocean-view.webp", alt: "Cocktails with marina and ocean view from a high-rise rooftop", width: 1544, height: 1029 },
+      { src: "/images/guests-cocktails-ocean-view-rooftop.webp", alt: "Guests enjoying cocktails at an oceanview rooftop party", width: 1364, height: 909 },
+      { src: "/images/cocktail-cheers-closeup-ocean-backdrop.webp", alt: "Cocktail cheers closeup with ocean backdrop", width: 1704, height: 1136 },
+      { src: "/images/craft-cocktails-trio-closeup.webp", alt: "Three handcrafted cocktails held up at a rooftop party", width: 2099, height: 1399 },
     ],
   },
   {
@@ -50,9 +50,9 @@ export const events: EventData[] = [
     category: "Private Parties",
     layout: "three-equal",
     images: [
-      { src: "/images/halloween-red-martini-skull-decor.webp", alt: "Halloween-themed red martini with dry ice smoke and skull decor", width: 1359, height: 906 },
-      { src: "/images/halloween-layered-purple-martini-pour.webp", alt: "Layered purple martini being poured at a Halloween party", width: 1042, height: 695 },
-      { src: "/images/halloween-group-cocktail-party.webp", alt: "Large group at a Halloween cocktail party at night", width: 979, height: 653 },
+      { src: "/images/halloween-red-martini-skull-decor.webp", alt: "Halloween-themed red martini with dry ice smoke and skull decor", width: 1765, height: 1176 },
+      { src: "/images/halloween-layered-purple-martini-pour.webp", alt: "Layered purple martini being poured at a Halloween party", width: 1401, height: 934 },
+      { src: "/images/halloween-group-cocktail-party.webp", alt: "Large group at a Halloween cocktail party at night", width: 1280, height: 853 },
     ],
   },
   {
@@ -60,10 +60,10 @@ export const events: EventData[] = [
     category: "Corporate",
     layout: "portrait-right-3",
     images: [
-      { src: "/images/friends-cheers-cocktails-upscale-venue.webp", alt: "Friends cheersing cocktails at an upscale venue", width: 1032, height: 688 },
-      { src: "/images/holiday-cocktails-rosemary-garnish.webp", alt: "Holiday cocktails with rosemary and espresso martini", width: 1242, height: 828 },
-      { src: "/images/gentlemen-cheers-cocktails-formal-event.webp", alt: "Gentlemen in suits cheersing cocktails and beer at a formal event", width: 969, height: 1292 },
-      { src: "/images/espresso-martinis-pair-bar-ambiance.webp", alt: "Two espresso martinis on a bar with warm ambient lighting", width: 1688, height: 1125 },
+      { src: "/images/friends-cheers-cocktails-upscale-venue.webp", alt: "Friends cheersing cocktails at an upscale venue", width: 1332, height: 888 },
+      { src: "/images/holiday-cocktails-rosemary-garnish.webp", alt: "Holiday cocktails with rosemary and espresso martini", width: 1678, height: 1118 },
+      { src: "/images/gentlemen-cheers-cocktails-formal-event.webp", alt: "Gentlemen in suits cheersing cocktails and beer at a formal event", width: 1363, height: 1817 },
+      { src: "/images/espresso-martinis-pair-bar-ambiance.webp", alt: "Two espresso martinis on a bar with warm ambient lighting", width: 2301, height: 1534 },
     ],
   },
   {
@@ -71,10 +71,10 @@ export const events: EventData[] = [
     category: "Weddings",
     layout: "two-portrait-two-landscape",
     images: [
-      { src: "/images/bride-wedding-reception-dance-floor.webp", alt: "Bride at wedding reception dance floor", width: 723, height: 1085 },
-      { src: "/images/wedding-party-toast-formal-reception.webp", alt: "Wedding party raising drinks in a formal toast at the reception", width: 1042, height: 695 },
-      { src: "/images/old-fashioned-berry-cocktail-fireside.webp", alt: "Old fashioned and berry cocktail by the fireside", width: 1218, height: 812 },
-      { src: "/images/martini-glasses-event-setup.webp", alt: "Rows of martini glasses ready for a wedding event", width: 558, height: 837 },
+      { src: "/images/bride-wedding-reception-dance-floor.webp", alt: "Bride at wedding reception dance floor", width: 930, height: 1396 },
+      { src: "/images/wedding-party-toast-formal-reception.webp", alt: "Wedding party raising drinks in a formal toast at the reception", width: 1354, height: 902 },
+      { src: "/images/old-fashioned-berry-cocktail-fireside.webp", alt: "Old fashioned and berry cocktail by the fireside", width: 1682, height: 1121 },
+      { src: "/images/martini-glasses-event-setup.webp", alt: "Rows of martini glasses ready for a wedding event", width: 734, height: 1101 },
     ],
   },
   {
@@ -82,9 +82,9 @@ export const events: EventData[] = [
     category: "Private Parties",
     layout: "portrait-left-2",
     images: [
-      { src: "/images/girlfriends-cheers-evening-patio-party.webp", alt: "Girlfriends cheersing cocktails at an evening patio party", width: 709, height: 1064 },
-      { src: "/images/strawberry-margaritas-tajin-rim.webp", alt: "Strawberry margaritas with Taj\u00edn rim closeup", width: 1915, height: 1276 },
-      { src: "/images/friends-laughing-cheers-cocktails-night.webp", alt: "Friends laughing and cheersing cocktails at night", width: 1064, height: 709 },
+      { src: "/images/girlfriends-cheers-evening-patio-party.webp", alt: "Girlfriends cheersing cocktails at an evening patio party", width: 913, height: 1369 },
+      { src: "/images/strawberry-margaritas-tajin-rim.webp", alt: "Strawberry margaritas with Taj\u00edn rim closeup", width: 2301, height: 1534 },
+      { src: "/images/friends-laughing-cheers-cocktails-night.webp", alt: "Friends laughing and cheersing cocktails at night", width: 1396, height: 931 },
     ],
   },
   {
@@ -92,9 +92,9 @@ export const events: EventData[] = [
     category: "Brand Collaborations",
     layout: "three-equal",
     images: [
-      { src: "/images/cocktail-class-setup-kahwa-station.webp", alt: "Cocktail class setup at Kawha coffee shop bar station", width: 1072, height: 715 },
-      { src: "/images/bartenders-cheers-colorful-cocktail-lineup.webp", alt: "Bartenders cheersing with a colorful cocktail lineup", width: 1113, height: 742 },
-      { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes on the bar", width: 1032, height: 688 },
+      { src: "/images/cocktail-class-setup-kahwa-station.webp", alt: "Cocktail class setup at Kawha coffee shop bar station", width: 1392, height: 928 },
+      { src: "/images/bartenders-cheers-colorful-cocktail-lineup.webp", alt: "Bartenders cheersing with a colorful cocktail lineup", width: 1487, height: 991 },
+      { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes on the bar", width: 1348, height: 898 },
     ],
   },
   {
@@ -102,9 +102,9 @@ export const events: EventData[] = [
     category: "Private Parties",
     layout: "three-equal",
     images: [
-      { src: "/images/costume-party-guests-craft-cocktails.webp", alt: "Guests in costume holding craft cocktails at a themed party", width: 1105, height: 736 },
-      { src: "/images/green-cocktail-spiral-garnish.webp", alt: "Green cocktail with spiral garnish closeup", width: 850, height: 1275 },
-      { src: "/images/spicy-paloma-tajin-rim-closeup.webp", alt: "Spicy paloma cocktail with Taj\u00edn rim", width: 758, height: 1347 },
+      { src: "/images/costume-party-guests-craft-cocktails.webp", alt: "Guests in costume holding craft cocktails at a themed party", width: 1431, height: 954 },
+      { src: "/images/green-cocktail-spiral-garnish.webp", alt: "Green cocktail with spiral garnish closeup", width: 1078, height: 1617 },
+      { src: "/images/spicy-paloma-tajin-rim-closeup.webp", alt: "Spicy paloma cocktail with Taj\u00edn rim", width: 991, height: 1763 },
     ],
   },
 ];

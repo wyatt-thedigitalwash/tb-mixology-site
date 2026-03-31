@@ -48,12 +48,12 @@ export default function DrinksPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
-              { src: "/images/craft-cocktails-trio-closeup.webp", alt: "Three handcrafted cocktails at a party", w: 1510, h: 1006 },
-              { src: "/images/strawberry-margaritas-tajin-rim.webp", alt: "Strawberry margaritas with Tajín rim", w: 1915, h: 1276 },
-              { src: "/images/old-fashioned-berry-cocktail-fireside.webp", alt: "Old fashioned and berry cocktail by the fireside", w: 1218, h: 812 },
-              { src: "/images/cocktail-cheers-closeup-ocean-backdrop.webp", alt: "Cocktail cheers with ocean backdrop", w: 1291, h: 861 },
-              { src: "/images/holiday-cocktails-rosemary-garnish.webp", alt: "Holiday cocktails with rosemary garnish", w: 1242, h: 828 },
-              { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes", w: 1032, h: 688 },
+              { src: "/images/craft-cocktails-trio-closeup.webp", alt: "Three handcrafted cocktails at a party", w: 2099, h: 1399 },
+              { src: "/images/strawberry-margaritas-tajin-rim.webp", alt: "Strawberry margaritas with Tajín rim", w: 2301, h: 1534 },
+              { src: "/images/old-fashioned-berry-cocktail-fireside.webp", alt: "Old fashioned and berry cocktail by the fireside", w: 1682, h: 1121 },
+              { src: "/images/cocktail-cheers-closeup-ocean-backdrop.webp", alt: "Cocktail cheers with ocean backdrop", w: 1704, h: 1136 },
+              { src: "/images/holiday-cocktails-rosemary-garnish.webp", alt: "Holiday cocktails with rosemary garnish", w: 1678, h: 1118 },
+              { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes", w: 1348, h: 898 },
             ].map((img) => (
               <FadeIn key={img.src}>
                 <div className="overflow-hidden rounded-sm relative aspect-[3/2]">
