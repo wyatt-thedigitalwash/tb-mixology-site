@@ -6,7 +6,10 @@ import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
 import ReviewCard from "@/components/ReviewCard";
 import InstagramFeed from "@/components/InstagramFeed";
+import { Palette, Leaf, Sparkles, Tag, Heart, ShieldCheck } from "lucide-react";
 import { services, addOnServices, packages, homeReviews, highlights } from "@/lib/data/home";
+
+const highlightIcons = [Palette, Leaf, Sparkles, Tag, Heart, ShieldCheck];
 
 export const metadata: Metadata = {
   title: "TB Mixology | Tampa Bay Event Bartending",
@@ -139,23 +142,24 @@ export default function Home() {
 
       {/* ── Differentiator ── */}
       <section className="py-20 md:py-28 bg-primary">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
             <SectionHeading title="Not Your Average Mobile Bar" light />
           </FadeIn>
-          <FadeIn delay="delay-100">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5">
-              {highlights.map((h) => (
-                <li
-                  key={h}
-                  className="flex items-start gap-3 font-body text-white/80 text-sm md:text-base"
-                >
-                  <span className="text-accent mt-0.5 shrink-0">&#10003;</span>
-                  {h}
-                </li>
-              ))}
-            </ul>
-          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {highlights.map((h, i) => {
+              const Icon = highlightIcons[i];
+              return (
+                <FadeIn key={h.title} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                  <div className="border border-white/10 rounded-sm p-6 text-center hover:border-accent/30 transition-colors duration-200 ease-out">
+                    <Icon size={28} className="text-accent mx-auto mb-4" strokeWidth={1.5} />
+                    <h3 className="font-heading text-lg text-secondary mb-2">{h.title}</h3>
+                    <p className="font-body text-sm text-white/60 leading-relaxed">{h.description}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
         </div>
       </section>
 

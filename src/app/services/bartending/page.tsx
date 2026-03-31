@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import { MessageSquare, BookOpen, User, Wrench, Snowflake, FileText } from "lucide-react";
 import { packages, included, bartendingAddOns } from "@/lib/data/bartending";
+
+const includedIcons = [MessageSquare, BookOpen, User, Wrench, Snowflake, FileText];
 
 export const metadata: Metadata = {
   title: "Bartending Services | TB Mixology — Tampa Bay Event Bartending",
@@ -37,7 +40,7 @@ export default function BartendingPage() {
 
       {/* What's Included */}
       <section className="py-20 md:py-28 bg-primary">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
             <SectionHeading
               label="The Experience"
@@ -45,19 +48,20 @@ export default function BartendingPage() {
               light
             />
           </FadeIn>
-          <FadeIn>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {included.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 font-body text-secondary/80 text-sm"
-                >
-                  <span className="text-accent mt-0.5 shrink-0">&#10003;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {included.map((item, i) => {
+              const Icon = includedIcons[i];
+              return (
+                <FadeIn key={item.title} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                  <div className="border border-white/10 rounded-sm p-6 text-center hover:border-accent/30 transition-colors duration-200 ease-out">
+                    <Icon size={28} className="text-accent mx-auto mb-4" strokeWidth={1.5} />
+                    <h3 className="font-heading text-lg text-secondary mb-2">{item.title}</h3>
+                    <p className="font-body text-sm text-white/60 leading-relaxed">{item.description}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
         </div>
       </section>
 

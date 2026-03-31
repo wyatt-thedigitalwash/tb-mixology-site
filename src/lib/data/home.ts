@@ -98,10 +98,10 @@ export const homeReviews = [
 ];
 
 export const highlights = [
-  "Fully custom cocktail menus for every event",
-  "Fresh ingredients \u2014 always, no exceptions",
-  "Creative, handcrafted garnishes",
-  "Cocktails named after the people who matter",
-  "Woman-owned & operated",
-  "Fully insured up to $2,000,000",
+  { title: "Fully Custom Menus", description: "Every cocktail menu is created from scratch for your event" },
+  { title: "Fresh Ingredients", description: "Real fruit, real herbs, real flavor \u2014 always, no exceptions" },
+  { title: "Creative Garnishes", description: "Handcrafted garnishes that make every drink a moment" },
+  { title: "Named Cocktails", description: "Signature drinks named after the people who matter" },
+  { title: "Woman-Owned", description: "Built and operated by women who care about every detail" },
+  { title: "Fully Insured", description: "Covered up to $2,000,000 for your peace of mind" },
 ];

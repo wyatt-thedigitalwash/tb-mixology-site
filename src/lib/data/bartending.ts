@@ -26,12 +26,12 @@ export const packages = [
 ];
 
 export const included = [
-  "Virtual consultation to plan your event",
-  "Custom cocktail menu designed for your theme",
-  "Professional bartender service",
-  "Full bar setup and breakdown",
-  "Ice, mixers, and garnishes",
-  "Custom printed cocktail menus",
+  { title: "Virtual Consultation", description: "We plan every detail of your bar experience in advance" },
+  { title: "Custom Cocktail Menu", description: "Designed around your theme, your palette, your guests" },
+  { title: "Professional Bartenders", description: "Experienced, personable, and always on point" },
+  { title: "Full Setup & Breakdown", description: "We arrive early and leave everything spotless" },
+  { title: "Ice, Mixers & Garnishes", description: "All the essentials — fresh, prepped, and ready" },
+  { title: "Printed Menus", description: "Custom printed cocktail menus for your bar display" },
 ];
 
 export const bartendingAddOns = [
