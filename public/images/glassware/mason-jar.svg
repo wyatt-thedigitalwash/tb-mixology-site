@@ -1,14 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Lid band -->
-  <rect x="34" y="28" width="52" height="8" rx="1" />
-  <!-- Neck -->
-  <line x1="37" y1="36" x2="36" y2="46" />
-  <line x1="83" y1="36" x2="84" y2="46" />
-  <!-- Body -->
-  <path d="M36 46 Q30 52 30 80 Q30 115 36 125" />
-  <path d="M84 46 Q90 52 90 80 Q90 115 84 125" />
-  <!-- Base -->
-  <path d="M36 125 Q36 132 60 132 Q84 132 84 125" />
-  <!-- Handle -->
-  <path d="M84 54 Q98 60 98 80 Q98 100 84 106" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="36" y="24" width="48" height="8" rx="1" />
+  <line x1="38" y1="32" x2="37" y2="42" />
+  <line x1="82" y1="32" x2="83" y2="42" />
+  <path d="M37 42 Q28 50 28 82 Q28 118 38 128" />
+  <path d="M83 42 Q92 50 92 82 Q92 118 82 128" />
+  <path d="M38 128 Q38 135 60 135 Q82 135 82 128" />
+  <path d="M83 52 Q96 58 96 82 Q96 106 83 112" />
 </svg>

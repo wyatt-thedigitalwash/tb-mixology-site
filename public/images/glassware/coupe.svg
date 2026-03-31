@@ -1,9 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Bowl — wide shallow saucer, single continuous shape -->
-  <path d="M22 50 Q22 35 40 30 Q50 28 60 28 Q70 28 80 30 Q98 35 98 50" />
-  <path d="M22 50 Q40 62 60 64 Q80 62 98 50" />
-  <!-- Stem -->
-  <line x1="60" y1="64" x2="60" y2="118" />
-  <!-- Base -->
-  <ellipse cx="60" cy="120" rx="22" ry="5" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 58 Q20 30 60 26 Q100 30 100 58" />
+  <path d="M20 58 Q40 72 60 74 Q80 72 100 58" />
+  <line x1="60" y1="74" x2="60" y2="120" />
+  <ellipse cx="60" cy="122" rx="24" ry="5" />
 </svg>
