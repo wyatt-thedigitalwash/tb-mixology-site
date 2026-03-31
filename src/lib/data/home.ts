@@ -5,8 +5,8 @@ export const services = [
       "Full-service bartending designed around your event. Custom cocktail menus, seamless service, and a bar experience aligned with your aesthetic.",
     href: "/services/bartending",
     imageLabel: "Event bartending photo",
-    imageSrc: "/images/bartender-shaking-cocktail-mobile-bar.webp",
-    imageAlt: "TB Mixology bartender shaking a cocktail at a mobile bar",
+    imageSrc: "/images/bartender-pouring-cocktails-private-event.webp",
+    imageAlt: "TB Mixology bartender pouring cocktails at a private event",
   },
   {
     title: "Batch Cocktails",
