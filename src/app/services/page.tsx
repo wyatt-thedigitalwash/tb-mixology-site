@@ -92,7 +92,7 @@ export default function ServicesPage() {
                         <span className="font-body text-sm text-primary">
                           {addon.name}
                         </span>
-                        <span className="font-accent text-accent text-base whitespace-nowrap">
+                        <span className="font-accent text-accent text-lg whitespace-nowrap">
                           {addon.price}
                         </span>
                       </div>
