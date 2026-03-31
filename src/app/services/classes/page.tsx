@@ -85,11 +85,22 @@ export default function ClassesPage() {
               subtitle="Cocktail classes make a memorable addition to any kind of gathering."
             />
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {perfectFor.map((item, i) => (
-              <FadeIn key={item} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : i === 3 ? "delay-300" : ""}>
-                <div className="border border-warm-gray/30 rounded-sm p-6 text-center hover:border-accent/50 transition-colors duration-200 ease-out">
-                  <h3 className="font-heading text-lg text-primary">{item}</h3>
+              <FadeIn key={item.name} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : i === 3 ? "delay-300" : ""}>
+                <div className="border border-warm-gray/30 rounded-sm overflow-hidden hover:border-accent/50 transition-colors duration-200 ease-out">
+                  <div className="relative aspect-[3/2]">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="font-heading text-lg text-primary">{item.name}</h3>
+                  </div>
                 </div>
               </FadeIn>
             ))}

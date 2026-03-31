@@ -21,6 +21,7 @@ const whatsIncluded = [
   "Elegant service ware",
   "Professional tableside service",
   "Setup and breakdown",
+  "Available for events of any size",
 ];
 
 const perfectFor = [
@@ -55,7 +56,7 @@ export default function CaviarPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn>
-              <div className="relative aspect-video rounded-sm overflow-hidden">
+              <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
                 <Image
                   src="/images/bartender-torching-cocktail-event.webp"
                   alt="TB Mixology bartender preparing a torched cocktail at an event"

@@ -128,13 +128,12 @@ export default function BartendingPage() {
       </section>
 
       {/* Bartending Add-Ons */}
-      <section className="py-20 md:py-28 bg-primary">
+      <section className="py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6">
           <FadeIn>
             <SectionHeading
               label="Extras"
               title="Available Add-Ons"
-              light
             />
           </FadeIn>
           <FadeIn>
@@ -142,9 +141,9 @@ export default function BartendingPage() {
               {bartendingAddOns.map((addon) => (
                 <div
                   key={addon.name}
-                  className="border border-white/15 rounded-sm p-4 flex justify-between items-start gap-4"
+                  className="border border-warm-gray/30 rounded-sm p-4 flex justify-between items-start gap-4"
                 >
-                  <span className="font-body text-sm text-secondary/80">
+                  <span className="font-body text-sm text-primary">
                     {addon.name}
                   </span>
                   <span className="font-accent text-accent text-sm whitespace-nowrap">

@@ -57,10 +57,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Add-On Services */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="Add-On Services" title="Enhance Your Event" />
+            <SectionHeading label="Add-On Services" title="Enhance Your Event" light />
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {addOnServices.map((service, i) => (
@@ -73,26 +73,26 @@ export default function ServicesPage() {
       </section>
 
       {/* Add-Ons Pricing */}
-      <section className="py-20 md:py-28 bg-primary">
+      <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="Pricing" title="Add-Ons & Extras" light />
+            <SectionHeading label="Pricing" title="Add-Ons & Extras" />
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {addOnCategories.map((category) => (
               <FadeIn key={category.title}>
                 <div>
-                  <h3 className="font-heading text-xl text-secondary mb-5">
+                  <h3 className="font-heading text-xl text-primary mb-5">
                     {category.title}
                   </h3>
                   <div className="space-y-3">
                     {category.items.map((addon) => (
                       <div
                         key={addon.name}
-                        className="border border-white/15 rounded-sm p-4 flex justify-between items-start gap-4"
+                        className="border border-warm-gray/30 rounded-sm p-4 flex justify-between items-start gap-4"
                       >
-                        <span className="font-body text-sm text-secondary/80">
+                        <span className="font-body text-sm text-primary">
                           {addon.name}
                         </span>
                         <span className="font-accent text-accent text-sm whitespace-nowrap">

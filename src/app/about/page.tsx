@@ -63,10 +63,10 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-primary py-20 md:py-28 px-6">
+      <section className="py-20 md:py-28 px-6">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <SectionHeading title="The Team" centered light />
+            <SectionHeading title="The Team" centered />
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-12">
             {team.map((member, i) => (
@@ -77,7 +77,7 @@ export default function AboutPage() {
                     aspect="square"
                     className="rounded-lg mb-4"
                   />
-                  <h3 className="font-heading text-xl text-secondary">
+                  <h3 className="font-heading text-xl text-primary">
                     {member.name}
                   </h3>
                   <p className="text-warm-gray font-body text-sm mt-1">
