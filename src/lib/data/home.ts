@@ -79,21 +79,21 @@ export const packages = [
 export const homeReviews = [
   {
     quote:
-      "TB Mixology made our wedding reception absolutely magical. The custom cocktails were a huge hit and the bartenders were so professional. Guests are still talking about the drinks!",
-    name: "Jessica & Mark",
-    eventType: "Wedding Reception",
+      "We used TB Mixology for a retirement party and they were outstanding from start to finish. They created a custom menu tailored towards the event, worked with us on the supplies and items needed, and were extremely responsive.",
+    name: "Jaret H.",
+    eventType: "Retirement Party",
   },
   {
     quote:
-      "We hired them for a corporate holiday party and it exceeded every expectation. The cocktail menu was tailored perfectly to our brand colors and theme. Seamless from start to finish.",
-    name: "Lauren M.",
+      "We\u2019ve had the pleasure of working with TB Mixology for multiple events, each hosting over 100 guests. They curated a cocktail menu tailored specifically to our brand and even made all juices in-house \u2014 nothing was store bought.",
+    name: "Nicholas T.",
     eventType: "Corporate Event",
   },
   {
     quote:
-      "The batch cocktails for my birthday were incredible \u2014 fresh, balanced, and beautifully presented. I didn\u2019t have to worry about a thing. Highly recommend for any event!",
-    name: "Danielle R.",
-    eventType: "Birthday Party",
+      "The absolute BEST! We hired TB Mixology for a private party, and they were incredible. Professional setup, great energy, and delicious custom drinks all night. Our guests loved them!",
+    name: "Toni J.",
+    eventType: "Private Party",
   },
 ];
 
