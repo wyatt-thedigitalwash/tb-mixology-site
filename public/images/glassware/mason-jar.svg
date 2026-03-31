@@ -1,9 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="36" y="24" width="48" height="8" rx="1" />
-  <line x1="38" y1="32" x2="37" y2="42" />
-  <line x1="82" y1="32" x2="83" y2="42" />
-  <path d="M37 42 Q28 50 28 82 Q28 118 38 128" />
-  <path d="M83 42 Q92 50 92 82 Q92 118 82 128" />
-  <path d="M38 128 Q38 135 60 135 Q82 135 82 128" />
-  <path d="M83 52 Q96 58 96 82 Q96 106 83 112" />
+  <!-- Lid band -->
+  <rect x="33" y="22" width="54" height="7" rx="1" />
+  <!-- Threaded neck — slightly narrower than body -->
+  <line x1="35" y1="29" x2="35" y2="40" />
+  <line x1="85" y1="29" x2="85" y2="40" />
+  <!-- Shoulder — neck widens to body -->
+  <line x1="35" y1="40" x2="30" y2="48" />
+  <line x1="85" y1="40" x2="90" y2="48" />
+  <!-- Body — straight sided cylinder -->
+  <line x1="30" y1="48" x2="30" y2="128" />
+  <line x1="90" y1="48" x2="90" y2="128" />
+  <!-- Base -->
+  <line x1="30" y1="128" x2="90" y2="128" />
+  <!-- Handle -->
+  <path d="M90 55 C102 58, 104 78, 104 85 C104 92, 102 112, 90 115" />
 </svg>

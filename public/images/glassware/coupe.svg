@@ -1,6 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M20 58 Q20 30 60 26 Q100 30 100 58" />
-  <path d="M20 58 Q40 72 60 74 Q80 72 100 58" />
-  <line x1="60" y1="74" x2="60" y2="120" />
-  <ellipse cx="60" cy="122" rx="24" ry="5" />
+  <!-- Rim ellipse -->
+  <ellipse cx="60" cy="40" rx="38" ry="7" />
+  <!-- Left side of bowl curving down to stem -->
+  <path d="M22 40 C22 62, 40 72, 60 72" />
+  <!-- Right side of bowl curving down to stem -->
+  <path d="M98 40 C98 62, 80 72, 60 72" />
+  <!-- Stem -->
+  <line x1="60" y1="72" x2="60" y2="118" />
+  <!-- Base -->
+  <ellipse cx="60" cy="120" rx="22" ry="5" />
 </svg>
