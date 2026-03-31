@@ -12,14 +12,13 @@ export default function InstagramFeed() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
       {posts.map((post) => (
-        <div key={post.src} className="overflow-hidden rounded-sm">
+        <div key={post.src} className="overflow-hidden rounded-sm relative aspect-[3/2]">
           <Image
             src={post.src}
             alt={post.alt}
-            width={post.width}
-            height={post.height}
+            fill
             sizes="(max-width: 768px) 100vw, 33vw"
-            className="w-full h-auto hover:scale-105 transition-transform duration-500 ease-out"
+            className="object-cover hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>
       ))}
