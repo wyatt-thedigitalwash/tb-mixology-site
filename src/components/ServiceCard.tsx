@@ -21,7 +21,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <Link href={href} className="group block">
-      <div className="overflow-hidden rounded-sm aspect-[3/2] relative">
+      <div className="overflow-hidden rounded-sm aspect-[4/5] relative">
         {imageSrc ? (
           <Image
             src={imageSrc}

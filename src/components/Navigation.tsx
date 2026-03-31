@@ -9,6 +9,7 @@ const services = [
   { href: "/services/batched", label: "Batch Cocktails" },
   { href: "/services/classes", label: "Cocktail Classes" },
   { href: "/services/glassware", label: "Glassware Rental" },
+  { href: "/services/caviar", label: "Caviar Service" },
 ];
 
 const navLinks = [

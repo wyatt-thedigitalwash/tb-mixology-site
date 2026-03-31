@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/classes",
     "/services/batched",
     "/services/glassware",
+    "/services/caviar",
     "/drinks",
     "/events",
     "/reviews",

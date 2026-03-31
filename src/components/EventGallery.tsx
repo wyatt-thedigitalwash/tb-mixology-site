@@ -28,17 +28,23 @@ function Img({ img, sizes, className }: { img: EventImage; sizes: string; classN
 function MobileStack({ images }: { images: EventImage[] }) {
   return (
     <div className="flex flex-col gap-3 md:hidden">
-      {images.map((img) => (
-        <div key={img.src} className="overflow-hidden rounded-sm relative aspect-[3/2]">
-          <Image
-            src={img.src}
-            alt={img.alt}
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-      ))}
+      {images.map((img) => {
+        const isPortrait = img.height > img.width;
+        return (
+          <div
+            key={img.src}
+            className={`overflow-hidden rounded-sm relative ${isPortrait ? "aspect-[3/4]" : "aspect-[3/2]"}`}
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -33,7 +33,7 @@ export const addOnServices = [
     title: "Caviar Service",
     description:
       "An all-inclusive, elevated tasting experience for your guests. The perfect premium add-on.",
-    href: "/services/bartending",
+    href: "/services/caviar",
     imageLabel: "Caviar service photo",
     imageSrc: "/images/bartender-torching-cocktail-event.webp",
     imageAlt: "TB Mixology bartender preparing a torched cocktail",

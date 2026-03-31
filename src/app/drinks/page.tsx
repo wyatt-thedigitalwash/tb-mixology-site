@@ -43,6 +43,35 @@ export default function DrinksPage() {
         </div>
       </section>
 
+      {/* Drink Photos */}
+      <section className="pb-20 md:pb-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              { src: "/images/craft-cocktails-trio-closeup.webp", alt: "Three handcrafted cocktails at a party", w: 1200, h: 800 },
+              { src: "/images/strawberry-margaritas-tajin-rim.webp", alt: "Strawberry margaritas with Tajín rim", w: 1200, h: 800 },
+              { src: "/images/old-fashioned-berry-cocktail-fireside.webp", alt: "Old fashioned and berry cocktail by the fireside", w: 1200, h: 800 },
+              { src: "/images/cocktail-cheers-closeup-ocean-backdrop.webp", alt: "Cocktail cheers with ocean backdrop", w: 1200, h: 800 },
+              { src: "/images/holiday-cocktails-rosemary-garnish.webp", alt: "Holiday cocktails with rosemary garnish", w: 1200, h: 800 },
+              { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes", w: 1200, h: 800 },
+            ].map((img) => (
+              <FadeIn key={img.src}>
+                <div className="overflow-hidden rounded-sm relative aspect-[3/2]">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={img.w}
+                    height={img.h}
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 md:py-32 bg-primary">
         <div className="max-w-3xl mx-auto px-6 text-center">
