@@ -9,6 +9,7 @@ interface ServiceCardProps {
   imageLabel: string;
   imageSrc?: string;
   imageAlt?: string;
+  light?: boolean;
 }
 
 export default function ServiceCard({
@@ -18,6 +19,7 @@ export default function ServiceCard({
   imageLabel,
   imageSrc,
   imageAlt,
+  light = false,
 }: ServiceCardProps) {
   return (
     <Link href={href} className="group block">
@@ -37,10 +39,10 @@ export default function ServiceCard({
           />
         )}
       </div>
-      <h3 className="font-heading text-xl md:text-2xl text-primary mt-5 mb-2 group-hover:text-accent transition-colors duration-200 ease-out">
+      <h3 className={`font-heading text-xl md:text-2xl mt-5 mb-2 group-hover:text-accent transition-colors duration-200 ease-out ${light ? "text-secondary" : "text-primary"}`}>
         {title}
       </h3>
-      <p className="text-warm-gray font-body text-sm leading-relaxed">
+      <p className={`font-body text-sm leading-relaxed ${light ? "text-white/60" : "text-warm-gray"}`}>
         {description}
       </p>
     </Link>

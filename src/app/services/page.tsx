@@ -40,7 +40,7 @@ export default function ServicesPage() {
         />
       </section>
 
-      {/* Core Services */}
+      {/* Core Services + Add-Ons */}
       <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
@@ -49,25 +49,22 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, i) => (
               <FadeIn key={service.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
-                <ServiceCard {...service} />
+                <ServiceCard {...service} light />
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Add-On Services */}
-      <section className="py-20 md:py-28 bg-primary">
-        <div className="max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <SectionHeading label="Add-On Services" title="Enhance Your Event" light />
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {addOnServices.map((service, i) => (
-              <FadeIn key={service.title} delay={i === 1 ? "delay-100" : ""}>
-                <ServiceCard {...service} />
-              </FadeIn>
-            ))}
+          <div className="mt-20">
+            <FadeIn>
+              <SectionHeading label="Add-On Services" title="Enhance Your Event" light />
+            </FadeIn>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {addOnServices.map((service, i) => (
+                <FadeIn key={service.title} delay={i === 1 ? "delay-100" : ""}>
+                  <ServiceCard {...service} light />
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </div>
       </section>
