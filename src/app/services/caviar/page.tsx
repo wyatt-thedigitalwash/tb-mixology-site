@@ -58,8 +58,8 @@ export default function CaviarPage() {
             <FadeIn>
               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
                 <Image
-                  src="/images/bartender-torching-cocktail-event.webp"
-                  alt="TB Mixology bartender preparing a torched cocktail at an event"
+                  src="/images/guest-enjoying-caviar-service.webp"
+                  alt="Guest enjoying the all-inclusive caviar service at a TB Mixology event"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
