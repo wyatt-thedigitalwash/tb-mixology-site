@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Body — slight taper -->
+  <path d="M30 50 L35 125 L85 125 L90 50" />
+  <!-- Rim -->
+  <ellipse cx="60" cy="50" rx="30" ry="6" />
+  <!-- Base -->
+  <line x1="35" y1="125" x2="85" y2="125" />
+  <!-- Bottom thickness -->
+  <path d="M35 125 Q35 132 60 132 Q85 132 85 125" />
+</svg>

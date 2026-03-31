@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Body — taller and narrower than highball -->
+  <path d="M38 22 L40 130 L80 130 L82 22" />
+  <!-- Rim -->
+  <ellipse cx="60" cy="22" rx="22" ry="5" />
+  <!-- Base -->
+  <path d="M40 130 Q40 137 60 137 Q80 137 80 130" />
+</svg>

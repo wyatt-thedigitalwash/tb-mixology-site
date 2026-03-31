@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
-import PlaceholderImage from "@/components/PlaceholderImage";
 import { glasswareTypes } from "@/lib/data/glassware";
 
 export const metadata: Metadata = {
@@ -49,7 +48,7 @@ export default function GlasswarePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {glasswareTypes.map((glass, i) => (
               <FadeIn
-                key={glass}
+                key={glass.name}
                 delay={
                   i % 5 === 1
                     ? "delay-100"
@@ -63,13 +62,16 @@ export default function GlasswarePage() {
                 }
               >
                 <div className="text-center group">
-                  <PlaceholderImage
-                    label={glass}
-                    className="rounded-sm group-hover:opacity-80 transition-opacity duration-200 ease-out"
-                    aspect="square"
-                  />
+                  <div className="aspect-square flex items-center justify-center p-6 rounded-sm border border-white/10 group-hover:border-accent/30 transition-colors duration-200 ease-out">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={glass.icon}
+                      alt={glass.name}
+                      className="w-full h-full text-secondary/70 group-hover:text-secondary transition-colors duration-200 ease-out"
+                    />
+                  </div>
                   <h3 className="font-heading text-lg text-secondary mt-3">
-                    {glass}
+                    {glass.name}
                   </h3>
                 </div>
               </FadeIn>

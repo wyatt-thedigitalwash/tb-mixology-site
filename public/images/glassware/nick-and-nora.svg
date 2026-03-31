@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Rounded bell bowl -->
+  <path d="M32 45 Q30 62 42 72 Q50 78 60 78 Q70 78 78 72 Q90 62 88 45" />
+  <!-- Rim -->
+  <ellipse cx="60" cy="45" rx="28" ry="6" />
+  <!-- Stem -->
+  <line x1="60" y1="78" x2="60" y2="120" />
+  <!-- Base -->
+  <ellipse cx="60" cy="122" rx="20" ry="5" />
+</svg>
