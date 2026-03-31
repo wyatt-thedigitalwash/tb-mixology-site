@@ -102,7 +102,7 @@ export default function BatchedPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="font-body text-sm text-primary">
+                <tbody className="font-body text-base text-primary">
                   <tr className="border-b border-warm-gray/15">
                     <td className="px-6 py-4">1 batch (~26–30 drinks)</td>
                     <td className="px-6 py-4 text-right font-accent text-accent text-xl md:text-2xl">

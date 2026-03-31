@@ -89,7 +89,7 @@ export default function BartendingPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="font-body text-sm text-primary">
+                <tbody className="font-body text-base text-primary">
                   {packages.map((pkg, i) => (
                     <tr
                       key={pkg.guests}
@@ -98,7 +98,7 @@ export default function BartendingPage() {
                       <td className="px-6 py-4 font-medium">{pkg.guests}</td>
                       <td className="px-6 py-4 text-warm-gray hidden sm:table-cell">{pkg.bartenders}</td>
                       <td className="px-6 py-4 text-warm-gray hidden md:table-cell">{pkg.rate}</td>
-                      <td className="px-6 py-4 text-right font-accent text-accent font-medium">
+                      <td className="px-6 py-4 text-right font-accent text-accent text-lg md:text-xl font-medium">
                         {pkg.starting}
                       </td>
                     </tr>
