@@ -14,13 +14,13 @@ export default function ReviewCard({
   stars = 5,
 }: ReviewCardProps) {
   return (
-    <div className="border border-warm-gray/20 p-6 md:p-8 rounded-sm">
+    <div className="border border-warm-gray/20 p-6 md:p-8 rounded-sm h-full flex flex-col">
       <div className="flex gap-1 mb-4">
         {Array.from({ length: stars }).map((_, i) => (
           <Star key={i} size={16} className="fill-accent text-accent" />
         ))}
       </div>
-      <p className="font-accent text-lg text-primary leading-relaxed mb-5 italic">
+      <p className="font-accent text-lg text-primary leading-relaxed mb-5 italic flex-1">
         &ldquo;{quote}&rdquo;
       </p>
       <div>

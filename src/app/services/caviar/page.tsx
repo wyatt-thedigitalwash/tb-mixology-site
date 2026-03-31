@@ -28,7 +28,7 @@ const perfectFor = [
   "Weddings",
   "Corporate Events",
   "VIP Receptions",
-  "Upscale Private Parties",
+  "Private Parties",
 ];
 
 export default function CaviarPage() {
