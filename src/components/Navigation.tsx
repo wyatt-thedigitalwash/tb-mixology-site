@@ -64,7 +64,13 @@ export default function Navigation() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-heading text-2xl text-primary tracking-wide">
+        <Link href="/" className="font-heading text-2xl text-primary tracking-wide flex items-center gap-1">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/tb-mixology-glass-logo.svg"
+            alt=""
+            className="w-8 h-8"
+          />
           TB Mixology
         </Link>
 
@@ -81,7 +87,7 @@ export default function Navigation() {
               >
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-sm font-body text-warm-gray hover:text-primary transition-colors duration-200 ease-out tracking-wide flex items-center gap-1"
+                  className="text-sm font-body text-primary/70 hover:text-primary transition-colors duration-200 ease-out tracking-wide flex items-center gap-1"
                 >
                   {link.label}
                   <ChevronDown
@@ -118,7 +124,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-body text-warm-gray hover:text-primary transition-colors duration-200 ease-out tracking-wide"
+                className="text-sm font-body text-primary/70 hover:text-primary transition-colors duration-200 ease-out tracking-wide"
               >
                 {link.label}
               </Link>

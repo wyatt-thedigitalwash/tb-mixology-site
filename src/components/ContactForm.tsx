@@ -15,9 +15,19 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     const data: Record<string, string> = {};
+    const services: string[] = [];
     formData.forEach((value, key) => {
-      if (typeof value === "string") data[key] = value;
+      if (typeof value === "string") {
+        if (key === "serviceType") {
+          services.push(value);
+        } else {
+          data[key] = value;
+        }
+      }
     });
+    if (services.length > 0) {
+      data.serviceType = services.join(", ");
+    }
 
     try {
       const res = await fetch("/api/contact", {
@@ -210,24 +220,25 @@ export default function ContactForm() {
             />
           </div>
           <div className="md:col-span-2">
-            <label htmlFor="serviceType" className={labelClass}>
-              What service are you interested in?
+            <label className={labelClass}>
+              What services are you interested in? (select all that apply)
             </label>
-            <select
-              id="serviceType"
-              name="serviceType"
-              className={`${inputClass} cursor-pointer`}
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Select a service
-              </option>
-              {serviceOptions.map((opt) => (
-                <option key={opt} value={opt} className="bg-secondary text-primary">
-                  {opt}
-                </option>
+            <div className="flex flex-wrap gap-x-6 gap-y-3 mt-2">
+              {serviceOptions.map((option) => (
+                <label
+                  key={option}
+                  className="flex items-center gap-2 cursor-pointer text-sm text-warm-gray font-body hover:text-primary transition-colors duration-200 ease-out"
+                >
+                  <input
+                    type="checkbox"
+                    name="serviceType"
+                    value={option}
+                    className="accent-accent"
+                  />
+                  {option}
+                </label>
               ))}
-            </select>
+            </div>
           </div>
         </div>
       </div>

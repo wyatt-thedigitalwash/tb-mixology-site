@@ -3,7 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import Image from "next/image";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import { team, values } from "@/lib/data/about";
+import { team, staff, values } from "@/lib/data/about";
 
 export const metadata: Metadata = {
   title: "About | TB Mixology — Tampa Bay Event Bartending",
@@ -68,9 +68,9 @@ export default function AboutPage() {
           <FadeIn>
             <SectionHeading title="The Team" centered />
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-12 max-w-2xl mx-auto">
             {team.map((member, i) => (
-              <FadeIn key={member.name} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+              <FadeIn key={member.name} delay={i === 1 ? "delay-100" : ""}>
                 <div className="text-center">
                   <PlaceholderImage
                     label={member.img}
@@ -78,6 +78,26 @@ export default function AboutPage() {
                     className="rounded-lg mb-4"
                   />
                   <h3 className="font-heading text-xl text-primary">
+                    {member.name}
+                  </h3>
+                  <p className="text-warm-gray font-body text-sm mt-1">
+                    {member.role}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mt-12">
+            {staff.map((member, i) => (
+              <FadeIn key={`staff-${i}`} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                <div className="text-center">
+                  <PlaceholderImage
+                    label={member.img}
+                    aspect="square"
+                    className="rounded-lg mb-4"
+                  />
+                  <h3 className="font-heading text-lg text-primary">
                     {member.name}
                   </h3>
                   <p className="text-warm-gray font-body text-sm mt-1">

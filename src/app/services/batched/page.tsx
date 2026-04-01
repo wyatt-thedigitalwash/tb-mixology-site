@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import DrinkMenu from "@/components/DrinkMenu";
+import SmoothScrollLink from "@/components/SmoothScrollLink";
 import Image from "next/image";
 import { details } from "@/lib/data/batched";
 
@@ -24,7 +26,7 @@ export default function BatchedPage() {
         <SectionHeading
           label="Services"
           title="Batched Cocktails"
-          subtitle="Handcrafted cocktail batches mixed, prepped, and delivered to your door — ready to pour and enjoy."
+          subtitle="Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Ideal for hosting with ease while still offering a polished, consistent drink experience."
         />
         <div className="text-center mt-8">
           <Link
@@ -58,12 +60,12 @@ export default function BatchedPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/drinks"
+              <SmoothScrollLink
+                href="#flavors"
                 className="inline-block text-accent font-body text-sm tracking-wide hover:text-accent/80 transition-colors duration-200 ease-out"
               >
-                View Full Flavor Menu &rarr;
-              </Link>
+                See Flavor Menu &darr;
+              </SmoothScrollLink>
             </FadeIn>
             <FadeIn delay="delay-100">
               <div className="relative aspect-video rounded-sm overflow-hidden">
@@ -105,19 +107,24 @@ export default function BatchedPage() {
                 <tbody className="font-body text-base text-primary">
                   <tr className="border-b border-warm-gray/15">
                     <td className="px-6 py-4">1 batch (~26–30 drinks)</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent text-lg">
+                    <td className="px-6 py-4 text-right font-accent text-primary text-lg">
                       $120–$150
                     </td>
                   </tr>
                   <tr className="border-b border-warm-gray/15">
                     <td className="px-6 py-4">2+ batches (each)</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent text-lg">
+                    <td className="px-6 py-4 text-right font-accent text-primary text-lg">
                       $110–$130
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-6 py-4">Half batch</td>
-                    <td className="px-6 py-4 text-right font-accent text-accent text-lg">
+                    <td className="px-6 py-4">
+                      Half batch
+                      <span className="block text-sm text-primary/70 mt-1">
+                        Available as an add-on to orders with 1+ full batch
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 text-right font-accent text-primary text-lg">
                       $70–$85
                     </td>
                   </tr>
@@ -125,6 +132,20 @@ export default function BatchedPage() {
               </table>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Batch Cocktail Flavors */}
+      <section id="flavors" className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-4xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading
+              label="Flavors"
+              title="Batch Cocktail Menu"
+              subtitle="Choose from our full menu of batch cocktail flavors — all made with fresh, high-quality ingredients."
+            />
+          </FadeIn>
+          <DrinkMenu />
         </div>
       </section>
 

@@ -103,14 +103,15 @@ export default function MenuExamples() {
             onClick={() => setLightbox(i)}
             className="shrink-0 w-48 md:w-auto overflow-hidden rounded-sm snap-start group cursor-pointer"
           >
-            <Image
-              src={menu.src}
-              alt={menu.alt}
-              width={menu.width}
-              height={menu.height}
-              sizes="(max-width: 768px) 192px, 25vw"
-              className="w-full h-auto group-hover:scale-105 transition-transform duration-500 ease-out"
-            />
+            <div className="relative aspect-[3/4] overflow-hidden">
+              <Image
+                src={menu.src}
+                alt={menu.alt}
+                fill
+                sizes="(max-width: 768px) 192px, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
+            </div>
           </button>
         ))}
       </div>

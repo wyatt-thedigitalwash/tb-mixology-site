@@ -101,8 +101,8 @@ export default function BartendingPage() {
                     >
                       <td className="px-6 py-4 font-medium">{pkg.guests}</td>
                       <td className="px-6 py-4 text-warm-gray hidden sm:table-cell">{pkg.bartenders}</td>
-                      <td className="px-6 py-4 text-warm-gray hidden md:table-cell">{pkg.rate}</td>
-                      <td className="px-6 py-4 text-right font-accent text-accent text-lg font-medium">
+                      <td className="px-6 py-4 text-primary/70 hidden md:table-cell">{pkg.rate}</td>
+                      <td className="px-6 py-4 text-right font-accent text-primary text-lg font-medium">
                         {pkg.starting}
                       </td>
                     </tr>
@@ -122,7 +122,7 @@ export default function BartendingPage() {
                 <div className="border border-warm-gray/30 p-5 rounded-sm">
                   <h3 className="font-heading text-lg text-primary mb-1">{pkg.guests}</h3>
                   <p className="font-body text-sm text-warm-gray mb-1">{pkg.bartenders}</p>
-                  <p className="font-body text-sm text-warm-gray mb-2">{pkg.rate}</p>
+                  <p className="font-body text-sm text-primary/70 mb-2">{pkg.rate}</p>
                   <p className="font-accent text-lg text-accent">{pkg.starting}</p>
                 </div>
               </FadeIn>
@@ -150,7 +150,7 @@ export default function BartendingPage() {
                   <span className="font-body text-base text-primary">
                     {addon.name}
                   </span>
-                  <span className="font-accent text-accent text-lg whitespace-nowrap">
+                  <span className="font-accent text-primary text-lg whitespace-nowrap">
                     {addon.price}
                   </span>
                 </div>

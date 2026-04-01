@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import GlasswareInquiry from "@/components/GlasswareInquiry";
 import { glasswareTypes } from "@/lib/data/glassware";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function GlasswarePage() {
         <SectionHeading
           label="Add-On Service"
           title="Glassware Rental"
-          subtitle="Elevate your bar with real glassware — coupes, rocks glasses, highballs, and more. Available as an add-on to any bartending package at $3–$5 per person."
+          subtitle="Elevate your event with real glassware — coupes, rocks glasses, highballs, and more. Available as an add-on to bartending packages or as a standalone rental."
         />
         <div className="text-center mt-8">
           <Link
@@ -86,15 +87,17 @@ export default function GlasswarePage() {
         </div>
       </section>
 
-      {/* Pricing Note */}
+      {/* How Are You Looking to Rent? */}
       <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6">
           <FadeIn>
             <SectionHeading
-              label="Pricing"
-              title="$3–$5 Per Person"
-              subtitle="Pricing is based on guest count and glassware selection. Reach out and we'll put together a custom quote for your event."
+              label="Get Started"
+              title="How Are You Looking to Rent?"
             />
+          </FadeIn>
+          <FadeIn>
+            <GlasswareInquiry />
           </FadeIn>
         </div>
       </section>

@@ -1,7 +1,14 @@
 export const team = [
-  { name: "Emma Nichter", role: "Director of Operations", img: "Headshot \u2014 replace" },
-  { name: "Brooke", role: "Lead Bartender", img: "Headshot \u2014 replace" },
-  { name: "Your Bartender", role: "Growing Team", img: "Headshot \u2014 replace" },
+  { name: "Brooke Krimmel", role: "Founder", img: "Headshot — replace" },
+  { name: "Emma Nichter", role: "Director of Operations", img: "Headshot — replace" },
+];
+
+export const staff = [
+  { name: "Team Member", role: "Bartender", img: "Team member photo — replace" },
+  { name: "Team Member", role: "Bartender", img: "Team member photo — replace" },
+  { name: "Team Member", role: "Bartender", img: "Team member photo — replace" },
+  { name: "Team Member", role: "Bartender", img: "Team member photo — replace" },
+  { name: "Team Member", role: "Bartender", img: "Team member photo — replace" },
 ];
 
 export const values = [

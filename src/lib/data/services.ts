@@ -11,7 +11,7 @@ export const services = [
   {
     title: "Batch Cocktails",
     description:
-      "Handcrafted cocktail batches mixed, prepped, and delivered to your door — ready to pour and enjoy.",
+      "Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Ideal for hosting with ease while still offering a polished, consistent drink experience.",
     href: "/services/batched",
     imageLabel: "Photo — Batched Cocktails",
     imageSrc: "/images/beverage-dispenser-station-fruit-garnishes.webp",
@@ -59,7 +59,7 @@ export const barSetupAddOns = [
 export const serviceEnhancements = [
   { name: "Additional Bartender", price: "$50/hr" },
   { name: "Bar Back", price: "$50/hr" },
-  { name: "Custom 4\u2019 Wooden Bar", price: "$200" },
+  { name: "Custom 4\u2019 Wooden Bar", price: "$200+" },
 ];
 
 export const experienceAddOns = [
@@ -67,4 +67,43 @@ export const experienceAddOns = [
   { name: "Smoker", price: "$25" },
   { name: "Bubble Machine", price: "$35" },
   { name: "Citrus Branding", price: "$80+" },
+];
+
+export const featuredAddOns = [
+  {
+    name: "Water Station",
+    description: "Keep your guests hydrated with a self-serve water station — especially great for outdoor events.",
+    price: "$75",
+    imageLabel: "Water Station photo — replace",
+  },
+  {
+    name: "Bubble Machine",
+    description: "Add a fun, festive touch to your event with a bubble machine at the bar.",
+    price: "$35",
+    imageLabel: "Bubble Machine photo — replace",
+  },
+  {
+    name: "Smoker",
+    description: "Elevate your cocktails with a dramatic smoked finish right at the bar.",
+    price: "$25",
+    imageLabel: "Smoker photo — replace",
+  },
+  {
+    name: "Citrus Branding",
+    description: "Custom-branded citrus garnishes with names, logos, or messages seared into the fruit.",
+    price: "$80+",
+    imageLabel: "Citrus Branding photo — replace",
+  },
+  {
+    name: "Bar Back",
+    description: "Extra support staff to keep the bar running smoothly during high-volume events.",
+    price: "$50/hr",
+    imageLabel: "Bar Back photo — replace",
+  },
+  {
+    name: "Caviar Service",
+    description: "An all-inclusive, elevated tasting experience. The perfect premium add-on for any event.",
+    price: "$25–$40/pp",
+    imageLabel: "Caviar Service photo — replace",
+  },
 ];

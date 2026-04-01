@@ -41,5 +41,5 @@ export const bartendingAddOns = [
   { name: "Water Station", price: "$75" },
   { name: "Additional Bartender", price: "$50/hr" },
   { name: "Bar Back", price: "$50/hr" },
-  { name: "Custom 4\u2019 Wooden Bar", price: "$200" },
+  { name: "Custom 4\u2019 Wooden Bar", price: "$200+" },
 ];

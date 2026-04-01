@@ -12,7 +12,7 @@ export const faqs = [
   {
     question: "Do you require a deposit?",
     answer:
-      "Yes, a deposit secures your date. Details covered during consultation.",
+      "Yes, a 50% deposit is required to secure your date.",
   },
   {
     question: "How long does setup/breakdown take?",
@@ -40,7 +40,7 @@ export const faqs = [
   },
   {
     question: "What do you need from the venue?",
-    answer: "Flat surface, water access, power outlet nearby.",
+    answer: "Just a space for us to set up. We provide everything else.",
   },
   {
     question: "Do you bring your own bar setup and glassware?",
@@ -70,6 +70,6 @@ export const faqs = [
   {
     question: "How does the batch cocktail service work?",
     answer:
-      "We deliver handcrafted batch cocktails in glass bottles with pour spouts. Free delivery in Tampa/St Pete. We pick up bottles the next day.",
+      "We deliver handcrafted batch cocktails in plastic bottles (disposable). Glass bottles with pour spouts are available upon request and will need to be picked up the following day. Free delivery in Tampa/St Pete.",
   },
 ];

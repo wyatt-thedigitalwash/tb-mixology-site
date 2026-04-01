@@ -11,7 +11,7 @@ export default function Footer() {
             <h3 className="font-heading text-2xl mb-4">TB Mixology</h3>
             <p className="text-white/60 font-body text-sm leading-relaxed max-w-sm mb-6">
               Handcrafted cocktails and thoughtful bar experiences across Tampa
-              Bay. Fresh ingredients, real care, your event.
+              Bay.
             </p>
             <div className="flex flex-col gap-2 mb-6">
               <a

@@ -43,7 +43,7 @@ export default function CaviarPage() {
           subtitle="An elevated tasting experience for your guests — premium caviar served tableside with all the classic accompaniments."
         />
         <div className="text-center mt-6">
-          <p className="font-accent text-2xl md:text-3xl text-accent mb-8">
+          <p className="font-accent text-2xl md:text-3xl text-primary mb-8">
             $25&ndash;$40 per person
           </p>
           <Link

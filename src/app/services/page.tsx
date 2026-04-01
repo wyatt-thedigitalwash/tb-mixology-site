@@ -3,12 +3,14 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
+import PlaceholderImage from "@/components/PlaceholderImage";
 import {
   services,
   addOnServices,
   barSetupAddOns,
   serviceEnhancements,
   experienceAddOns,
+  featuredAddOns,
 } from "@/lib/data/services";
 
 export const metadata: Metadata = {
@@ -92,11 +94,44 @@ export default function ServicesPage() {
                         <span className="font-body text-base text-primary">
                           {addon.name}
                         </span>
-                        <span className="font-accent text-accent text-lg whitespace-nowrap">
+                        <span className="font-accent text-primary text-lg whitespace-nowrap">
                           {addon.price}
                         </span>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Add-Ons */}
+      <section className="py-20 md:py-28 bg-primary">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading
+              label="Extras"
+              title="Elevate Your Event"
+              subtitle="Take your event to the next level with these premium add-ons. Available alongside any of our services."
+              light
+            />
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredAddOns.map((addon, i) => (
+              <FadeIn key={addon.name} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                <div className="border border-white/10 rounded-sm overflow-hidden hover:border-accent/30 transition-colors duration-200 ease-out">
+                  <PlaceholderImage
+                    label={addon.imageLabel}
+                    aspect="video"
+                  />
+                  <div className="p-5">
+                    <div className="flex justify-between items-start gap-3 mb-2">
+                      <h3 className="font-heading text-lg text-secondary">{addon.name}</h3>
+                      <span className="font-accent text-accent text-lg whitespace-nowrap">{addon.price}</span>
+                    </div>
+                    <p className="font-body text-sm text-white/60 leading-relaxed">{addon.description}</p>
                   </div>
                 </div>
               </FadeIn>

@@ -53,15 +53,16 @@ export default function Home() {
         </div>
         <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
           <FadeIn>
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-secondary leading-tight mb-6">
-              Fresh Ingredients.
-              <br />
-              Unforgettable Events.
-            </h1>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/tb-mixology-logo-transparent.svg"
+              alt="TB Mixology logo"
+              className="mx-auto w-64 md:w-80 lg:w-96 h-auto mb-6 opacity-70"
+            />
           </FadeIn>
           <FadeIn delay="delay-100">
             <p className="font-body text-white/70 text-base md:text-xl mb-10 max-w-2xl mx-auto">
-              Woman-owned &amp; operated mobile bartending &mdash; St. Pete, Tampa, Clearwater, Sarasota
+              A St. Pete-based mobile bartending company specializing in fresh, seasonal cocktails made with natural ingredients, tailored to each event
             </p>
           </FadeIn>
           <FadeIn delay="delay-200">
@@ -122,7 +123,7 @@ export default function Home() {
                   <h3 className="font-heading text-xl text-primary mb-1">{pkg.guests}</h3>
                   <p className="font-body text-sm text-warm-gray mb-3">{pkg.bartenders}</p>
                   <p className="font-body text-base text-primary mb-1">{pkg.rate}</p>
-                  <p className="font-accent text-lg text-accent">{pkg.starting}</p>
+                  <p className="font-accent text-lg text-primary">{pkg.starting}</p>
                 </div>
               ))}
             </div>
@@ -194,7 +195,7 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-secondary">
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="@tbmixology" title="Follow the Pour" />
+            <SectionHeading label="@tbmixology" title="Follow Along with TB Mixology" />
           </FadeIn>
           <FadeIn delay="delay-100">
             <InstagramFeed />
