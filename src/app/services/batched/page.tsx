@@ -3,6 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import DrinkMenu from "@/components/DrinkMenu";
+import PricingCard from "@/components/PricingCard";
 import SmoothScrollLink from "@/components/SmoothScrollLink";
 import Image from "next/image";
 import { details } from "@/lib/data/batched";
@@ -92,44 +93,14 @@ export default function BatchedPage() {
             />
           </FadeIn>
           <FadeIn>
-            <div className="max-w-2xl mx-auto border border-warm-gray/30 rounded-sm overflow-hidden">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-warm-gray/30">
-                    <th className="px-6 py-4 font-body text-sm text-warm-gray uppercase tracking-wider">
-                      Option
-                    </th>
-                    <th className="px-6 py-4 font-body text-sm text-warm-gray uppercase tracking-wider text-right">
-                      Price
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="font-body text-base text-primary">
-                  <tr className="border-b border-warm-gray/15">
-                    <td className="px-6 py-4">1 batch (~26–30 drinks)</td>
-                    <td className="px-6 py-4 text-right font-accent text-primary text-lg">
-                      $120–$150
-                    </td>
-                  </tr>
-                  <tr className="border-b border-warm-gray/15">
-                    <td className="px-6 py-4">2+ batches (each)</td>
-                    <td className="px-6 py-4 text-right font-accent text-primary text-lg">
-                      $110–$130
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4">
-                      Half batch
-                      <span className="block text-sm text-primary/70 mt-1">
-                        Available as an add-on to orders with 1+ full batch
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-right font-accent text-primary text-lg">
-                      $70–$85
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="max-w-2xl mx-auto space-y-2">
+              <PricingCard name="1 batch (~26–30 drinks)" price="$120–$150" />
+              <PricingCard name="2+ batches (each)" price="$110–$130" />
+              <PricingCard
+                name="Half batch"
+                price="$70–$85"
+                note="Available as an add-on to orders with 1+ full batch"
+              />
             </div>
           </FadeIn>
         </div>
@@ -142,7 +113,7 @@ export default function BatchedPage() {
             <SectionHeading
               label="Flavors"
               title="Batch Cocktail Menu"
-              subtitle="Choose from our full menu of batch cocktail flavors — all made with fresh, high-quality ingredients."
+              subtitle="Choose from our full menu of batch cocktail flavors — all made with fresh, high-quality ingredients. Many of these flavors can also be incorporated into your bartending service menu."
             />
           </FadeIn>
           <DrinkMenu />

@@ -38,8 +38,8 @@ export const bartendingAddOns = [
   { name: "Alcohol Purchase & Transport", price: "Cost + 10%" },
   { name: "Glassware Rental", price: "$3\u2013$5/pp" },
   { name: "Large Ice Cubes", price: "$50+" },
-  { name: "Water Station", price: "$75" },
-  { name: "Additional Bartender", price: "$50/hr" },
+  { name: "Water Station", price: "$1/pp" },
+  { name: "Additional Bartender", price: "$75/hr" },
   { name: "Bar Back", price: "$50/hr" },
   { name: "Custom 4\u2019 Wooden Bar", price: "$200+" },
 ];

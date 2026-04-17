@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import PricingCard from "@/components/PricingCard";
 import { ChevronRight } from "lucide-react";
 
 type Mode = null | "addon" | "standalone";
@@ -53,39 +54,38 @@ export default function GlasswareInquiry() {
       </div>
 
       {mode === "addon" && (
-        <div className="mt-8 border border-warm-gray/30 rounded-sm p-6">
-          <h4 className="font-heading text-xl text-primary mb-3">
-            Glassware as an Add-On
-          </h4>
-          <p className="font-body text-primary mb-2">
-            <span className="font-accent text-primary text-lg">$3–$5 per person</span>
-          </p>
-          <p className="font-body text-sm text-warm-gray leading-relaxed mb-4">
-            Pricing is based on guest count and glassware selection. Glassware rental includes delivery, setup, and pickup — we handle everything.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-accent text-primary px-8 py-3 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
-          >
-            Add to Your Bartending Package
-          </Link>
+        <div className="mt-8 space-y-4">
+          <PricingCard
+            name="Glassware Rental (Add-On)"
+            price="$3–$5/pp"
+            note="Based on guest count and glassware selection. Includes delivery, setup, and pickup."
+          />
+          <div className="text-center">
+            <Link
+              href="/contact"
+              className="inline-block bg-accent text-primary px-8 py-3 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+            >
+              Add to Your Bartending Package
+            </Link>
+          </div>
         </div>
       )}
 
       {mode === "standalone" && (
-        <div className="mt-8 border border-warm-gray/30 rounded-sm p-6">
-          <h4 className="font-heading text-xl text-primary mb-3">
-            Standalone Glassware Rental
-          </h4>
-          <p className="font-body text-sm text-warm-gray leading-relaxed mb-4">
-            We offer standalone glassware rental for events where you&rsquo;re handling the bar yourself. Pricing varies based on quantity, glassware types, and event details. Reach out and we&rsquo;ll put together a custom quote.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-accent text-primary px-8 py-3 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
-          >
-            Request a Quote
-          </Link>
+        <div className="mt-8 space-y-4">
+          <PricingCard
+            name="Standalone Glassware Rental"
+            price="Custom Quote"
+            note="Pricing varies based on quantity, glassware types, and event details."
+          />
+          <div className="text-center">
+            <Link
+              href="/contact"
+              className="inline-block bg-accent text-primary px-8 py-3 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+            >
+              Request a Quote
+            </Link>
+          </div>
         </div>
       )}
     </div>

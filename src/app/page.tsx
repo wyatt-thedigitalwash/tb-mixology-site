@@ -6,10 +6,19 @@ import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
 import ReviewCard from "@/components/ReviewCard";
 import InstagramFeed from "@/components/InstagramFeed";
-import { Palette, Leaf, Sparkles, Tag, Heart, ShieldCheck } from "lucide-react";
-import { services, addOnServices, packages, homeReviews, highlights } from "@/lib/data/home";
+import ExpandableHighlight from "@/components/ExpandableHighlight";
+import PricingCard from "@/components/PricingCard";
+import AddOnsGrid from "@/components/AddOnsGrid";
+import {
+  services,
+  addOnServices,
+  packages,
+  homeReviews,
+  highlights,
+} from "@/lib/data/home";
+import { addOnOverviewItems } from "@/lib/data/services";
 
-const highlightIcons = [Palette, Leaf, Sparkles, Tag, Heart, ShieldCheck];
+const highlightIconNames = ["Palette", "Leaf", "Sparkles", "Tag", "Heart", "ShieldCheck"] as const;
 
 export const metadata: Metadata = {
   title: "TB Mixology | Tampa Bay Event Bartending",
@@ -31,7 +40,7 @@ export default function Home() {
     <main>
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-15">
           {/* Desktop hero */}
           <Image
             src="/images/espresso-martinis-pair-bar-ambiance.webp"
@@ -53,15 +62,16 @@ export default function Home() {
         </div>
         <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
           <FadeIn>
+            {/* TODO: Swap logo when client provides updated version without T|B in glass */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/tb-mixology-logo-transparent.svg"
               alt="TB Mixology logo"
-              className="mx-auto w-64 md:w-80 lg:w-96 h-auto mb-6 opacity-70"
+              className="mx-auto w-64 md:w-80 lg:w-96 h-auto mb-6"
             />
           </FadeIn>
           <FadeIn delay="delay-100">
-            <p className="font-body text-white/70 text-base md:text-xl mb-10 max-w-2xl mx-auto">
+            <p className="font-body text-white text-base md:text-xl mb-10 max-w-2xl mx-auto">
               A St. Pete-based mobile bartending company specializing in fresh, seasonal cocktails made with natural ingredients, tailored to each event
             </p>
           </FadeIn>
@@ -69,7 +79,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#services"
-                className="border border-secondary text-secondary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-secondary hover:text-primary transition-colors duration-200 ease-out"
+                className="border border-white text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-white hover:text-primary transition-colors duration-200 ease-out"
               >
                 View Our Services
               </a>
@@ -84,7 +94,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Services Overview ── */}
+      {/* ── Services Overview ── (light) */}
       <section id="services" className="py-20 md:py-28 bg-secondary">
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
@@ -97,84 +107,105 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
             {addOnServices.map((s, i) => (
-              <FadeIn key={s.title} delay={i === 1 ? "delay-100" : ""}>
+              <FadeIn key={s.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
                 <ServiceCard {...s} />
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ── Bartending Packages ── */}
-      <section className="py-20 md:py-28 bg-secondary">
-        <div className="max-w-4xl mx-auto px-6">
-          <FadeIn>
-            <SectionHeading label="Pricing" title="Bartending Packages" subtitle="Pricing based on a 4-hour event. Built to ensure fast, seamless service." />
-          </FadeIn>
-          <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {packages.map((pkg) => (
-                <div
-                  key={pkg.guests}
-                  className="border border-warm-gray/30 p-6 rounded-sm hover:border-accent/50 transition-colors duration-200 ease-out"
-                >
-                  <h3 className="font-heading text-xl text-primary mb-1">{pkg.guests}</h3>
-                  <p className="font-body text-sm text-warm-gray mb-3">{pkg.bartenders}</p>
-                  <p className="font-body text-base text-primary mb-1">{pkg.rate}</p>
-                  <p className="font-accent text-lg text-primary">{pkg.starting}</p>
-                </div>
+          {/* Add-Ons & Extras */}
+          <div className="mt-16">
+            <FadeIn>
+              <SectionHeading label="Extras" title="Add-Ons & Extras" />
+            </FadeIn>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {addOnOverviewItems.map((item) => (
+                <FadeIn key={item.name}>
+                  <div className="border border-warm-gray/30 rounded-sm px-4 py-3">
+                    <p className="font-body text-sm font-semibold text-primary">{item.name}</p>
+                    <p className="font-body text-sm text-warm-gray mt-1">{item.description}</p>
+                  </div>
+                </FadeIn>
               ))}
             </div>
-          </FadeIn>
-          <FadeIn delay="delay-100">
-            <div className="text-center mt-8">
-              <Link
-                href="/services/bartending"
-                className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
-              >
-                See Full Details &rarr;
-              </Link>
-            </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
-      {/* ── Differentiator ── */}
+      {/* ── Differentiator ── (dark) */}
       <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
             <SectionHeading title="Not Your Average Mobile Bar" light />
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {highlights.map((h, i) => {
-              const Icon = highlightIcons[i];
-              return (
-                <FadeIn key={h.title} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
-                  <div className="border border-white/10 rounded-sm p-6 text-center hover:border-accent/30 transition-colors duration-200 ease-out">
-                    <Icon size={28} className="text-accent mx-auto mb-4" strokeWidth={1.5} />
-                    <h3 className="font-heading text-lg text-secondary mb-2">{h.title}</h3>
-                    <p className="font-body text-sm text-white/60 leading-relaxed">{h.description}</p>
-                  </div>
-                </FadeIn>
-              );
-            })}
+            {highlights.map((h, i) => (
+              <FadeIn key={h.title} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                <ExpandableHighlight
+                  iconName={highlightIconNames[i]}
+                  title={h.title}
+                  description={h.description}
+                  detail={h.detail}
+                />
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Reviews ── */}
-      {/* TODO: integrate Google Places Reviews API */}
+      {/* ── Pricing Preview ── (light) */}
       <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading label="Pricing" title="Bartending Packages" subtitle="Pricing based on a 4-hour event. Built to ensure fast, seamless service." />
+          </FadeIn>
+
+          <FadeIn>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {packages.map((pkg) => (
+                <PricingCard
+                  key={pkg.guests}
+                  name={pkg.guests}
+                  price={pkg.starting}
+                  note={`${pkg.bartenders} · ${pkg.rate}`}
+                />
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Add-Ons & Extras */}
+          <div className="mt-16">
+            <FadeIn>
+              <SectionHeading label="Extras" title="Add-Ons & Extras" />
+            </FadeIn>
+            <AddOnsGrid />
+          </div>
+
+          <FadeIn>
+            <div className="text-center mt-10">
+              <Link
+                href="/services/bartending"
+                className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
+              >
+                See Full Bartending Details &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Reviews ── (dark) */}
+      <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="Testimonials" title="What Our Clients Say" />
+            <SectionHeading label="Testimonials" title="What Our Clients Say" light />
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {homeReviews.map((r, i) => (
               <FadeIn key={r.name} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
-                <ReviewCard {...r} />
+                <ReviewCard {...r} light />
               </FadeIn>
             ))}
           </div>
@@ -182,7 +213,7 @@ export default function Home() {
             <div className="text-center mt-10">
               <Link
                 href="/reviews"
-                className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
+                className="font-body text-sm text-secondary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
               >
                 Read More Reviews &rarr;
               </Link>
@@ -191,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Instagram Feed ── */}
+      {/* ── Instagram Feed ── (light) */}
       <section className="py-20 md:py-28 bg-secondary">
         <div className="max-w-6xl mx-auto px-6">
           <FadeIn>
@@ -223,14 +254,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA Section ── */}
+      {/* ── CTA Section ── (dark) */}
       <section className="py-24 md:py-32 bg-primary">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
               Your Event Deserves a Great Bar
             </h2>
-            <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
+            <p className="font-body text-base text-white/70 mb-10">
               Let&rsquo;s build something unforgettable together.
             </p>
             <Link

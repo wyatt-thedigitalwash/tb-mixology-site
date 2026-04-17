@@ -3,6 +3,7 @@ export const categories = [
   "Weddings",
   "Corporate",
   "Private Parties",
+  "Cocktail Classes",
   "Brand Collaborations",
 ] as const;
 
@@ -24,7 +25,9 @@ export type EventLayout =
   | "hero-top-2"
   | "landscape-top-2-portrait"
   | "three-equal"
-  | "three-top-portrait-bottom";
+  | "three-portrait"
+  | "three-top-portrait-bottom"
+  | "grid-2x2-plus-3";
 
 export interface EventData {
   title: string;
@@ -34,17 +37,6 @@ export interface EventData {
 }
 
 export const events: EventData[] = [
-  {
-    title: "Rooftop Cocktail Party",
-    category: "Private Parties",
-    layout: "grid-2x2",
-    images: [
-      { src: "/images/cocktails-highrise-marina-ocean-view.webp", alt: "Cocktails with marina and ocean view from a high-rise rooftop", width: 1544, height: 1029 },
-      { src: "/images/guests-cocktails-ocean-view-rooftop.webp", alt: "Guests enjoying cocktails at an oceanview rooftop party", width: 1364, height: 909 },
-      { src: "/images/cocktail-cheers-closeup-ocean-backdrop.webp", alt: "Cocktail cheers closeup with ocean backdrop", width: 1704, height: 1136 },
-      { src: "/images/craft-cocktails-trio-closeup.webp", alt: "Three handcrafted cocktails held up at a rooftop party", width: 2099, height: 1399 },
-    ],
-  },
   {
     title: "Halloween Soir\u00e9e",
     category: "Private Parties",
@@ -88,23 +80,69 @@ export const events: EventData[] = [
     ],
   },
   {
-    title: "Kawha Coffee Collaboration",
-    category: "Brand Collaborations",
-    layout: "three-equal",
+    title: "Birthday Party",
+    category: "Private Parties",
+    layout: "grid-2x2",
     images: [
-      { src: "/images/cocktail-class-setup-kahwa-station.webp", alt: "Cocktail class setup at Kawha coffee shop bar station", width: 1392, height: 928 },
-      { src: "/images/bartenders-cheers-colorful-cocktail-lineup.webp", alt: "Bartenders cheersing with a colorful cocktail lineup", width: 1487, height: 991 },
-      { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes on the bar", width: 1348, height: 898 },
+      { src: "/images/events/birthday-party/group-cheers-shots-behind-bar.webp", alt: "Group raising cocktails and shots for cheers behind bar at birthday party", width: 1920, height: 1280 },
+      { src: "/images/events/birthday-party/charcuterie-spread-outdoor-night-party.webp", alt: "Elaborate charcuterie spread at outdoor birthday party with purple uplighting", width: 1920, height: 1280 },
+      { src: "/images/events/birthday-party/guests-cheers-cocktails-rooftop-night.webp", alt: "Guests holding craft cocktails at upscale rooftop birthday party", width: 1920, height: 1280 },
+      { src: "/images/events/birthday-party/bartenders-behind-bar-smiling.webp", alt: "Two bartenders smiling behind marble bar with cocktails at birthday party", width: 1920, height: 1280 },
     ],
   },
   {
-    title: "Costume Party",
+    title: "Christmas Party",
     category: "Private Parties",
+    layout: "portrait-left-3",
+    images: [
+      { src: "/images/events/christmas-party/cranberry-rosemary-cocktail-ice-sphere.webp", alt: "Tall cocktail with ice sphere, cranberries, and rosemary sprig", width: 1280, height: 1920 },
+      { src: "/images/events/christmas-party/sips-of-the-season-cocktail-menu.webp", alt: "Custom Sips of the Season cocktail menu with disco ball and Christmas decor", width: 1920, height: 1280 },
+      { src: "/images/events/christmas-party/smoked-cranberry-cocktails-rosemary.webp", alt: "Smoked cranberry cocktails with rosemary garnish at Christmas party", width: 1920, height: 1280 },
+    ],
+  },
+  {
+    title: "Gasparilla Party",
+    category: "Private Parties",
+    layout: "three-portrait",
+    images: [
+      { src: "/images/events/gasparilla/gasparilla-cocktail-lime-pirate-flags.webp", alt: "Lime cocktail with gold coins and pirate flags at Gasparilla party", width: 1080, height: 1920 },
+      { src: "/images/events/gasparilla/guest-pirate-costume-cocktail-skeleton.webp", alt: "Guest in pirate outfit holding cocktail at Gasparilla party", width: 1080, height: 1920 },
+      { src: "/images/events/gasparilla/paloma-tajin-rim-grapefruit-closeup.webp", alt: "Spicy paloma cocktail with tajin rim and grapefruit at Gasparilla party", width: 1080, height: 1920 },
+    ],
+  },
+  {
+    title: "Grand Prix",
+    category: "Private Parties",
+    layout: "grid-2x2-plus-3",
+    images: [
+      { src: "/images/events/grand-prix/cocktails-cheers-marina-aerial-view.webp", alt: "Cocktails cheersing with aerial marina and Tampa Bay view", width: 1920, height: 1280 },
+      { src: "/images/events/grand-prix/friends-racing-outfits-cocktails-cheers.webp", alt: "Friends in Grand Prix racing themed outfits toasting cocktails", width: 1920, height: 1280 },
+      { src: "/images/events/grand-prix/couple-cocktails-highrise-penthouse.webp", alt: "Couple posing with craft cocktails in highrise penthouse", width: 1920, height: 1280 },
+      { src: "/images/events/grand-prix/three-friends-cocktails-ocean-view-balcony.webp", alt: "Three friends holding cocktails on ocean view balcony", width: 1920, height: 1280 },
+      { src: "/images/events/grand-prix/cocktails-cheers-closeup-ocean-view.webp", alt: "Closeup of friends cheersing cocktails with ocean view", width: 1920, height: 1280 },
+      { src: "/images/events/grand-prix/bartender-pouring-cocktail-skyline-view.webp", alt: "Bartender pouring cocktail with marina and skyline view", width: 1280, height: 1920 },
+      { src: "/images/events/grand-prix/couple-drinks-colorful-dress-penthouse.webp", alt: "Couple posing with drinks in colorful outfit at penthouse party", width: 1280, height: 1920 },
+    ],
+  },
+  {
+    title: "Kawha Coffee Collaboration",
+    category: "Cocktail Classes",
     layout: "three-equal",
     images: [
-      { src: "/images/costume-party-guests-craft-cocktails.webp", alt: "Guests in costume holding craft cocktails at a themed party", width: 1431, height: 954 },
-      { src: "/images/green-cocktail-spiral-garnish.webp", alt: "Green cocktail with spiral garnish closeup", width: 1078, height: 1617 },
-      { src: "/images/spicy-paloma-tajin-rim-closeup.webp", alt: "Spicy paloma cocktail with Taj\u00edn rim", width: 991, height: 1763 },
+      { src: "/images/events/kawha-collaboration/kawha-roastery-cocktail-class-setup.webp", alt: "Cocktail class bar setup at Kawha Coffee Roastery", width: 1920, height: 1280 },
+      { src: "/images/events/kawha-collaboration/kawha-cocktail-class-group-photo.webp", alt: "Group of women at Kawha coffee roastery cocktail class", width: 1920, height: 1280 },
+      { src: "/images/events/kawha-collaboration/group-cheers-espresso-martinis-kawha.webp", alt: "Group raising espresso martinis for cheers at Kawha cocktail class", width: 1920, height: 1280 },
+    ],
+  },
+  {
+    title: "Tampa Bay Rays Team Event",
+    category: "Cocktail Classes",
+    layout: "grid-2x2",
+    images: [
+      { src: "/images/events/rays-corporate/instructor-cheers-rays-logo-background.webp", alt: "TB Mixology instructor raising glass with Rays logo in background", width: 1920, height: 1280 },
+      { src: "/images/events/rays-corporate/rays-team-mixing-cocktails-group.webp", alt: "Full Rays staff group mixing cocktails at team building event", width: 1920, height: 1280 },
+      { src: "/images/events/rays-corporate/four-craft-cocktails-lineup-bar.webp", alt: "Four craft cocktails lined up at Rays corporate cocktail class", width: 1920, height: 1280 },
+      { src: "/images/events/rays-corporate/bartenders-cheers-hugo-spritz-margarita.webp", alt: "TB Mixology bartenders cheersing hugo spritz and margarita at Rays venue", width: 1920, height: 1280 },
     ],
   },
 ];

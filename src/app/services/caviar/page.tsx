@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import PricingCard from "@/components/PricingCard";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import { Gem, UtensilsCrossed, GlassWater, HandPlatter, Sparkles, Users } from "lucide-react";
@@ -25,12 +26,6 @@ const details = [
   { icon: Users, title: "Any Event Size", description: "Intimate dinners to large-scale receptions" },
 ];
 
-const perfectFor = [
-  "Weddings",
-  "Corporate Events",
-  "VIP Receptions",
-  "Private Parties",
-];
 
 export default function CaviarPage() {
   return (
@@ -38,14 +33,14 @@ export default function CaviarPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
-          label="Add-On Service"
+          label="Add-On or Standalone"
           title="All-Inclusive Caviar Service"
-          subtitle="An elevated tasting experience for your guests — premium caviar served tableside with all the classic accompaniments."
+          subtitle="An elevated tasting experience for your guests — premium caviar served tableside with all the classic accompaniments. Available as an add-on to any bartending package or as a standalone booking."
         />
-        <div className="text-center mt-6">
-          <p className="font-accent text-2xl md:text-3xl text-primary mb-8">
-            $25&ndash;$40 per person
-          </p>
+        <div className="max-w-sm mx-auto mt-8 mb-8">
+          <PricingCard name="All-Inclusive Caviar Service" price="$25–$40/pp" />
+        </div>
+        <div className="text-center">
           <Link
             href="/contact"
             className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
@@ -62,8 +57,8 @@ export default function CaviarPage() {
             <FadeIn>
               <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
                 <Image
-                  src="/images/guest-enjoying-caviar-service.webp"
-                  alt="Guest enjoying the all-inclusive caviar service at a TB Mixology event"
+                  src="/images/caviar-service/caviar-service-couple-tasting.webp"
+                  alt="Couple tasting caviar being served on hand at a TB Mixology event"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -85,9 +80,10 @@ export default function CaviarPage() {
                 source or coordinate.
               </p>
               <p className="font-body text-secondary/70 leading-relaxed">
-                Whether it&rsquo;s a wedding cocktail hour, a corporate
-                reception, or an intimate dinner party, caviar adds a refined,
-                memorable touch that elevates the entire event.
+                Perfect for wedding cocktail hours, corporate receptions, VIP events,
+                and intimate dinner parties. Book it as an add-on to your bartending
+                package or as a standalone experience &mdash; either way, we handle
+                everything.
               </p>
             </FadeIn>
           </div>
@@ -121,22 +117,27 @@ export default function CaviarPage() {
         </div>
       </section>
 
-      {/* Perfect For */}
+      {/* Gallery */}
       <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading
-              label="Ideal For"
-              title="Perfect For"
-              subtitle="Caviar service is a memorable premium touch for any celebration."
-              light
-            />
+            <SectionHeading label="Gallery" title="The Caviar Experience" light />
           </FadeIn>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {perfectFor.map((item, i) => (
-              <FadeIn key={item} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : i === 3 ? "delay-300" : ""}>
-                <div className="border border-white/15 rounded-sm p-6 text-center hover:border-accent/40 transition-colors duration-200 ease-out">
-                  <h3 className="font-heading text-lg text-secondary">{item}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { src: "/images/caviar-service/caviar-bump-serving-guest-closeup.webp", alt: "Server offering caviar bump to guest at event" },
+              { src: "/images/caviar-service/bride-groom-caviar-bump-wedding.webp", alt: "Bride and groom enjoying caviar bumps at wedding celebration" },
+              { src: "/images/caviar-service/guest-enjoying-caviar-outdoor-tent.webp", alt: "Guest enjoying caviar service under outdoor tent" },
+            ].map((img, i) => (
+              <FadeIn key={img.src} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
               </FadeIn>
             ))}
@@ -152,7 +153,7 @@ export default function CaviarPage() {
               Add Caviar to Your Event
             </h2>
             <p className="font-accent text-lg md:text-xl text-warm-gray mb-10">
-              The perfect premium touch for any celebration.
+              Book as an add-on to bartending or as a standalone experience.
             </p>
             <Link
               href="/contact"

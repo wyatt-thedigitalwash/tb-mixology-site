@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import PricingCard from "@/components/PricingCard";
+import AddOnsGrid from "@/components/AddOnsGrid";
 import { MessageSquare, BookOpen, User, Wrench, Snowflake, FileText } from "lucide-react";
-import { packages, included, bartendingAddOns } from "@/lib/data/bartending";
+import { packages, included } from "@/lib/data/bartending";
 
 const includedIcons = [MessageSquare, BookOpen, User, Wrench, Snowflake, FileText];
 
@@ -55,7 +58,7 @@ export default function BartendingPage() {
                 <FadeIn key={item.title} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
                   <div className="border border-white/10 rounded-sm p-6 text-center hover:border-accent/30 transition-colors duration-200 ease-out">
                     <Icon size={28} className="text-accent mx-auto mb-4" strokeWidth={1.5} />
-                    <h3 className="font-heading text-lg text-secondary mb-2">{item.title}</h3>
+                    <h3 className="font-body text-sm font-semibold text-secondary mb-2">{item.title}</h3>
                     <p className="font-body text-sm text-white/60 leading-relaxed">{item.description}</p>
                   </div>
                 </FadeIn>
@@ -66,8 +69,8 @@ export default function BartendingPage() {
       </section>
 
       {/* Pricing Packages */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
             <SectionHeading
               label="Pricing"
@@ -75,88 +78,59 @@ export default function BartendingPage() {
             />
           </FadeIn>
           <FadeIn>
-            <div className="border border-warm-gray/30 rounded-sm overflow-hidden">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-warm-gray/30">
-                    <th className="px-6 py-4 font-body text-xs text-warm-gray uppercase tracking-wider">
-                      Guest Count
-                    </th>
-                    <th className="px-6 py-4 font-body text-xs text-warm-gray uppercase tracking-wider hidden sm:table-cell">
-                      Staffing
-                    </th>
-                    <th className="px-6 py-4 font-body text-xs text-warm-gray uppercase tracking-wider hidden md:table-cell">
-                      Rate
-                    </th>
-                    <th className="px-6 py-4 font-body text-xs text-warm-gray uppercase tracking-wider text-right">
-                      Starting At
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="font-body text-base text-primary">
-                  {packages.map((pkg, i) => (
-                    <tr
-                      key={pkg.guests}
-                      className={i < packages.length - 1 ? "border-b border-warm-gray/15" : ""}
-                    >
-                      <td className="px-6 py-4 font-medium">{pkg.guests}</td>
-                      <td className="px-6 py-4 text-warm-gray hidden sm:table-cell">{pkg.bartenders}</td>
-                      <td className="px-6 py-4 text-primary/70 hidden md:table-cell">{pkg.rate}</td>
-                      <td className="px-6 py-4 text-right font-accent text-primary text-lg font-medium">
-                        {pkg.starting}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {packages.map((pkg) => (
+                <PricingCard
+                  key={pkg.guests}
+                  name={pkg.guests}
+                  price={pkg.starting}
+                  note={`${pkg.bartenders} · ${pkg.rate}`}
+                />
+              ))}
             </div>
-            <p className="text-center text-warm-gray font-body text-sm mt-4 italic">
+            <p className="text-center text-warm-gray font-body text-xs mt-4">
               Based on a 4-hour event. Our pricing is built to ensure fast, seamless service.
             </p>
           </FadeIn>
 
-          {/* Mobile card view */}
-          <div className="sm:hidden mt-8 space-y-4">
-            {packages.map((pkg) => (
-              <FadeIn key={pkg.guests}>
-                <div className="border border-warm-gray/30 p-5 rounded-sm">
-                  <h3 className="font-heading text-lg text-primary mb-1">{pkg.guests}</h3>
-                  <p className="font-body text-sm text-warm-gray mb-1">{pkg.bartenders}</p>
-                  <p className="font-body text-sm text-primary/70 mb-2">{pkg.rate}</p>
-                  <p className="font-accent text-lg text-accent">{pkg.starting}</p>
-                </div>
-              </FadeIn>
-            ))}
+          {/* Add-Ons & Extras */}
+          <div className="mt-16">
+            <FadeIn>
+              <SectionHeading
+                label="Extras"
+                title="Add-Ons & Extras"
+              />
+            </FadeIn>
+            <AddOnsGrid />
           </div>
         </div>
       </section>
 
-      {/* Bartending Add-Ons */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* Gallery */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading
-              label="Extras"
-              title="Available Add-Ons"
-            />
+            <SectionHeading label="Gallery" title="Our Bartenders in Action" />
           </FadeIn>
-          <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {bartendingAddOns.map((addon) => (
-                <div
-                  key={addon.name}
-                  className="border border-warm-gray/30 rounded-sm p-4 flex justify-between items-start gap-4"
-                >
-                  <span className="font-body text-base text-primary">
-                    {addon.name}
-                  </span>
-                  <span className="font-accent text-primary text-lg whitespace-nowrap">
-                    {addon.price}
-                  </span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { src: "/images/bartender-shaking-cocktail-mobile-bar.webp", alt: "TB Mixology bartender shaking a cocktail at a mobile bar" },
+              { src: "/images/events/grand-prix/bartender-pouring-cocktail-skyline-view.webp", alt: "Bartender pouring cocktail with marina and skyline view" },
+              { src: "/images/bartender-pouring-cocktails-private-event.webp", alt: "Bartender pouring cocktails at a private event" },
+            ].map((img, i) => (
+              <FadeIn key={img.src} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
-              ))}
-            </div>
-          </FadeIn>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -167,7 +141,7 @@ export default function BartendingPage() {
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
               Ready to Book Your Bar?
             </h2>
-            <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
+            <p className="font-body text-base text-white/70 mb-10">
               Tell us about your event and we&rsquo;ll recommend the perfect package.
             </p>
             <Link

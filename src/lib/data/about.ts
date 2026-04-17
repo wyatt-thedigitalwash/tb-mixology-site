@@ -27,6 +27,7 @@ export const values = [
   },
   {
     title: "Fully Insured",
-    description: "Covered up to $2,000,000 for your peace of mind.",
+    /* TODO: Add link to insurance certificate PDF when provided by client */
+    description: "Fully insured up to $2,000,000 for your peace of mind.",
   },
 ];

@@ -3,8 +3,6 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import Image from "next/image";
-import PlaceholderImage from "@/components/PlaceholderImage";
-import { perfectFor } from "@/lib/data/classes";
 
 export const metadata: Metadata = {
   title: "Cocktail Classes | TB Mixology — Tampa Bay Event Bartending",
@@ -68,39 +66,36 @@ export default function ClassesPage() {
               </p>
               <p className="font-body text-secondary/70 leading-relaxed">
                 Whether you want a laid-back evening with friends or an energetic
-                team-building activity, we tailor the class to your vibe.
+                team-building activity, we tailor the class to your vibe. Perfect
+                for bachelorette parties, team events, brand activations, and
+                private gatherings.
               </p>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Perfect For */}
-      <section className="py-20 md:py-28">
+      {/* Kawha Coffee Collaboration */}
+      <section className="py-20 md:py-28 bg-secondary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading
-              label="Ideal For"
-              title="Perfect For"
-              subtitle="Cocktail classes make a memorable addition to any kind of gathering."
-            />
+            <SectionHeading label="Kawha Coffee Collaboration" title="Espresso Martini Class" />
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {perfectFor.map((item, i) => (
-              <FadeIn key={item.name} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : i === 3 ? "delay-300" : ""}>
-                <div className="border border-warm-gray/30 rounded-sm overflow-hidden hover:border-accent/50 transition-colors duration-200 ease-out">
-                  <div className="relative aspect-[3/2]">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-4 text-center">
-                    <h3 className="font-heading text-lg text-primary">{item.name}</h3>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { src: "/images/events/kawha-collaboration/kawha-roastery-cocktail-class-setup.webp", alt: "Cocktail class bar setup at Kawha Coffee Roastery with bottles and glassware" },
+              { src: "/images/events/kawha-collaboration/kawha-cocktail-class-group-photo.webp", alt: "Group of women at Kawha coffee roastery cocktail class" },
+              { src: "/images/events/kawha-collaboration/cocktail-class-station-tools-menu.webp", alt: "Cocktail class place setting with bar tools, glassware, and espresso menu card" },
+            ].map((img, i) => (
+              <FadeIn key={img.src} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <div className="relative aspect-[3/2] rounded-sm overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
               </FadeIn>
             ))}
@@ -108,24 +103,31 @@ export default function ClassesPage() {
         </div>
       </section>
 
-      {/* Gallery Placeholder */}
-      <section className="py-20 md:py-28 bg-secondary">
+      {/* Tampa Bay Rays Corporate Event */}
+      <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="Gallery" title="Class Moments" />
+            <SectionHeading label="Tampa Bay Rays" title="Corporate Team Event" light />
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {["Shaking cocktails", "Group learning", "Final presentation"].map(
-              (label, i) => (
-                <FadeIn key={label} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
-                  <PlaceholderImage
-                    label={`Photo — ${label}`}
-                    className="rounded-sm"
-                    aspect="square"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { src: "/images/events/rays-corporate/instructor-cheers-rays-logo-background.webp", alt: "TB Mixology instructor raising glass with Rays logo in background" },
+              { src: "/images/events/rays-corporate/rays-team-mixing-cocktails-group.webp", alt: "Full Rays staff group mixing cocktails at team building event" },
+              { src: "/images/events/rays-corporate/four-craft-cocktails-lineup-bar.webp", alt: "Four craft cocktails lined up at Rays corporate cocktail class" },
+              { src: "/images/events/rays-corporate/bartenders-cheers-hugo-spritz-margarita.webp", alt: "TB Mixology bartenders cheersing hugo spritz and margarita at Rays venue" },
+            ].map((img, i) => (
+              <FadeIn key={img.src} delay={i % 2 === 1 ? "delay-100" : ""}>
+                <div className="relative aspect-[3/2] rounded-sm overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
                   />
-                </FadeIn>
-              )
-            )}
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>

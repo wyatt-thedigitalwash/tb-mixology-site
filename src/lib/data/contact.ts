@@ -4,6 +4,7 @@ export const serviceOptions = [
   "Batch Cocktails",
   "Cocktail Classes",
   "Caviar Service",
+  "Bar Rental",
   "Not Sure Yet",
 ];
 

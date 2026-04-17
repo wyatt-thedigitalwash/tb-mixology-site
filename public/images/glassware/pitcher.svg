@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Rim ellipse -->
+  <ellipse cx="55" cy="30" rx="28" ry="6" />
+  <!-- Spout -->
+  <path d="M83 30 C90 30, 94 34, 94 40" />
+  <!-- Left side — gentle curve -->
+  <path d="M27 30 C27 32, 28 90, 32 128" />
+  <!-- Right side — gentle curve -->
+  <path d="M83 30 C83 32, 82 90, 78 128" />
+  <!-- Bottom -->
+  <path d="M32 128 Q32 136 55 136 Q78 136 78 128" />
+  <!-- Handle -->
+  <path d="M78 48 C96 54, 98 80, 96 100 C94 116, 86 126, 78 128" />
+</svg>

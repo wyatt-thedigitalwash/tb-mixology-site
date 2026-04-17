@@ -152,6 +152,18 @@ function EventGrid({ event }: { event: EventData }) {
         </>
       );
 
+    case "three-portrait":
+      return (
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-3 gap-3">
+            {imgs.map((img) => (
+              <Img key={img.src} img={img} sizes="33vw" className="aspect-[2/3]" />
+            ))}
+          </div>
+        </>
+      );
+
     case "three-top-portrait-bottom":
       return (
         <>
@@ -175,6 +187,28 @@ function EventGrid({ event }: { event: EventData }) {
                 </div>
               </div>
             )}
+          </div>
+        </>
+      );
+
+    case "grid-2x2-plus-3":
+      return (
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:flex md:flex-col gap-3">
+            <div className="grid grid-cols-2 gap-3 aspect-[2/1]">
+              {imgs.slice(0, 4).map((img) => (
+                <Img key={img.src} img={img} sizes="50vw" />
+              ))}
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {imgs.slice(4).map((img) => {
+                const isPortrait = img.height > img.width;
+                return (
+                  <Img key={img.src} img={img} sizes="33vw" className={isPortrait ? "aspect-[3/4]" : "aspect-[3/2]"} />
+                );
+              })}
+            </div>
           </div>
         </>
       );

@@ -107,7 +107,7 @@ export default function DrinksPage() {
             <SectionHeading
               label="Batch Cocktails"
               title="Batch Cocktail Menu"
-              subtitle="Ordering batch cocktails? Here are your flavor options. These are specifically for our batch cocktail service — pre-mixed and delivered ready to pour."
+              subtitle="Ordering batch cocktails? Here are your flavor options. These are our batch cocktail flavors — pre-mixed and delivered ready to pour. Many of these can also be incorporated into your bartending service menu."
             />
           </FadeIn>
           <DrinkMenu />
