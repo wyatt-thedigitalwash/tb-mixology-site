@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title: "TB Mixology | Tampa Bay Event Bartending",
   description:
     "Woman-owned mobile bartending serving St. Pete, Tampa, Clearwater & Sarasota. Fresh ingredients, custom cocktail menus, and unforgettable bar experiences for every event.",
-  metadataBase: new URL("https://tb-mixology-site.vercel.app"),
+  metadataBase: new URL("https://tbmixology.com"),
   robots: { index: true, follow: true },
   icons: {
     icon: "/favicon.ico",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "TB Mixology | Tampa Bay Event Bartending",
     description:
       "Woman-owned mobile bartending serving St. Pete, Tampa, Clearwater & Sarasota. Fresh ingredients, custom cocktail menus, and unforgettable bar experiences.",
-    url: "https://tb-mixology-site.vercel.app",
+    url: "https://tbmixology.com",
     siteName: "TB Mixology",
     locale: "en_US",
     type: "website",

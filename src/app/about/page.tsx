@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://tb-mixology-site.vercel.app/about",
+    canonical: "https://tbmixology.com/about",
   },
 };
 

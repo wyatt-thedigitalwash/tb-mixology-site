@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     images: [{ url: "/og-image.png" }],
   },
   alternates: {
-    canonical: "https://tb-mixology-site.vercel.app/services/classes",
+    canonical: "https://tbmixology.com/services/classes",
   },
   twitter: {
     card: "summary_large_image",

@@ -77,7 +77,7 @@ export async function POST(req: Request) {
 
         <hr style="border: none; border-top: 1px solid #c9a96e; margin-top: 32px;" />
         <p style="color: #a89f95; font-size: 12px;">
-          Sent from tb-mixology-site.vercel.app contact form
+          Sent from tbmixology.com contact form
         </p>
       </div>
     `;

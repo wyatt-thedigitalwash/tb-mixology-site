@@ -6,7 +6,7 @@
 - Location: St. Petersburg, FL (serving Tampa Bay area)
 - Phone: (614) 634-1126 / (727) 337-4215
 - Email: emma@tbmixology.com
-- Website URL: https://tb-mixology-site.vercel.app
+- Website URL: https://tbmixology.com
 - Google Business Profile: (to be linked)
 - Instagram: @tbmixology
 

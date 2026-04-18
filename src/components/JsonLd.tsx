@@ -1,4 +1,4 @@
-const siteUrl = "https://tb-mixology-site.vercel.app";
+const siteUrl = "https://tbmixology.com";
 
 const localBusiness = {
   "@type": "EventPlanningService",

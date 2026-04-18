@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "Rent real glassware for your event — coupes, rocks glasses, highballs, martini glasses, and more. Serving Tampa, St. Pete, and surrounding areas.",
   },
   alternates: {
-    canonical: "https://tb-mixology-site.vercel.app/services/glassware",
+    canonical: "https://tbmixology.com/services/glassware",
   },
 };
 

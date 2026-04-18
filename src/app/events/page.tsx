@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Browse our event gallery featuring weddings, corporate events, private parties, and brand collaborations across Tampa Bay.",
   },
   alternates: {
-    canonical: "https://tb-mixology-site.vercel.app/events",
+    canonical: "https://tbmixology.com/events",
   },
 };
 

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "See what our clients are saying about TB Mixology. Five-star reviews from weddings, corporate events, and private parties across Tampa Bay.",
   },
   alternates: {
-    canonical: "https://tb-mixology-site.vercel.app/reviews",
+    canonical: "https://tbmixology.com/reviews",
   },
 };
 

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Every TB Mixology event gets a fully custom cocktail menu built from scratch. Explore past menus and our batch cocktail flavor options.",
   },
   alternates: {
-    canonical: "https://tb-mixology-site.vercel.app/drinks",
+    canonical: "https://tbmixology.com/drinks",
   },
 };
 

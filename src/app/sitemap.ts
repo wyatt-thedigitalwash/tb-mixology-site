@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://tb-mixology-site.vercel.app";
+  const baseUrl = "https://tbmixology.com";
 
   const pages = [
     "",
