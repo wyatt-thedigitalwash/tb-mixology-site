@@ -5,16 +5,28 @@ import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import PricingCard from "@/components/PricingCard";
 import AddOnsGrid from "@/components/AddOnsGrid";
-import { MessageSquare, BookOpen, User, Wrench, Snowflake, FileText } from "lucide-react";
+import { MessageSquare, BookOpen, User, Wrench, Leaf, Snowflake, FileText, GlassWater, Martini, Table } from "lucide-react";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 import { packages, included } from "@/lib/data/bartending";
+import BarExtrasGrid from "@/components/BarExtrasGrid";
 
-const includedIcons = [MessageSquare, BookOpen, User, Wrench, Snowflake, FileText];
+const includedIcons = [MessageSquare, BookOpen, User, Wrench, Leaf, Snowflake, FileText, GlassWater, Martini, Table];
 
 export const metadata: Metadata = {
   title: "Bartending Services | TB Mixology — Tampa Bay Event Bartending",
   description:
     "Professional mobile bartending for events of all sizes — custom cocktail menus, full bar setup, and seamless service. Serving Tampa, St. Pete, Clearwater, and Sarasota.",
   openGraph: {
+    title: "Bartending Services | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Professional mobile bartending for events of all sizes — custom cocktail menus, full bar setup, and seamless service. Serving Tampa, St. Pete, Clearwater, and Sarasota.",
+    images: [{ url: "/og-image.png" }],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/services/bartending",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Bartending Services | TB Mixology — Tampa Bay Event Bartending",
     description:
       "Professional mobile bartending for events of all sizes — custom cocktail menus, full bar setup, and seamless service. Serving Tampa, St. Pete, Clearwater, and Sarasota.",
@@ -27,13 +39,14 @@ export default function BartendingPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
+          as="h1"
           label="Services"
           title="Bartending Services"
           subtitle="Professional mobile bartending tailored to your event, your style, and your guest count. Every detail handled with care."
         />
         <div className="text-center mt-8">
           <Link
-            href="/contact"
+            href="/contact?service=bartending"
             className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
           >
             Book Your Bar
@@ -48,6 +61,7 @@ export default function BartendingPage() {
             <SectionHeading
               label="The Experience"
               title="What&rsquo;s Included"
+              subtitle="Every bartending package comes with everything you need for a seamless bar experience."
               light
             />
           </FadeIn>
@@ -102,6 +116,8 @@ export default function BartendingPage() {
               />
             </FadeIn>
             <AddOnsGrid />
+
+            <BarExtrasGrid />
           </div>
         </div>
       </section>
@@ -145,7 +161,7 @@ export default function BartendingPage() {
               Tell us about your event and we&rsquo;ll recommend the perfect package.
             </p>
             <Link
-              href="/contact"
+              href="/contact?service=bartending"
               className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
             >
               Get in Touch
@@ -153,6 +169,18 @@ export default function BartendingPage() {
           </FadeIn>
         </div>
       </section>
+
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: "Bartending Services", href: "/services/bartending" },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Mobile Event Bartending"
+        description="Professional mobile bartending with custom cocktail menus, full bar setup, and seamless service for events across Tampa Bay."
+      />
     </main>
   );
 }

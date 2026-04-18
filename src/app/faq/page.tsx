@@ -4,9 +4,28 @@ import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import FaqAccordion from "@/components/FaqAccordion";
 import { faqs } from "@/lib/data/faq";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "FAQ | TB Mixology — Tampa Bay Event Bartending",
+  description:
+    "Frequently asked questions about TB Mixology's mobile bartending services, pricing, and event planning in Tampa Bay.",
+  openGraph: {
+    title: "FAQ | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Frequently asked questions about TB Mixology's mobile bartending services, pricing, and event planning in Tampa Bay.",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Frequently asked questions about TB Mixology's mobile bartending services, pricing, and event planning in Tampa Bay.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/faq",
+  },
 };
 
 const jsonLd = {
@@ -34,6 +53,7 @@ export default function FaqPage() {
         {/* Hero */}
         <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
           <SectionHeading
+            as="h1"
             label="Support"
             title="Frequently Asked Questions"
             subtitle="Everything you need to know about working with TB Mixology"
@@ -73,6 +93,14 @@ export default function FaqPage() {
             </FadeIn>
           </div>
         </section>
+
+        <LocalBusinessJsonLd />
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Home", href: "/" },
+            { name: "FAQ", href: "/faq" },
+          ]}
+        />
       </main>
     </>
   );

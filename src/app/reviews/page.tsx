@@ -5,11 +5,27 @@ import SectionHeading from "@/components/SectionHeading";
 import ReviewCard from "@/components/ReviewCard";
 import FadeIn from "@/components/FadeIn";
 import { reviews } from "@/lib/data/reviews";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Reviews | TB Mixology — Tampa Bay Event Bartending",
   description:
     "See what our clients are saying about TB Mixology. Five-star reviews from weddings, corporate events, and private parties across Tampa Bay.",
+  openGraph: {
+    title: "Reviews | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "See what our clients are saying about TB Mixology. Five-star reviews from weddings, corporate events, and private parties across Tampa Bay.",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reviews | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "See what our clients are saying about TB Mixology. Five-star reviews from weddings, corporate events, and private parties across Tampa Bay.",
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/reviews",
+  },
 };
 
 const jsonLd = {
@@ -50,6 +66,7 @@ export default function ReviewsPage() {
         {/* Hero */}
         <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
           <SectionHeading
+            as="h1"
             label="Testimonials"
             title="Kind Words"
             subtitle="Hear from the hosts, couples, and brands we've had the pleasure of working with"
@@ -113,6 +130,9 @@ export default function ReviewsPage() {
             </FadeIn>
           </div>
         </section>
+
+        <LocalBusinessJsonLd />
+        <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Reviews", href: "/reviews" }]} />
       </main>
     </>
   );

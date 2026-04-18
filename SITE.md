@@ -28,7 +28,6 @@
 - [x] Services / Cocktail Classes
 - [x] Services / Batched Cocktails
 - [x] Services / Glassware Rental
-- [x] Services / Bar Rental
 - [x] Drinks (flavor menus)
 - [x] Events (photo galleries)
 - [x] Reviews

@@ -26,6 +26,7 @@ export default function ExpandableHighlight({ iconName, title, description, deta
   return (
     <button
       onClick={() => setOpen(!open)}
+      aria-expanded={open}
       className="border border-white/10 rounded-sm p-6 text-center hover:border-accent/30 transition-colors duration-200 ease-out w-full cursor-pointer"
     >
       <Icon size={28} className="text-accent mx-auto mb-4" strokeWidth={1.5} />

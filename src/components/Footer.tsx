@@ -41,7 +41,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-accent transition-colors inline-flex items-center gap-2 text-sm font-body"
-              aria-label="Instagram"
+              aria-label="TB Mixology on Instagram (opens in a new tab)"
             >
               <Instagram size={18} />
               @tbmixology
@@ -70,6 +70,7 @@ export default function Footer() {
               href="https://thedigitalwash.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="The Digital Wash (opens in a new tab)"
               className="hover:text-white/50 transition-colors"
             >
               The Digital Wash

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import PlaceholderImage from "./PlaceholderImage";
+import { Check } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
@@ -9,6 +10,7 @@ interface ServiceCardProps {
   imageLabel: string;
   imageSrc?: string;
   imageAlt?: string;
+  highlights?: string[];
   light?: boolean;
 }
 
@@ -19,6 +21,7 @@ export default function ServiceCard({
   imageLabel,
   imageSrc,
   imageAlt,
+  highlights,
   light = false,
 }: ServiceCardProps) {
   return (
@@ -45,6 +48,16 @@ export default function ServiceCard({
       <p className={`font-body text-sm leading-relaxed ${light ? "text-white/60" : "text-warm-gray"}`}>
         {description}
       </p>
+      {highlights && highlights.length > 0 && (
+        <ul className="mt-3 space-y-1.5">
+          {highlights.map((item) => (
+            <li key={item} className={`flex items-start gap-2 font-body text-xs leading-relaxed ${light ? "text-white/50" : "text-warm-gray/80"}`}>
+              <Check size={12} className="text-accent shrink-0 mt-0.5" strokeWidth={2.5} />
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </Link>
   );
 }

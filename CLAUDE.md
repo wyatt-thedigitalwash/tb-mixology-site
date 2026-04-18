@@ -11,12 +11,11 @@
 ## Pages
 
 - `/` — Home (Hero, Services Overview, Bartending Packages, Differentiator, Reviews, Instagram, CTA)
-- `/services` — Services overview (3 core services + 3 add-on services + add-ons pricing)
+- `/services` — Services overview (3 core services + 2 add-on services + add-ons pricing)
 - `/services/bartending` — Bartending Services (guest-count packages + add-ons)
 - `/services/classes` — Cocktail Classes
 - `/services/batched` — Batched Cocktails (pricing + details)
 - `/services/glassware` — Glassware Rental (10 types)
-- `/services/bar-rental` — Bar Rental (custom portable bar)
 - `/drinks` — Drinks & Flavors (tabbed: Vodka, Tequila, Gin, Bourbon, Build Your Own)
 - `/events` — Event photo galleries (filtered by category)
 - `/reviews` — Reviews (8 placeholder reviews)

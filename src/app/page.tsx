@@ -9,6 +9,7 @@ import InstagramFeed from "@/components/InstagramFeed";
 import ExpandableHighlight from "@/components/ExpandableHighlight";
 import PricingCard from "@/components/PricingCard";
 import AddOnsGrid from "@/components/AddOnsGrid";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import {
   services,
   addOnServices,
@@ -16,7 +17,8 @@ import {
   homeReviews,
   highlights,
 } from "@/lib/data/home";
-import { addOnOverviewItems } from "@/lib/data/services";
+import { mainAddOns, barExtras } from "@/lib/data/services";
+import BarExtrasGrid from "@/components/BarExtrasGrid";
 
 const highlightIconNames = ["Palette", "Leaf", "Sparkles", "Tag", "Heart", "ShieldCheck"] as const;
 
@@ -32,6 +34,14 @@ export const metadata: Metadata = {
     siteName: "TB Mixology",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/og-image.png" }],
+  },
+  alternates: { canonical: "https://tb-mixology-site.vercel.app" },
+  twitter: {
+    card: "summary_large_image",
+    title: "TB Mixology | Tampa Bay Event Bartending",
+    description: "Woman-owned mobile bartending serving St. Pete, Tampa, Clearwater & Sarasota.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -67,8 +77,11 @@ export default function Home() {
             <img
               src="/assets/tb-mixology-logo-transparent.svg"
               alt="TB Mixology logo"
+              width={384}
+              height={120}
               className="mx-auto w-64 md:w-80 lg:w-96 h-auto mb-6"
             />
+            <h1 className="sr-only">TB Mixology — Tampa Bay Event Bartending</h1>
           </FadeIn>
           <FadeIn delay="delay-100">
             <p className="font-body text-white text-base md:text-xl mb-10 max-w-2xl mx-auto">
@@ -107,9 +120,9 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 max-w-3xl mx-auto">
             {addOnServices.map((s, i) => (
-              <FadeIn key={s.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+              <FadeIn key={s.title} delay={i === 1 ? "delay-100" : ""}>
                 <ServiceCard {...s} />
               </FadeIn>
             ))}
@@ -120,8 +133,8 @@ export default function Home() {
             <FadeIn>
               <SectionHeading label="Extras" title="Add-Ons & Extras" />
             </FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {addOnOverviewItems.map((item) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {[...mainAddOns, ...barExtras].map((item) => (
                 <FadeIn key={item.name}>
                   <div className="border border-warm-gray/30 rounded-sm px-4 py-3">
                     <p className="font-body text-sm font-semibold text-primary">{item.name}</p>
@@ -175,12 +188,10 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          {/* Add-Ons & Extras */}
           <div className="mt-16">
-            <FadeIn>
-              <SectionHeading label="Extras" title="Add-Ons & Extras" />
-            </FadeIn>
             <AddOnsGrid />
+
+            <BarExtrasGrid />
           </div>
 
           <FadeIn>
@@ -237,6 +248,7 @@ export default function Home() {
                 href="https://instagram.com/tbmixology"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="TB Mixology on Instagram (opens in a new tab)"
                 className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
               >
                 Instagram &rarr;
@@ -245,6 +257,7 @@ export default function Home() {
                 href="https://www.tiktok.com/@tbmixology"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="TB Mixology on TikTok (opens in a new tab)"
                 className="font-body text-sm text-primary hover:text-accent transition-colors duration-200 ease-out tracking-wide"
               >
                 TikTok &rarr;
@@ -274,34 +287,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── LocalBusiness JSON-LD ── */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "TB Mixology",
-            description:
-              "Woman-owned mobile bartending serving Tampa Bay. Custom cocktails, private event bartending, cocktail classes, and batch cocktails.",
-            url: "https://tb-mixology-site.vercel.app",
-            telephone: "",
-            areaServed: [
-              { "@type": "City", name: "Tampa" },
-              { "@type": "City", name: "St. Petersburg" },
-              { "@type": "City", name: "Clearwater" },
-              { "@type": "City", name: "Sarasota" },
-            ],
-            priceRange: "$$",
-            image: "",
-            sameAs: [
-              "https://instagram.com/tbmixology",
-              "https://www.facebook.com/p/TB-Mixology-100093284260144/",
-              "https://www.tiktok.com/@tbmixology",
-            ],
-          }),
-        }}
-      />
+      {/* ── Structured Data ── */}
+      <LocalBusinessJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }]} />
     </main>
   );
 }

@@ -47,15 +47,6 @@ export const addOnServices = [
     imageSrc: "/images/martini-glasses-event-setup.webp",
     imageAlt: "Rows of martini glasses set up for an event",
   },
-  {
-    title: "Bar Rental",
-    description:
-      "A custom portable bar to anchor your event setup. Delivered, set up, and broken down by us.",
-    href: "/services/bar-rental",
-    imageLabel: "Bar rental photo",
-    imageSrc: "/images/bar-rentals/canopy-bar-cart-waterfront-palm-trees.webp",
-    imageAlt: "White bar cart with canopy and rattan lanterns on waterfront lawn",
-  },
 ];
 
 export const packages = [

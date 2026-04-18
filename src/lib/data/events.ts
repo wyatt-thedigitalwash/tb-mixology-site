@@ -93,11 +93,14 @@ export const events: EventData[] = [
   {
     title: "Christmas Party",
     category: "Private Parties",
-    layout: "portrait-left-3",
+    layout: "grid-2x2-plus-3",
     images: [
-      { src: "/images/events/christmas-party/cranberry-rosemary-cocktail-ice-sphere.webp", alt: "Tall cocktail with ice sphere, cranberries, and rosemary sprig", width: 1280, height: 1920 },
       { src: "/images/events/christmas-party/sips-of-the-season-cocktail-menu.webp", alt: "Custom Sips of the Season cocktail menu with disco ball and Christmas decor", width: 1920, height: 1280 },
       { src: "/images/events/christmas-party/smoked-cranberry-cocktails-rosemary.webp", alt: "Smoked cranberry cocktails with rosemary garnish at Christmas party", width: 1920, height: 1280 },
+      { src: "/images/events/christmas-party/guest-holding-martini-sparkle-headband.webp", alt: "Guest in sparkle headband holding lemon drop martini at Christmas party", width: 1920, height: 1280 },
+      { src: "/images/events/christmas-party/cranberry-rosemary-cocktail-ice-sphere.webp", alt: "Tall cocktail with ice sphere, cranberries, and rosemary sprig", width: 1280, height: 1920 },
+      { src: "/images/events/christmas-party/bartender-holding-two-rosemary-cocktails.webp", alt: "Bartender holding two rosemary garnished cocktails at Christmas party", width: 1080, height: 1616 },
+      { src: "/images/events/christmas-party/friends-cocktails-holiday-feather-boa.webp", alt: "Two friends posing with cranberry cocktails wearing holiday feather boa", width: 1616, height: 1080 },
     ],
   },
   {
@@ -137,12 +140,15 @@ export const events: EventData[] = [
   {
     title: "Tampa Bay Rays Team Event",
     category: "Cocktail Classes",
-    layout: "grid-2x2",
+    layout: "grid-2x2-plus-3",
     images: [
       { src: "/images/events/rays-corporate/instructor-cheers-rays-logo-background.webp", alt: "TB Mixology instructor raising glass with Rays logo in background", width: 1920, height: 1280 },
       { src: "/images/events/rays-corporate/rays-team-mixing-cocktails-group.webp", alt: "Full Rays staff group mixing cocktails at team building event", width: 1920, height: 1280 },
       { src: "/images/events/rays-corporate/four-craft-cocktails-lineup-bar.webp", alt: "Four craft cocktails lined up at Rays corporate cocktail class", width: 1920, height: 1280 },
       { src: "/images/events/rays-corporate/bartenders-cheers-hugo-spritz-margarita.webp", alt: "TB Mixology bartenders cheersing hugo spritz and margarita at Rays venue", width: 1920, height: 1280 },
+      { src: "/images/events/rays-corporate/rays-staff-pouring-jigger-cocktail.webp", alt: "Rays staff member pouring from jigger into shaker at cocktail class", width: 1920, height: 1280 },
+      { src: "/images/events/rays-corporate/two-women-pouring-cocktails-rays.webp", alt: "Two women pouring cocktails together at Rays cocktail class", width: 1920, height: 1280 },
+      { src: "/images/events/rays-corporate/bartenders-drinking-hugo-spritz-cheers.webp", alt: "Two TB Mixology bartenders drinking hugo spritz cocktails at end of class", width: 1920, height: 1280 },
     ],
   },
 ];

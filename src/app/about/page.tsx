@@ -3,9 +3,28 @@ import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import Image from "next/image";
 import { values } from "@/lib/data/about";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "About | TB Mixology — Tampa Bay Event Bartending",
+  description:
+    "Meet the team behind TB Mixology — a woman-owned mobile bartending company based in St. Pete, FL serving Tampa Bay with custom cocktails and unforgettable bar experiences.",
+  openGraph: {
+    title: "About | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Meet the team behind TB Mixology — a woman-owned mobile bartending company based in St. Pete, FL serving Tampa Bay with custom cocktails and unforgettable bar experiences.",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Meet the team behind TB Mixology — woman-owned mobile bartending in St. Pete, FL.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/about",
+  },
 };
 
 export default function AboutPage() {
@@ -29,8 +48,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
               <Image
-                src="/images/tb-mixology-founders-outdoor-bar.webp"
-                alt="TB Mixology founders working behind a portable bar at an outdoor event"
+                src="/images/about-us/emma-brooke-together.webp"
+                alt="Emma Nichter and Brooke Krimmel, founders of TB Mixology"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -38,7 +57,6 @@ export default function AboutPage() {
             </div>
             <div>
               <SectionHeading label="Our Story" title="How It Started" />
-              {/* REPLACE: Emma to fill in personal story */}
               <div className="space-y-4 text-warm-gray font-body leading-relaxed">
                 <p>
                   TB Mixology was founded with a simple belief: every event
@@ -61,6 +79,58 @@ export default function AboutPage() {
         </FadeIn>
       </section>
 
+      {/* The Team */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading title="The Team" />
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-2xl mx-auto">
+            {/* Brooke */}
+            <FadeIn>
+              <div className="text-center">
+                <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-4">
+                  <Image
+                    src="/images/about-us/brooke-krimmel-headshot.webp"
+                    alt="Brooke Krimmel, Founder of TB Mixology"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="font-heading text-xl text-primary">
+                  Brooke Krimmel
+                </h3>
+                <p className="text-warm-gray font-body text-sm mt-1">
+                  Founder
+                </p>
+              </div>
+            </FadeIn>
+
+            {/* Emma */}
+            <FadeIn delay="delay-100">
+              <div className="text-center">
+                <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-4">
+                  <Image
+                    src="/images/about-us/emma-nichter-headshot.webp"
+                    alt="Emma Nichter, Director of Operations at TB Mixology"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="font-heading text-xl text-primary">
+                  Emma Nichter
+                </h3>
+                <p className="text-warm-gray font-body text-sm mt-1">
+                  Director of Operations
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
         <FadeIn>
@@ -81,6 +151,14 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+
+      <LocalBusinessJsonLd />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about" },
+        ]}
+      />
     </main>
   );
 }

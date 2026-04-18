@@ -1,12 +1,44 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import { serviceOptions, cupOptions } from "@/lib/data/contact";
+import { useState, useEffect, useRef, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
+import { serviceOptions, cupOptions, serviceParamMap } from "@/lib/data/contact";
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [checkedServices, setCheckedServices] = useState<Set<string>>(new Set());
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const serviceParams = searchParams.getAll("service");
+    if (serviceParams.length === 0) return;
+
+    const preselected = new Set<string>();
+    for (const param of serviceParams) {
+      const label = serviceParamMap[param];
+      if (label) preselected.add(label);
+    }
+
+    if (preselected.size > 0) {
+      setCheckedServices(preselected);
+      // Smooth scroll to form after a brief delay for render
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 300);
+    }
+  }, [searchParams]);
+
+  function handleServiceToggle(option: string) {
+    setCheckedServices((prev) => {
+      const next = new Set(prev);
+      if (next.has(option)) next.delete(option);
+      else next.add(option);
+      return next;
+    });
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -47,7 +79,7 @@ export default function ContactForm() {
 
   if (submitted)
     return (
-      <div className="text-center py-16">
+      <div className="text-center py-16" role="status" aria-live="polite">
         <h3 className="font-heading text-2xl text-primary mb-3">
           Thank You!
         </h3>
@@ -63,7 +95,7 @@ export default function ContactForm() {
     "text-xs tracking-[0.15em] uppercase text-warm-gray font-body mb-1 block";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-12">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-12">
       {/* Client Information */}
       <div>
         <h3 className="font-heading text-2xl text-primary mb-6">
@@ -77,6 +109,7 @@ export default function ContactForm() {
               id="firstName"
               name="firstName"
               required
+              aria-required="true"
               placeholder="First name"
               className={inputClass}
             />
@@ -88,6 +121,7 @@ export default function ContactForm() {
               id="lastName"
               name="lastName"
               required
+              aria-required="true"
               placeholder="Last name"
               className={inputClass}
             />
@@ -99,6 +133,7 @@ export default function ContactForm() {
               id="email"
               name="email"
               required
+              aria-required="true"
               placeholder="your@email.com"
               className={inputClass}
             />
@@ -110,6 +145,7 @@ export default function ContactForm() {
               id="phone"
               name="phone"
               required
+              aria-required="true"
               placeholder="(555) 123-4567"
               className={inputClass}
             />
@@ -233,6 +269,8 @@ export default function ContactForm() {
                     type="checkbox"
                     name="serviceType"
                     value={option}
+                    checked={checkedServices.has(option)}
+                    onChange={() => handleServiceToggle(option)}
                     className="accent-accent"
                   />
                   {option}
@@ -322,7 +360,7 @@ export default function ContactForm() {
       </div>
 
       {error && (
-        <p className="text-red-600 text-sm font-body">{error}</p>
+        <p role="alert" className="text-red-600 text-sm font-body">{error}</p>
       )}
 
       <button

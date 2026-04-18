@@ -10,7 +10,6 @@ const serviceLinks = [
   { href: "/services/batched", label: "Batch Cocktails" },
   { href: "/services/classes", label: "Cocktail Classes" },
   { href: "/services/glassware", label: "Glassware Rental" },
-  { href: "/services/bar-rental", label: "Bar Rental" },
   { href: "/services/caviar", label: "Caviar Service" },
 ];
 
@@ -71,6 +70,18 @@ export default function Navigation() {
     setMobileServicesOpen(false);
   }, []);
 
+  // Escape key closes mobile menu and dropdown
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        if (menuOpen) closeMenu();
+        if (dropdownOpen) setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen, dropdownOpen, closeMenu]);
+
   // Determine header colors based on state
   const headerBg = menuOpen
     ? "bg-primary"
@@ -85,16 +96,20 @@ export default function Navigation() {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 ${headerBg}`}>
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <nav aria-label="Main navigation" className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
             onClick={menuOpen ? closeMenu : undefined}
+            aria-label="TB Mixology — Home"
             className={`font-heading text-2xl tracking-wide flex items-center gap-1 ${lightText ? "text-secondary" : "text-primary"}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/tb-mixology-glass-logo.svg"
               alt=""
+              aria-hidden="true"
+              width={32}
+              height={32}
               className={`w-8 h-8 ${lightText ? "brightness-0 invert" : ""}`}
             />
             TB Mixology
@@ -113,6 +128,8 @@ export default function Navigation() {
                 >
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
+                    aria-expanded={dropdownOpen}
+                    aria-haspopup="true"
                     className={`text-sm font-body tracking-wide flex items-center gap-1 transition-colors duration-200 ${
                       transparent ? "text-white/70 hover:text-white" : "text-primary/70 hover:text-primary"
                     }`}
@@ -177,7 +194,8 @@ export default function Navigation() {
               if (menuOpen) closeMenu();
               else setMenuOpen(true);
             }}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -186,6 +204,9 @@ export default function Navigation() {
 
       {/* Mobile menu — full screen overlay */}
       <div
+        role="dialog"
+        aria-label="Mobile navigation menu"
+        aria-modal="true"
         className={`fixed inset-0 z-40 bg-primary md:hidden transition-all duration-500 ease-out ${
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
@@ -204,6 +225,7 @@ export default function Navigation() {
                   <>
                     <button
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      aria-expanded={mobileServicesOpen}
                       className="font-heading text-2xl text-secondary hover:text-accent active:text-accent flex items-center gap-2"
                     >
                       {link.label}

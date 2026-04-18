@@ -4,7 +4,7 @@
   --color-primary: #1a1a1a;
   --color-secondary: #faf9f7;
   --color-accent: #c9a96e;
-  --color-warm-gray: #a89f95;
+  --color-warm-gray: #7a7269;
   --color-bg: #faf9f7;
   --color-text: #1a1a1a;
 
@@ -50,6 +50,15 @@ main > section:not(.bg-primary) + section:not(.bg-primary) {
   .accordion-body > div {
     transition: none;
   }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Staggered delays */
@@ -73,21 +82,47 @@ main > section:not(.bg-primary) + section:not(.bg-primary) {
   overflow: hidden;
 }
 
+/* Focus-visible styles */
+:focus-visible {
+  outline: 2px solid #c9a96e;
+  outline-offset: 2px;
+}
+
+/* Skip navigation link */
+.skip-nav {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.75rem 1.5rem;
+  background: #1a1a1a;
+  color: #faf9f7;
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.skip-nav:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
 /* Form input styles */
 input, textarea, select {
   background-color: transparent;
-  border-bottom: 1px solid #a89f95;
+  border-bottom: 1px solid #7a7269;
   outline: none;
   transition: border-color 0.25s ease-out;
   color: #1a1a1a;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus-visible, textarea:focus-visible, select:focus-visible {
   border-color: #c9a96e;
+  outline: none;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #a89f95;
+  color: #7a7269;
 }
 
 /* Scrollbar styling */
@@ -100,6 +135,6 @@ input::placeholder, textarea::placeholder {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a89f95;
+  background: #7a7269;
   border-radius: 3px;
 }

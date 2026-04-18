@@ -5,6 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import FadeIn from "@/components/FadeIn";
 import DrinkMenu from "@/components/DrinkMenu";
 import MenuExamples from "@/components/MenuExamples";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Drinks & Menus | TB Mixology — Tampa Bay Event Bartending",
@@ -14,6 +15,16 @@ export const metadata: Metadata = {
     title: "Drinks & Menus | TB Mixology — Tampa Bay Event Bartending",
     description:
       "Every TB Mixology event gets a fully custom cocktail menu built from scratch. Explore past menus and our batch cocktail flavor options.",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Drinks & Menus | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Every TB Mixology event gets a fully custom cocktail menu built from scratch. Explore past menus and our batch cocktail flavor options.",
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/drinks",
   },
 };
 
@@ -34,6 +45,7 @@ export default function DrinksPage() {
       {/* ── Hero ── */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
+          as="h1"
           label="Drinks & Menus"
           title="What We Pour"
           subtitle="Every event gets its own custom cocktail menu. From classic favorites to creative originals, we build drinks around your vibe, your guests, and your occasion."
@@ -143,6 +155,9 @@ export default function DrinksPage() {
           </FadeIn>
         </div>
       </section>
+
+      <LocalBusinessJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Drinks", href: "/drinks" }]} />
     </main>
   );
 }

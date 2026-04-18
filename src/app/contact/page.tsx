@@ -1,10 +1,30 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Contact | TB Mixology — Tampa Bay Event Bartending",
+  description:
+    "Contact TB Mixology to plan your next event. Fill out our event questionnaire or book a free consultation with Emma. Serving Tampa Bay.",
+  openGraph: {
+    title: "Contact | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Contact TB Mixology to plan your next event. Fill out our event questionnaire or book a free consultation with Emma. Serving Tampa Bay.",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Get in touch with TB Mixology to plan your next Tampa Bay event.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -28,7 +48,7 @@ export default function ContactPage() {
               <h2 className="font-heading text-3xl text-primary mb-8">
                 Event Questionnaire
               </h2>
-              <ContactForm />
+              <Suspense><ContactForm /></Suspense>
             </div>
           </FadeIn>
 
@@ -46,6 +66,14 @@ export default function ContactPage() {
           </FadeIn>
         </div>
       </section>
+
+      <LocalBusinessJsonLd />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
     </main>
   );
 }

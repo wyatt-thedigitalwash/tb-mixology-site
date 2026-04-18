@@ -5,6 +5,8 @@ import PricingCard from "@/components/PricingCard";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import { Gem, UtensilsCrossed, GlassWater, HandPlatter, Sparkles, Users } from "lucide-react";
+import CaviarInquiry from "@/components/CaviarInquiry";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Caviar Service | TB Mixology — Tampa Bay Event Bartending",
@@ -14,6 +16,16 @@ export const metadata: Metadata = {
     title: "Caviar Service | TB Mixology — Tampa Bay Event Bartending",
     description:
       "All-inclusive caviar service for weddings, corporate events, and private parties in Tampa Bay.",
+    images: [{ url: "/og-image.png" }],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/services/caviar",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Caviar Service | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "All-inclusive caviar service for weddings, corporate events, and private parties in Tampa Bay. Premium caviar, accompaniments, and professional tableside service.",
   },
 };
 
@@ -33,6 +45,7 @@ export default function CaviarPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
+          as="h1"
           label="Add-On or Standalone"
           title="All-Inclusive Caviar Service"
           subtitle="An elevated tasting experience for your guests — premium caviar served tableside with all the classic accompaniments. Available as an add-on to any bartending package or as a standalone booking."
@@ -42,7 +55,7 @@ export default function CaviarPage() {
         </div>
         <div className="text-center">
           <Link
-            href="/contact"
+            href="/contact?service=caviar"
             className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
           >
             Book Caviar Service
@@ -145,18 +158,33 @@ export default function CaviarPage() {
         </div>
       </section>
 
+      {/* How to Book */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-4xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading
+              label="Get Started"
+              title="How Are You Looking to Book?"
+            />
+          </FadeIn>
+          <FadeIn>
+            <CaviarInquiry />
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 bg-primary">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeIn>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary mb-4 leading-tight">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary mb-4 leading-tight">
               Add Caviar to Your Event
             </h2>
-            <p className="font-accent text-lg md:text-xl text-warm-gray mb-10">
+            <p className="font-accent text-lg md:text-xl text-white/70 mb-10">
               Book as an add-on to bartending or as a standalone experience.
             </p>
             <Link
-              href="/contact"
+              href="/contact?service=caviar"
               className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-accent/90 transition-colors duration-300 ease-out"
             >
               Get in Touch
@@ -164,6 +192,18 @@ export default function CaviarPage() {
           </FadeIn>
         </div>
       </section>
+
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: "Caviar Service", href: "/services/caviar" },
+        ]}
+      />
+      <ServiceJsonLd
+        name="All-Inclusive Caviar Service"
+        description="Premium caviar service for weddings, corporate events, and private parties in Tampa Bay. Tableside service with all accompaniments included."
+      />
     </main>
   );
 }

@@ -6,6 +6,7 @@ import DrinkMenu from "@/components/DrinkMenu";
 import PricingCard from "@/components/PricingCard";
 import SmoothScrollLink from "@/components/SmoothScrollLink";
 import Image from "next/image";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 import { details } from "@/lib/data/batched";
 
 export const metadata: Metadata = {
@@ -14,6 +15,16 @@ export const metadata: Metadata = {
     "Handcrafted batched cocktails mixed, prepped, and delivered to your door in Tampa & St. Pete. Each batch makes 26\u201330 drinks.",
   openGraph: {
     title: "Batched Cocktails | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Handcrafted batched cocktails mixed, prepped, and delivered to your door in Tampa & St. Pete. Each batch makes 26\u201330 drinks.",
+    images: [{ url: "/og-image.png" }],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/services/batched",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Batched Cocktails | TB Mixology \u2014 Tampa Bay Event Bartending",
     description:
       "Handcrafted batched cocktails mixed, prepped, and delivered to your door in Tampa & St. Pete. Each batch makes 26\u201330 drinks.",
   },
@@ -25,13 +36,14 @@ export default function BatchedPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
+          as="h1"
           label="Services"
           title="Batched Cocktails"
           subtitle="Pre-mixed, ready-to-pour cocktails made with fresh, high-quality ingredients. Ideal for hosting with ease while still offering a polished, consistent drink experience."
         />
         <div className="text-center mt-8">
           <Link
-            href="/contact"
+            href="/contact?service=batch"
             className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
           >
             Place an Order
@@ -123,29 +135,28 @@ export default function BatchedPage() {
       {/* Gallery */}
       <section className="py-20 md:py-28 bg-secondary">
         <div className="max-w-7xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading label="Gallery" title="Batch Cocktails in Action" />
+          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FadeIn>
-              <div className="relative aspect-video rounded-sm overflow-hidden">
-                <Image
-                  src="/images/beverage-dispenser-station-fruit-garnishes.webp"
-                  alt="Self-serve beverage dispensers with fresh fruit garnishes"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </FadeIn>
-            <FadeIn delay="delay-100">
-              <div className="relative aspect-video rounded-sm overflow-hidden">
-                <Image
-                  src="/images/pink-cocktail-lineup-lime-garnish.webp"
-                  alt="Pink cocktail lineup with lime garnishes on the bar"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </FadeIn>
+            {[
+              { src: "/images/batch-cocktails/batch-dispensers-menus-garnishes-setup.webp", alt: "Batch cocktail dispensers with printed menus and fresh garnishes" },
+              { src: "/images/batch-cocktails/holiday-cocktail-tower-coupe-glasses.webp", alt: "Holiday batch cocktails displayed on a tower of coupe glasses with green bows" },
+              { src: "/images/batch-cocktails/cocktail-menus-citrus-garnishes-closeup.webp", alt: "Custom cocktail menus with fresh citrus garnishes and dehydrated fruit" },
+              { src: "/images/batch-cocktails/baby-shower-batch-bar-setup.webp", alt: "Batch cocktail bar setup for a baby shower celebration" },
+            ].map((img, i) => (
+              <FadeIn key={img.src} delay={i % 2 === 1 ? "delay-100" : ""}>
+                <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -161,7 +172,7 @@ export default function BatchedPage() {
               Tell us how many guests and we&rsquo;ll recommend the perfect flavors.
             </p>
             <Link
-              href="/contact"
+              href="/contact?service=batch"
               className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
             >
               Place an Order
@@ -169,6 +180,18 @@ export default function BatchedPage() {
           </FadeIn>
         </div>
       </section>
+
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: "Batched Cocktails", href: "/services/batched" },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Batched Cocktails"
+        description="Handcrafted batched cocktails mixed, prepped, and delivered for events in Tampa Bay. Each batch makes 26-30 drinks."
+      />
     </main>
   );
 }

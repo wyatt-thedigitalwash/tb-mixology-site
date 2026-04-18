@@ -26,20 +26,14 @@ export const packages = [
 ];
 
 export const included = [
-  { title: "Virtual Consultation", description: "We plan every detail of your bar experience in advance" },
-  { title: "Custom Cocktail Menu", description: "Designed around your theme, your palette, your guests" },
+  { title: "Consultation", description: "We plan every detail of your bar experience in advance" },
+  { title: "Custom Cocktail Menu", description: "5+ cocktails & mocktails designed around your event" },
   { title: "Professional Bartenders", description: "Experienced, personable, and always on point" },
   { title: "Full Setup & Breakdown", description: "We arrive early and leave everything spotless" },
-  { title: "Ice, Mixers & Garnishes", description: "All the essentials — fresh, prepped, and ready" },
-  { title: "Printed Menus", description: "Custom printed cocktail menus for your bar display" },
-];
-
-export const bartendingAddOns = [
-  { name: "Alcohol Purchase & Transport", price: "Cost + 10%" },
-  { name: "Glassware Rental", price: "$3\u2013$5/pp" },
-  { name: "Large Ice Cubes", price: "$50+" },
-  { name: "Water Station", price: "$1/pp" },
-  { name: "Additional Bartender", price: "$75/hr" },
-  { name: "Bar Back", price: "$50/hr" },
-  { name: "Custom 4\u2019 Wooden Bar", price: "$200+" },
+  { title: "All Ingredients", description: "Fresh juices, sodas, garnishes, rims & alcohol (if applicable)" },
+  { title: "Ice & Coolers", description: "Everything to keep your drinks perfectly chilled" },
+  { title: "Custom Printed Menus", description: "Branded cocktail menus for your bar display" },
+  { title: "Cups & Dry Goods", description: "High-end 12oz cups, napkins, straws & garnish picks" },
+  { title: "All Bar Tools", description: "Shakers, jiggers, strainers \u2014 everything we need" },
+  { title: "Tables, Linens or Bar", description: "Bar setup with tables & linens or wooden bar rental" },
 ];

@@ -62,7 +62,7 @@ export default function GlasswareInquiry() {
           />
           <div className="text-center">
             <Link
-              href="/contact"
+              href="/contact?service=bartending&service=glassware"
               className="inline-block bg-accent text-primary px-8 py-3 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
             >
               Add to Your Bartending Package
@@ -80,7 +80,7 @@ export default function GlasswareInquiry() {
           />
           <div className="text-center">
             <Link
-              href="/contact"
+              href="/contact?service=glassware"
               className="inline-block bg-accent text-primary px-8 py-3 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
             >
               Request a Quote

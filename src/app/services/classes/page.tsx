@@ -3,12 +3,23 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import Image from "next/image";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Cocktail Classes | TB Mixology — Tampa Bay Event Bartending",
   description:
     "Interactive, hands-on cocktail classes for bachelorette parties, team events, brand activations, and private parties in Tampa Bay.",
   openGraph: {
+    title: "Cocktail Classes | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Interactive, hands-on cocktail classes for bachelorette parties, team events, brand activations, and private parties in Tampa Bay.",
+    images: [{ url: "/og-image.png" }],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/services/classes",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Cocktail Classes | TB Mixology — Tampa Bay Event Bartending",
     description:
       "Interactive, hands-on cocktail classes for bachelorette parties, team events, brand activations, and private parties in Tampa Bay.",
@@ -21,13 +32,14 @@ export default function ClassesPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
+          as="h1"
           label="Services"
           title="Cocktail Classes"
           subtitle="Interactive, hands-on cocktail classes in a guided social setting. Equal parts fun and elevated."
         />
         <div className="text-center mt-8">
           <Link
-            href="/contact"
+            href="/contact?service=classes"
             className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
           >
             Book a Class
@@ -42,8 +54,8 @@ export default function ClassesPage() {
             <FadeIn>
               <div className="relative aspect-video rounded-sm overflow-hidden">
                 <Image
-                  src="/images/cocktail-class-group-espresso-martinis.webp"
-                  alt="Group of women at a TB Mixology cocktail class holding espresso martinis"
+                  src="/images/pink-cocktail-lineup-lime-garnish.webp"
+                  alt="Colorful cocktail lineup with lime garnishes from a cocktail class"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -104,10 +116,10 @@ export default function ClassesPage() {
       </section>
 
       {/* Tampa Bay Rays Corporate Event */}
-      <section className="py-20 md:py-28 bg-primary">
+      <section className="py-20 md:py-28 bg-secondary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="Tampa Bay Rays" title="Corporate Team Event" light />
+            <SectionHeading label="Tampa Bay Rays" title="Corporate Team Event" />
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
@@ -143,7 +155,7 @@ export default function ClassesPage() {
               Tell us about your group and we&rsquo;ll tailor the perfect experience.
             </p>
             <Link
-              href="/contact"
+              href="/contact?service=classes"
               className="inline-block bg-accent text-primary px-12 py-5 text-sm tracking-[0.2em] uppercase font-body font-medium rounded-sm hover:bg-white hover:text-primary transition-colors duration-300 ease-out"
             >
               Book a Class
@@ -151,6 +163,18 @@ export default function ClassesPage() {
           </FadeIn>
         </div>
       </section>
+
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: "Cocktail Classes", href: "/services/classes" },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Cocktail Classes"
+        description="Interactive, hands-on cocktail classes for bachelorette parties, team events, brand activations, and private parties in Tampa Bay."
+      />
     </main>
   );
 }

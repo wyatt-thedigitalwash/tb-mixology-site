@@ -5,11 +5,27 @@ import SectionHeading from "@/components/SectionHeading";
 import FadeIn from "@/components/FadeIn";
 import EventGallery from "@/components/EventGallery";
 import MenuExamples from "@/components/MenuExamples";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Events | TB Mixology — Tampa Bay Event Bartending",
   description:
     "Browse our event gallery featuring weddings, corporate events, private parties, and brand collaborations across Tampa Bay.",
+  openGraph: {
+    title: "Events | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Browse our event gallery featuring weddings, corporate events, private parties, and brand collaborations across Tampa Bay.",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Events | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Browse our event gallery featuring weddings, corporate events, private parties, and brand collaborations across Tampa Bay.",
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/events",
+  },
 };
 
 export default function EventsPage() {
@@ -18,6 +34,7 @@ export default function EventsPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
+          as="h1"
           label="Our Work"
           title="Events & Gallery"
           subtitle="A look at some of our favorite events across Tampa Bay"
@@ -73,6 +90,9 @@ export default function EventsPage() {
           </FadeIn>
         </div>
       </section>
+
+      <LocalBusinessJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Events", href: "/events" }]} />
     </main>
   );
 }

@@ -3,20 +3,32 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 import {
   services,
   addOnServices,
-  addOnOverviewItems,
+  mainAddOns,
+  barExtras,
 } from "@/lib/data/services";
 
 export const metadata: Metadata = {
   title: "Our Services | TB Mixology — Tampa Bay Event Bartending",
   description:
-    "Bartending services, batch cocktails, cocktail classes, caviar service, glassware rental, and bar rental — explore the full range of TB Mixology services in Tampa Bay.",
+    "Bartending services, batch cocktails, cocktail classes, caviar service, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
   openGraph: {
     title: "Our Services | TB Mixology — Tampa Bay Event Bartending",
     description:
-      "Bartending services, batch cocktails, cocktail classes, caviar service, glassware rental, and bar rental — explore the full range of TB Mixology services in Tampa Bay.",
+      "Bartending services, batch cocktails, cocktail classes, caviar service, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
+    images: [{ url: "/og-image.png" }],
+  },
+  alternates: {
+    canonical: "https://tb-mixology-site.vercel.app/services",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services | TB Mixology — Tampa Bay Event Bartending",
+    description:
+      "Bartending services, batch cocktails, cocktail classes, caviar service, and glassware rental — explore the full range of TB Mixology services in Tampa Bay.",
   },
 };
 
@@ -26,21 +38,29 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <SectionHeading
+          as="h1"
           label="What We Offer"
           title="Our Services"
           subtitle="From full-service bartending and batch cocktails to hands-on classes and premium add-ons — TB Mixology has everything you need to elevate your next event."
         />
       </section>
 
-      {/* Core Services + Add-On Services */}
+      {/* Services */}
       <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
             <SectionHeading label="Core Services" title="What We Do" light />
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[...services, ...addOnServices].map((service, i) => (
-              <FadeIn key={service.title} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+            {services.map((service, i) => (
+              <FadeIn key={service.title} delay={i === 1 ? "delay-100" : i === 2 ? "delay-200" : ""}>
+                <ServiceCard {...service} light />
+              </FadeIn>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 max-w-3xl mx-auto">
+            {addOnServices.map((service, i) => (
+              <FadeIn key={service.title} delay={i === 1 ? "delay-100" : ""}>
                 <ServiceCard {...service} light />
               </FadeIn>
             ))}
@@ -54,8 +74,8 @@ export default function ServicesPage() {
           <FadeIn>
             <SectionHeading label="Extras" title="Add-Ons & Extras" />
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {addOnOverviewItems.map((item) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {mainAddOns.map((item) => (
               <FadeIn key={item.name}>
                 <div className="border border-warm-gray/30 rounded-sm px-4 py-3">
                   <p className="font-body text-sm font-semibold text-primary">{item.name}</p>
@@ -64,6 +84,23 @@ export default function ServicesPage() {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn>
+            <p className="text-xs tracking-[0.2em] uppercase text-warm-gray font-body mt-10 mb-4 text-center">
+              Bar Extras
+            </p>
+          </FadeIn>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {barExtras.map((item) => (
+              <FadeIn key={item.name}>
+                <div className="border border-warm-gray/20 rounded-sm px-3 py-2 text-center">
+                  <p className="font-body text-xs font-semibold text-primary">{item.name}</p>
+                  <p className="font-body text-xs text-warm-gray mt-0.5">{item.price}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
           <FadeIn>
             <div className="text-center mt-8">
               <Link
@@ -97,6 +134,13 @@ export default function ServicesPage() {
           </FadeIn>
         </div>
       </section>
+
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+        ]}
+      />
     </main>
   );
 }
