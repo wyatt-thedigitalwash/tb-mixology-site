@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, Libre_Franklin, Cormorant_Garamond } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -65,6 +66,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-XT0JGTLXQS"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XT0JGTLXQS');
+        `}
+      </Script>
       <body
         className={`${playfair.variable} ${libre.variable} ${cormorant.variable} antialiased`}
       >
