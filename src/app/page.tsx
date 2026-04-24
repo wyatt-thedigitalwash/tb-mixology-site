@@ -17,8 +17,6 @@ import {
   homeReviews,
   highlights,
 } from "@/lib/data/home";
-import { mainAddOns, barExtras } from "@/lib/data/services";
-import BarExtrasGrid from "@/components/BarExtrasGrid";
 
 const highlightIconNames = ["Palette", "Leaf", "Sparkles", "Tag", "Heart", "ShieldCheck"] as const;
 
@@ -128,22 +126,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Add-Ons & Extras */}
-          <div className="mt-16">
-            <FadeIn>
-              <SectionHeading label="Extras" title="Add-Ons & Extras" />
-            </FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {[...mainAddOns, ...barExtras].map((item) => (
-                <FadeIn key={item.name}>
-                  <div className="border border-warm-gray/30 rounded-sm px-4 py-3">
-                    <p className="font-body text-sm font-semibold text-primary">{item.name}</p>
-                    <p className="font-body text-sm text-warm-gray mt-1">{item.description}</p>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -190,8 +172,6 @@ export default function Home() {
 
           <div className="mt-16">
             <AddOnsGrid />
-
-            <BarExtrasGrid />
           </div>
 
           <FadeIn>

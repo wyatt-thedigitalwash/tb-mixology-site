@@ -125,5 +125,103 @@ Format: WebP (quality 100, max 1920px longest side, EXIF stripped)
 | IMG_6734.JPG | instructor-pouring-hugo-spritz.webp | 1920x1280 | 2189KB | Instructor pouring hugo spritz cocktail with Rays baseball art in background |
 | IMG_6751.JPG | bartenders-drinking-hugo-spritz-cheers.webp | 1920x1280 | 2193KB | Two TB Mixology bartenders drinking hugo spritz cocktails at end of class |
 
+## Menu Examples (Batch 2) → `public/menu-examples/`
+
+Processed on: 2026-04-23
+Source: `public/new-menus/`
+Format: WebP (quality 100, max 1200px longest side, EXIF stripped)
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| Beige Aesthetic Autumn Wedding Menu.png | cocktail-menu-campfire-autumn-leaves.webp | 928x1200 | 149KB | Campfire and cocktails autumn menu with copper leaf illustrations |
+| Beige Typography Drinks Menu.png.png | cocktail-menu-personalized-party-casual.webp | 728x1200 | 217KB | Personalized party drink menu with watermark cocktail glass illustrations |
+| Brown Neutral Classy Heritage Floral Filipino Wedding Food and Drink Menu.png | cocktail-menu-rattan-floral-elegant.webp | 928x1200 | 252KB | Elegant cocktail menu with rattan border and floral illustration |
+| Cynthia.png | cocktail-menu-christmas-holly-spritz.webp | 927x1200 | 198KB | Christmas cocktail menu with holly branches and red bow |
+| GingerBread.PNG | cocktail-menu-christmas-greenery-festive.webp | 928x1200 | 170KB | Festive Christmas cocktail menu with watercolor greenery and berries |
+| Green and White Pickleball Tournament Illustrative Instagram Story.PNG | cocktail-menu-pickleball-tournament-green.webp | 675x1200 | 307KB | Pickleball tournament themed cocktail menu with green background |
+| Jared.PNG | cocktail-menu-gold-arch-art-deco.webp | 927x1200 | 106KB | Art deco cocktail menu with gold arch and geometric accents |
+| Orange and Beige Vintage Horse Racing Cup Flyer.png | cocktail-menu-grand-prix-racing-retro.webp | 927x1200 | 207KB | Grand Prix racing themed cocktail menu with checkered flag |
+| Red Beige Modern Minimalist Food Menu Poster.png | cocktail-menu-japanese-minimalist-red.webp | 900x1200 | 102KB | Japanese inspired minimalist cocktail menu with bold red typography |
+| Red Simple Illustrative Retro Cocktail Menu-2.png | cocktail-menu-wellness-retro-red.webp | 927x1200 | 128KB | Wellness themed retro cocktail menu with red illustrations |
+| TDSynnex.png | cocktail-menu-corporate-tech-mocktail.webp | 900x1200 | 120KB | Corporate tech mocktail menu with blue hexagonal graphics |
+| Tiff.png | cocktail-menu-christmas-candy-cane-border.webp | 927x1200 | 186KB | Christmas cocktail menu with candy cane striped border |
+| helinger.png | cocktail-menu-sports-illustrated-monochrome.webp | 927x1200 | 209KB | Sports themed cocktail menu with hand-drawn monochrome illustrations |
+
+## Drink Photos → `public/images/`
+
+Processed on: 2026-04-23
+Source: `public/new-drinks/`
+Format: WebP (quality 100, max 1200px longest side, EXIF stripped)
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| drink1.JPG | pineapple-cocktail-art-heals-mural.webp | 800x1200 | 353KB | Pineapple cocktail held against colorful mural at Art Heals event |
+| drink2.JPG | red-martini-dry-ice-halloween-decor.webp | 1200x800 | 197KB | Red martini with dry ice smoke and Halloween skull decor |
+| drink3.jpg | three-cocktails-cheers-overhead.webp | 900x1200 | 206KB | Three cocktails held together in a cheers from overhead |
+| drink4.JPG | cranberry-rosemary-highball-bar-setup.webp | 1200x800 | 240KB | Cranberry rosemary highball with mini bottle at bar setup |
+| drink5.jpeg | tropical-cocktails-trio-art-heals-event.webp | 1200x800 | 323KB | Trio of tropical purple and pink cocktails at Art Heals event |
+| drink6.JPG | berry-cocktail-espresso-martini-cheers.webp | 1200x800 | 163KB | Berry cocktail and espresso martini cheers at night event |
+| drink7.JPG | rosemary-cranberry-sparkling-highball.webp | 800x1200 | 264KB | Sparkling rosemary and cranberry highball cocktail |
+| drink8.JPG | formal-event-cocktails-cheers-suits.webp | 900x1200 | 220KB | Formal event cocktails cheers with guests in suits |
+
+## Wedding Photos → `public/images/events/wedding/`
+
+Processed on: 2026-04-23
+Source: `public/new-wedding/`
+Format: WebP (quality 100, max 1200px longest side, EXIF stripped)
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| IMG_0609.JPG | wedding-mobile-bar-setup-floral-arrangement.webp | 1200x800 | 245KB | Wedding mobile bar setup with floral arrangement and cocktail shakers |
+| IMG_0610.JPG | wedding-bar-cocktail-menu-orchid-display.webp | 1200x800 | 248KB | Wedding bar with cocktail menu display and orchid arrangement at dusk |
+| IMG_0715.JPG | wedding-guests-fist-bump-string-lights.webp | 800x1200 | 218KB | Wedding guests posing with fist bump under string lights at night |
+
+## iConcierge Med Spa Event → `public/images/events/iconcierge-med-spa/`
+
+Processed on: 2026-04-23
+Source: `public/new-medspa-event/`
+Format: WebP (quality 100, max 1200px longest side, EXIF stripped)
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| medspa1.JPG | med-spa-caviar-service-guest-closeup.webp | 1200x800 | 267KB | Caviar service closeup with guest at med spa grand reopening event |
+| medspa2.JPG | med-spa-bartender-shaking-cocktail-mobile-cart.webp | 1200x800 | 341KB | TB Mixology bartender shaking cocktail at mobile bar cart |
+| medspa3JPG.JPG | med-spa-caviar-prep-tent-event.webp | 800x1200 | 241KB | Team member preparing caviar bites under tent at med spa event |
+| medspa4.JPG | med-spa-garnish-station-overhead-colorful.webp | 1200x963 | 554KB | Colorful garnish station overhead with edible flowers and dried citrus |
+| medspa5.JPG | med-spa-infused-water-dispensers-bar-cart.webp | 800x1200 | 310KB | Infused water dispensers on mobile bar cart |
+
+## Mocktail Events → `public/images/events/mocktail-events/`
+
+Processed on: 2026-04-23
+Source: `public/new-mocktail-events/`
+Format: WebP (quality 100, max 1200px longest side, EXIF stripped)
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| IMG_0292.JPG | mocktail-trio-blue-green-lineup-corporate.webp | 1200x800 | 172KB | Three blue and green mocktails lined up at corporate event |
+| IMG_0295 (1).JPG | mocktail-group-photo-dell-corporate-event.webp | 800x1200 | 372KB | Group of women holding colorful mocktails at Dell corporate event |
+| IMG_0978.jpeg | mocktail-purple-pineapple-garnished-pair.webp | 1200x800 | 279KB | Purple and pineapple garnished mocktail pair at Art Heals event |
+| IMG_1020.jpeg | mocktail-purple-cup-art-heals-industrial.webp | 800x1200 | 190KB | Purple mocktail with Art Heals branding against industrial metal backdrop |
+| IMG_1030.jpeg | mocktail-pink-purple-duo-concrete-rustic.webp | 800x1200 | 291KB | Pink and purple mocktail duo on concrete with rustic metal backdrop |
+| IMG_1033.jpeg | mocktail-trio-art-heals-rustic-industrial.webp | 1200x800 | 323KB | Three Art Heals mocktails with garnishes on rustic industrial backdrop |
+| IMG_1034.jpeg | mocktail-pink-drink-blue-mural-art-heals.webp | 800x1200 | 246KB | Pink mocktail held against blue geometric mural at Art Heals event |
+
+## Mixed Event Photos → various event folders
+
+Processed on: 2026-04-23
+Source: `public/new-new/`
+Format: WebP (quality 100, max 1200px longest side, EXIF stripped)
+
+| Original Filename | New Filename | Destination | Dimensions | Size | Description |
+|---|---|---|---|---|---|
+| new-christmas.JPG | christmas-group-toast-sparkly-dresses-night.webp | events/christmas-party/ | 1200x802 | 331KB | Group of friends toasting cocktails in sparkly dresses at Christmas party |
+| newchristmas2JPG.JPG | christmas-cranberry-cocktail-ice-sphere-crafting.webp | events/christmas-party/ | 1200x800 | 240KB | Bartender crafting cranberry cocktail with ice sphere garnish |
+| newwedding.JPG | wedding-bride-groom-dance-floor-laughing.webp | events/wedding/ | 800x1200 | 210KB | Bride and groom laughing on the dance floor at wedding reception |
+| newwedding2.JPG | wedding-bride-drinking-at-mobile-bar.webp | events/wedding/ | 1200x800 | 317KB | Bride drinking at the mobile bar during wedding reception |
+| new-iconcerige.JPG | med-spa-server-champagne-tray-tent.webp | events/iconcierge-med-spa/ | 800x1200 | 264KB | Server carrying gold tray of champagne flutes at med spa grand reopening |
+
+| IMG_0546.JPG | bartender-shaking-cocktail-outdoor-canopy.webp | images/ | 1200x800 | 341KB | TB Mixology bartender shaking cocktail under outdoor canopy with pendant lights |
+| IMG_1482.JPG | bartender-shaking-cocktail-home-bar-event.webp | images/ | 1200x800 | 290KB | Bartender shaking cocktail at home bar during private event |
+
 ---
-**Total: 81 images processed**
+**Total: 124 images processed**

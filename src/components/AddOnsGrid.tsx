@@ -3,13 +3,13 @@ import PricingCard from "@/components/PricingCard";
 import {
   barSetupAddOns,
   serviceEnhancements,
-  experienceAddOns,
+  barExtras,
 } from "@/lib/data/services";
 
 const addOnCategories = [
-  { title: "Bar Setup & Essentials", items: barSetupAddOns },
+  { title: "Bar Set Up & Essentials", items: barSetupAddOns },
   { title: "Service Enhancements", items: serviceEnhancements },
-  { title: "Experience Add-Ons", items: experienceAddOns },
+  { title: "Bar Extras", items: barExtras },
 ];
 
 export default function AddOnsGrid() {

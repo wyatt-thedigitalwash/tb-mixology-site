@@ -8,7 +8,6 @@ import AddOnsGrid from "@/components/AddOnsGrid";
 import { MessageSquare, BookOpen, User, Wrench, Leaf, Snowflake, FileText, GlassWater, Martini, Table } from "lucide-react";
 import { LocalBusinessJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 import { packages, included } from "@/lib/data/bartending";
-import BarExtrasGrid from "@/components/BarExtrasGrid";
 
 const includedIcons = [MessageSquare, BookOpen, User, Wrench, Leaf, Snowflake, FileText, GlassWater, Martini, Table];
 
@@ -116,8 +115,6 @@ export default function BartendingPage() {
               />
             </FadeIn>
             <AddOnsGrid />
-
-            <BarExtrasGrid />
           </div>
         </div>
       </section>

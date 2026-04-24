@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import FadeIn from "@/components/FadeIn";
 import DrinkMenu from "@/components/DrinkMenu";
 import MenuExamples from "@/components/MenuExamples";
+import DrinkPhotos from "@/components/DrinkPhotos";
 import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
@@ -28,44 +28,32 @@ export const metadata: Metadata = {
   },
 };
 
-const cocktailPhotos = [
-  { src: "/images/craft-cocktails-trio-closeup.webp", alt: "Three handcrafted cocktails at a party", w: 2099, h: 1399 },
-  { src: "/images/strawberry-margaritas-tajin-rim.webp", alt: "Strawberry margaritas with Tajín rim", w: 2301, h: 1534 },
-  { src: "/images/old-fashioned-berry-cocktail-fireside.webp", alt: "Old fashioned and berry cocktail by the fireside", w: 1682, h: 1121 },
-  { src: "/images/holiday-cocktails-rosemary-garnish.webp", alt: "Holiday cocktails with rosemary garnish", w: 1678, h: 1118 },
-  { src: "/images/pink-cocktail-lineup-lime-garnish.webp", alt: "Pink cocktail lineup with lime garnishes", w: 1348, h: 898 },
-  { src: "/images/green-cocktail-spiral-garnish.webp", alt: "Green cocktail with spiral garnish", w: 1078, h: 1617 },
-  { src: "/images/bartenders-cheers-colorful-cocktail-lineup.webp", alt: "Bartenders cheersing with a colorful cocktail lineup", w: 1487, h: 991 },
-  { src: "/images/cocktail-cheers-closeup-ocean-backdrop.webp", alt: "Cocktail cheers with ocean backdrop", w: 1704, h: 1136 },
-];
-
 export default function DrinksPage() {
   return (
     <main className="bg-secondary">
-      {/* ── Hero ── */}
+      {/* ── Intro (light) ── */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
-        <SectionHeading
-          as="h1"
-          label="Drinks & Menus"
-          title="What We Pour"
-          subtitle="Every event gets its own custom cocktail menu. From classic favorites to creative originals, we build drinks around your vibe, your guests, and your occasion."
-        />
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading
+            as="h1"
+            label="Bartending Services"
+            title="Your Event, Your Menu"
+          />
+          <p className="font-body text-warm-gray text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-center -mt-4">
+            We don&rsquo;t work from a fixed list. Every bartending menu is designed from
+            scratch &mdash; cocktails named after the people who matter, colors matched
+            to your decor, flavors built around your theme. From elegant wedding receptions
+            to wild costume parties, no two menus are the same.
+          </p>
+        </div>
       </section>
 
-      {/* ── Custom Bartending Menus — THE MAIN EVENT ── */}
+      {/* ── Gallery (dark) ── */}
       <section className="py-20 md:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading
-              label="Bartending Services"
-              title="Your Event, Your Menu"
-              light
-            />
-            <p className="font-body text-white/70 text-base md:text-lg leading-relaxed max-w-3xl mx-auto text-center -mt-4 mb-16">
-              We don&rsquo;t work from a fixed list. Every bartending menu is designed from
-              scratch &mdash; cocktails named after the people who matter, colors matched
-              to your decor, flavors built around your theme. From elegant wedding receptions
-              to wild costume parties, no two menus are the same.
+            <p className="text-xs tracking-[0.25em] uppercase font-body text-accent text-center mb-10">
+              Menu Examples
             </p>
           </FadeIn>
 
@@ -74,29 +62,16 @@ export default function DrinksPage() {
             <MenuExamples />
           </FadeIn>
 
-          {/* Cocktail photos grid */}
-          <div className="mt-16">
+          {/* Cocktail photos carousel */}
+          <div className="mt-20">
             <FadeIn>
-              <p className="text-xs tracking-[0.25em] uppercase font-body text-accent text-center mb-8">
+              <p className="text-xs tracking-[0.25em] uppercase font-body text-accent text-center mb-10">
                 A Taste of What We&rsquo;ve Made
               </p>
             </FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {cocktailPhotos.map((img, i) => (
-                <FadeIn key={img.src} delay={i % 4 === 1 ? "delay-100" : i % 4 === 2 ? "delay-200" : i % 4 === 3 ? "delay-300" : ""}>
-                  <div className="overflow-hidden rounded-sm relative aspect-square">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={img.w}
-                      height={img.h}
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+            <FadeIn delay="delay-100">
+              <DrinkPhotos />
+            </FadeIn>
           </div>
 
           <FadeIn delay="delay-200">

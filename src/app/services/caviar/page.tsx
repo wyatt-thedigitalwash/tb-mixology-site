@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import PricingCard from "@/components/PricingCard";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
 import { Gem, UtensilsCrossed, GlassWater, HandPlatter, Sparkles, Users } from "lucide-react";
@@ -50,16 +49,58 @@ export default function CaviarPage() {
           title="All-Inclusive Caviar Service"
           subtitle="An elevated tasting experience for your guests — premium caviar served tableside with all the classic accompaniments. Available as an add-on to any bartending package or as a standalone booking."
         />
-        <div className="max-w-sm mx-auto mt-8 mb-8">
-          <PricingCard name="All-Inclusive Caviar Service" price="$25–$40/pp" />
-        </div>
-        <div className="text-center">
-          <Link
-            href="/contact?service=caviar"
-            className="inline-block bg-accent text-primary px-8 py-4 text-sm tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
-          >
-            Book Caviar Service
-          </Link>
+        <div className="max-w-3xl mx-auto mt-10">
+          <FadeIn>
+            <div className="border border-warm-gray/30 rounded-sm px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+              <div>
+                <p className="font-body text-sm font-semibold text-primary">All-Inclusive Caviar Service</p>
+                <p className="font-body text-xs text-warm-gray mt-0.5">Premium caviar, accompaniments, service ware &amp; tableside service included</p>
+              </div>
+              <p className="font-body text-lg font-semibold text-primary whitespace-nowrap">$25&ndash;$40/pp</p>
+            </div>
+          </FadeIn>
+          <FadeIn delay="delay-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="border border-warm-gray/30 rounded-sm p-6 text-center flex flex-col">
+                <p className="text-xs tracking-[0.2em] uppercase font-body text-accent mb-2">
+                  Add-On
+                </p>
+                <h3 className="font-heading text-lg text-primary mb-2">
+                  Pair with Bartending
+                </h3>
+                <p className="font-body text-sm text-warm-gray leading-relaxed mb-5">
+                  Add caviar service to any bartending package for a complete experience.
+                </p>
+                <div className="mt-auto">
+                  <Link
+                    href="/contact?service=bartending&service=caviar"
+                    className="inline-block bg-accent text-primary px-6 py-3 text-xs tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+                  >
+                    Add to Bartending
+                  </Link>
+                </div>
+              </div>
+              <div className="border border-warm-gray/30 rounded-sm p-6 text-center flex flex-col">
+                <p className="text-xs tracking-[0.2em] uppercase font-body text-accent mb-2">
+                  Standalone
+                </p>
+                <h3 className="font-heading text-lg text-primary mb-2">
+                  Book Caviar Only
+                </h3>
+                <p className="font-body text-sm text-warm-gray leading-relaxed mb-5">
+                  Book caviar as its own standalone service &mdash; we bring everything.
+                </p>
+                <div className="mt-auto">
+                  <Link
+                    href="/contact?service=caviar"
+                    className="inline-block bg-accent text-primary px-6 py-3 text-xs tracking-[0.15em] uppercase font-body rounded-sm hover:bg-accent/90 transition-colors duration-200 ease-out"
+                  >
+                    Book Caviar Service
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
