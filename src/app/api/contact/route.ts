@@ -43,7 +43,10 @@ export async function POST(req: Request) {
       );
     }
 
-    const subject = `New Event Inquiry — ${eventType || "Event"} on ${eventDate || "TBD"}`;
+    const subject =
+      eventType && eventDate
+        ? `New Event Inquiry — ${eventType} on ${eventDate}`
+        : "New Event Inquiry — TB Mixology Website";
 
     const htmlContent = `
       <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; max-width: 600px; margin: 0 auto;">
@@ -83,7 +86,7 @@ export async function POST(req: Request) {
     `;
 
     await resend.emails.send({
-      from: "TB Mixology <onboarding@resend.dev>",
+      from: "TB Mixology <notifications@tbmixology.com>",
       to: "emma@tbmixology.com",
       subject,
       html: htmlContent,
