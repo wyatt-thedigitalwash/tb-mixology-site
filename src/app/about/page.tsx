@@ -31,7 +31,7 @@ export default function AboutPage() {
   return (
     <main className="bg-secondary">
       {/* Hero */}
-      <section className="py-24 md:py-32 text-center px-6">
+      <section className="pt-20 pb-12 md:py-32 text-center px-6">
         <FadeIn>
           <p className="text-accent font-accent text-lg tracking-wide mb-3">
             Woman-owned &amp; operated, St.&nbsp;Pete-based
@@ -85,8 +85,8 @@ export default function AboutPage() {
           <FadeIn>
             <SectionHeading title="The Team" />
           </FadeIn>
+          {/* Founders */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-2xl mx-auto">
-            {/* Brooke */}
             <FadeIn>
               <div className="text-center">
                 <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-4">
@@ -107,7 +107,6 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            {/* Emma */}
             <FadeIn delay="delay-100">
               <div className="text-center">
                 <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-4">
@@ -127,6 +126,38 @@ export default function AboutPage() {
                 </p>
               </div>
             </FadeIn>
+          </div>
+
+          {/* Crew */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-4xl mx-auto mt-16">
+            {[
+              { src: "/bartenders/tb-mixology-emily-bartender.webp", name: "Emily", role: "Bartender" },
+              { src: "/bartenders/tb-mixology-ali-bartender.webp", name: "Ali", role: "Bartender" },
+              { src: "/bartenders/tb-mixology-gianna-bartender.webp", name: "Gianna", role: "Bartender" },
+              { src: "/bartenders/tb-mixology-bri-bartender-tpa.webp", name: "Bri", role: "Bartender" },
+              { src: "/bartenders/tb-mixology-joey-barback.webp", name: "Joey", role: "Barback" },
+              { src: "/bartenders/tb-mixology-madi-photographer.webp", name: "Madi", role: "Photographer" },
+            ].map((member, i) => (
+              <FadeIn key={member.name} delay={i % 4 === 1 ? "delay-100" : i % 4 === 2 ? "delay-200" : i % 4 === 3 ? "delay-300" : ""}>
+                <div className="text-center">
+                  <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-3">
+                    <Image
+                      src={member.src}
+                      alt={`${member.name}, ${member.role} at TB Mixology`}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <h3 className="font-heading text-lg text-primary">
+                    {member.name}
+                  </h3>
+                  <p className="text-warm-gray font-body text-xs mt-0.5">
+                    {member.role}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>

@@ -31,13 +31,18 @@ export default function ContactPage() {
   return (
     <main className="bg-secondary">
       {/* Hero */}
-      <section className="py-24 md:py-32 text-center px-6">
+      <section className="pt-20 pb-6 md:py-32 text-center px-6">
         <FadeIn>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary">
             Let&rsquo;s Plan Your Event
           </h1>
         </FadeIn>
       </section>
+
+      {/* Divider — mobile only */}
+      <div className="max-w-7xl mx-auto px-6 md:hidden">
+        <div className="border-b border-warm-gray/30 mb-8" />
+      </div>
 
       {/* Two-column layout */}
       <section className="max-w-7xl mx-auto px-6 pb-20 md:pb-28">

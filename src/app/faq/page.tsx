@@ -51,7 +51,7 @@ export default function FaqPage() {
 
       <main className="bg-secondary">
         {/* Hero */}
-        <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
+        <section className="pt-24 pb-10 md:pt-40 md:pb-20 px-6">
           <SectionHeading
             as="h1"
             label="Support"

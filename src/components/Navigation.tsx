@@ -95,13 +95,13 @@ export default function Navigation() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 ${headerBg}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${headerBg}`}>
         <nav aria-label="Main navigation" className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
             onClick={menuOpen ? closeMenu : undefined}
             aria-label="TB Mixology — Home"
-            className={`font-heading text-2xl tracking-wide flex items-center gap-1 ${lightText ? "text-secondary" : "text-primary"}`}
+            className={`font-heading text-2xl tracking-wide flex items-center gap-1 transition-colors duration-500 ease-in-out ${lightText ? "text-secondary" : "text-primary"}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -110,7 +110,7 @@ export default function Navigation() {
               aria-hidden="true"
               width={32}
               height={32}
-              className={`w-8 h-8 ${lightText ? "brightness-0 invert" : ""}`}
+              className={`w-8 h-8 transition-[filter] duration-500 ease-in-out ${lightText ? "brightness-0 invert" : ""}`}
             />
             TB Mixology
           </Link>
@@ -179,7 +179,7 @@ export default function Navigation() {
             )}
             <Link
               href="/contact"
-              className={`text-sm font-body px-5 py-2 rounded-sm tracking-[0.1em] uppercase transition-colors duration-200 ${
+              className={`text-sm font-body px-5 py-2 rounded-sm tracking-[0.1em] uppercase transition-colors duration-500 ease-in-out ${
                 transparent ? "text-primary bg-white hover:bg-accent" : "text-secondary bg-primary hover:bg-accent"
               }`}
             >
@@ -189,7 +189,7 @@ export default function Navigation() {
 
           {/* Mobile toggle */}
           <button
-            className={`md:hidden z-50 ${lightText ? "text-secondary" : "text-primary"}`}
+            className={`md:hidden z-50 transition-colors duration-500 ease-in-out ${lightText ? "text-secondary" : "text-primary"}`}
             onClick={() => {
               if (menuOpen) closeMenu();
               else setMenuOpen(true);
