@@ -11,6 +11,7 @@ export default function ContactForm() {
   const [error, setError] = useState("");
   const [checkedServices, setCheckedServices] = useState<Set<string>>(new Set());
   const formRef = useRef<HTMLFormElement>(null);
+  const [loadedAt] = useState(() => Date.now());
 
   useEffect(() => {
     const serviceParams = searchParams.getAll("service");
@@ -65,7 +66,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, _t: String(loadedAt) }),
       });
 
       if (!res.ok) throw new Error("Failed to send");
@@ -95,7 +96,7 @@ export default function ContactForm() {
     "text-xs tracking-[0.15em] uppercase text-warm-gray font-body mb-1 block";
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-12">
+    <form ref={formRef} onSubmit={handleSubmit} className="relative space-y-12">
       {/* Client Information */}
       <div>
         <h3 className="font-heading text-2xl text-primary mb-6">
@@ -357,6 +358,18 @@ export default function ContactForm() {
             />
           </div>
         </div>
+      </div>
+
+      {/* Honeypot — hidden from real users */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-0 overflow-hidden">
+        <label htmlFor="company">Company</label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       {error && (

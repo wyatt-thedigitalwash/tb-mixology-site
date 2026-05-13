@@ -1,8 +1,36 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+// In-memory rate limit store: IP -> list of timestamps
+const rateLimitMap = new Map<string, number[]>();
+const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MAX = 3;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const timestamps = rateLimitMap.get(ip) ?? [];
+  const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW);
+  rateLimitMap.set(ip, recent);
+  if (recent.length >= RATE_LIMIT_MAX) return true;
+  recent.push(now);
+  return false;
+}
+
+// Silent success — fools bots into thinking submission worked
+const SILENT_OK = NextResponse.json({ success: true });
+
 export async function POST(req: Request) {
   try {
+    // --- Rate Limiting ---
+    const forwarded = req.headers.get("x-forwarded-for");
+    const ip = forwarded?.split(",")[0]?.trim() ?? "unknown";
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await req.json();
 
@@ -26,8 +54,20 @@ export async function POST(req: Request) {
       cupPreference,
       anythingElse,
       referral,
+      company, // honeypot
+      _t, // timestamp
     } = body;
 
+    // --- Honeypot Check ---
+    if (company) return SILENT_OK;
+
+    // --- Time-Based Check (< 3 seconds) ---
+    const loadedAt = Number(_t);
+    if (!_t || isNaN(loadedAt) || Date.now() - loadedAt < 3000) {
+      return SILENT_OK;
+    }
+
+    // --- Required Fields ---
     if (!firstName || !lastName || !email || !phone) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -35,6 +75,36 @@ export async function POST(req: Request) {
       );
     }
 
+    // --- Field Length / Gibberish Validation ---
+    const textFields: Record<string, unknown> = {
+      firstName, lastName, email, phone, eventAddress, locationType,
+      eventDate, startTime, endTime, eventType, eventTheme,
+      beverageTypes, serviceType, budget, specificDrinks,
+      cupPreference, anythingElse, referral,
+    };
+
+    for (const [key, val] of Object.entries(textFields)) {
+      if (val && typeof val === "string" && val.length > 500) {
+        return NextResponse.json(
+          { error: `${key} is too long` },
+          { status: 400 }
+        );
+      }
+    }
+
+    // Name fields: reject if over 100 chars, or no spaces and over 20 chars
+    for (const name of [firstName, lastName]) {
+      if (typeof name === "string") {
+        if (name.length > 100) {
+          return NextResponse.json({ error: "Name is too long" }, { status: 400 });
+        }
+        if (!name.includes(" ") && name.length > 20) {
+          return NextResponse.json({ error: "Invalid name" }, { status: 400 });
+        }
+      }
+    }
+
+    // Email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -43,6 +113,27 @@ export async function POST(req: Request) {
       );
     }
 
+    // Phone: must contain 10-11 digits
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+      return NextResponse.json(
+        { error: "Invalid phone number" },
+        { status: 400 }
+      );
+    }
+
+    // Guest count: reject if over 1000
+    if (guestCount) {
+      const count = Number(guestCount);
+      if (isNaN(count) || count > 1000) {
+        return NextResponse.json(
+          { error: "Invalid guest count" },
+          { status: 400 }
+        );
+      }
+    }
+
+    // --- Build & Send Email ---
     const subject =
       eventType && eventDate
         ? `New Event Inquiry — ${eventType} on ${eventDate}`
