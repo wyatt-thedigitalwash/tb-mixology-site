@@ -45,7 +45,7 @@ export const faqs = [
   {
     question: "Do you bring your own bar setup and glassware?",
     answer:
-      "We bring a full bar setup. Glassware rental is available as an add-on at $3\u2013$5 per person, or we can provide disposable cups.",
+      "We bring a full bar setup. Glassware rental is available as an add-on at $4\u2013$5 per person, or we can provide disposable cups.",
   },
   {
     question: "Can you create a custom themed cocktail menu?",

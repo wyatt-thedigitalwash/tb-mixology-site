@@ -77,11 +77,11 @@ Woman-owned & operated mobile bartending company based in St. Pete, FL. Speciali
 
 ### Services
 
-- Bartending Services (packages by guest count: 1–25 from $600, 26–50 from $1,000, 51–80 from $1,600, 81–100+ from $1,900)
+- Bartending Services (packages by guest count: up to 25 from $800, 26–50 from $950, 51–75 from $1,350, 76–100 from $1,600, 100+ from $1,900 — based on a 4-hour event, gratuity not included)
 - Batch Cocktails ($120–$150/batch)
-- Cocktail Classes
+- Cocktail Classes (8–15 guests from $700, 16–30 from $1,100, 31–50+ from $1,800)
 - Caviar Service (add-on, $25–$40/pp)
-- Glassware Rental (add-on, $3–$5/pp)
+- Glassware Rental (add-on, $4–$5/pp)
 
 ### Social Media
 

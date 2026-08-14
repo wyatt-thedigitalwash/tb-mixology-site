@@ -297,6 +297,36 @@ function EventGrid({ event }: { event: EventData }) {
         </>
       );
 
+    /* ── Six portraits: 3-col × 2 rows ──
+       Used by all-portrait sets of 6 (la-dolce-forty, summer soirée, toast-the-hostess)
+    */
+    case "six-portrait":
+      return (
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-3 gap-3">
+            {imgs.map((img) => (
+              <Img key={img.src} img={img} sizes="33vw" className="aspect-[2/3]" />
+            ))}
+          </div>
+        </>
+      );
+
+    /* ── Eight portraits: 4-col × 2 rows ──
+       Used by all-portrait sets of 8 (power-design, wedding champagne tower)
+    */
+    case "eight-portrait":
+      return (
+        <>
+          <MobileStack images={imgs} />
+          <div className="hidden md:grid grid-cols-4 gap-3">
+            {imgs.map((img) => (
+              <Img key={img.src} img={img} sizes="25vw" className="aspect-[3/4]" />
+            ))}
+          </div>
+        </>
+      );
+
     /* ── Fallback: equal grid ── */
     case "three-equal":
     default:

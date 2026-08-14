@@ -28,6 +28,8 @@ export type EventLayout =
   | "med-spa"
   | "three-equal"
   | "three-portrait"
+  | "six-portrait"
+  | "eight-portrait"
   | "portrait-left-2";
 
 export interface EventData {
@@ -194,6 +196,95 @@ export const events: EventData[] = [
       { src: "/images/events/iconcierge-med-spa/med-spa-bartender-shaking-cocktail-mobile-cart.webp", alt: "TB Mixology bartender shaking cocktail at mobile bar cart during med spa grand reopening", width: 1200, height: 800 },
     ],
   },
+  {
+    title: "Wedding Champagne Tower",
+    category: "Weddings",
+    layout: "eight-portrait",
+    images: [
+      { src: "/images/events/wedding-champagne-tower/wedding-couple-pouring-champagne-tower.webp", alt: "Bride and groom pouring champagne into a coupe tower at their wedding reception", width: 1024, height: 1365 },
+      { src: "/images/events/wedding-champagne-tower/wedding-champagne-tower-pour-closeup.webp", alt: "Close-up of champagne being poured into the top coupe of a wedding champagne tower", width: 1024, height: 1365 },
+      { src: "/images/events/wedding-champagne-tower/wedding-couple-champagne-tower-floral-arch.webp", alt: "Wedding couple pouring a champagne tower beside a white floral arch", width: 1024, height: 1366 },
+      { src: "/images/events/wedding-champagne-tower/wedding-champagne-cascading-coupe-tower.webp", alt: "Champagne cascading down a stacked coupe tower at a wedding reception", width: 1024, height: 1536 },
+      { src: "/images/events/wedding-champagne-tower/wedding-bride-groom-celebrating-champagne-coupes.webp", alt: "Bride and groom celebrating with champagne coupes at dusk", width: 1024, height: 1536 },
+      { src: "/images/events/wedding-champagne-tower/wedding-completed-champagne-coupe-tower.webp", alt: "Completed champagne coupe tower at a wedding reception", width: 1024, height: 1365 },
+      { src: "/images/events/wedding-champagne-tower/wedding-bride-hand-ring-champagne-coupe.webp", alt: "Bride's hand with wedding ring holding a fluted champagne coupe", width: 1024, height: 1366 },
+      { src: "/images/events/wedding-champagne-tower/wedding-guest-drinking-champagne-bottle-reception.webp", alt: "Wedding guest in bow tie and suspenders drinking champagne at the reception", width: 1024, height: 1365 },
+    ],
+  },
+  {
+    title: "La Dolce Forty Birthday",
+    category: "Private Parties",
+    layout: "six-portrait",
+    images: [
+      { src: "/images/events/la-dolce-forty/la-dolce-forty-cocktail-menu-spritz-pair.webp", alt: "La Dolce Forty custom cocktail menu beside two spritzes at the bar", width: 1440, height: 1920 },
+      { src: "/images/events/la-dolce-forty/la-dolce-forty-bartender-outdoor-bar-disco-ball.webp", alt: "TB Mixology bartender at a white outdoor bar under a disco ball and bougainvillea", width: 1125, height: 1500 },
+      { src: "/images/events/la-dolce-forty/la-dolce-forty-edible-flower-cocktails-cheers.webp", alt: "Three cocktails topped with edible flowers held together over a green lawn", width: 1440, height: 1920 },
+      { src: "/images/events/la-dolce-forty/la-dolce-forty-caviar-bump-service-guests.webp", alt: "TB Mixology staff serving caviar bumps to guests at a garden birthday party", width: 1440, height: 1920 },
+      { src: "/images/events/la-dolce-forty/la-dolce-forty-saxophonist-disco-performer-party.webp", alt: "Saxophonist and mirrorball performer entertaining guests at a poolside birthday party", width: 959, height: 1278 },
+      { src: "/images/events/la-dolce-forty/la-dolce-forty-guest-straw-hat-palm-trees.webp", alt: "Guest in a straw hat holding a cocktail among palm trees", width: 1125, height: 1500 },
+    ],
+  },
+  {
+    title: "Toast the Hostess",
+    category: "Cocktail Classes",
+    layout: "six-portrait",
+    images: [
+      { src: "/images/events/toast-the-hostess/toast-the-hostess-guests-crafting-cocktails-table.webp", alt: "Guests crafting strawberry cocktails together at a hosted cocktail class", width: 1440, height: 1920 },
+      { src: "/images/events/toast-the-hostess/toast-the-hostess-pouring-prosecco-cocktail-class.webp", alt: "Host pouring prosecco into a coupe during a hosted cocktail class", width: 1440, height: 1920 },
+      { src: "/images/events/toast-the-hostess/toast-the-hostess-cocktail-kit-menu-instructions.webp", alt: "Cocktail kit flat lay with recipe instruction cards, berries, and bar tools", width: 1440, height: 1920 },
+      { src: "/images/events/toast-the-hostess/toast-the-hostess-summer-menu-citrus-bowl.webp", alt: "Summer cocktail menu card beside a bowl of lemons and limes", width: 1440, height: 1920 },
+      { src: "/images/events/toast-the-hostess/toast-the-hostess-berry-cocktail-mint-lemon.webp", alt: "Red berry cocktail garnished with mint, lemon wheel, and cherry", width: 1440, height: 1920 },
+      { src: "/images/events/toast-the-hostess/toast-the-hostess-blackberry-cocktail-dried-citrus.webp", alt: "Deep blackberry cocktail with dried citrus wheel and fresh mint", width: 1440, height: 1920 },
+    ],
+  },
+  {
+    title: "Smith & Associates — Summer Soirée",
+    category: "Brand Collaborations",
+    layout: "six-portrait",
+    images: [
+      { src: "/images/events/smith-associates-art-house/summer-soiree-balcony-bar-waterfront-view.webp", alt: "White mobile bar on a highrise balcony with poppies and a waterfront view", width: 1440, height: 1920 },
+      { src: "/images/events/smith-associates-art-house/summer-soiree-menu-poppies-balcony.webp", alt: "Framed Summer Soirée cocktail menu with poppies and striped straws", width: 1080, height: 1920 },
+      { src: "/images/events/smith-associates-art-house/summer-soiree-bartender-pouring-prosecco-skyline.webp", alt: "TB Mixology bartender pouring prosecco into a spritz above the Tampa skyline", width: 1080, height: 1920 },
+      { src: "/images/events/smith-associates-art-house/summer-soiree-guest-ordering-at-mobile-bar.webp", alt: "Guest in a blue floral dress ordering at the white mobile bar", width: 1080, height: 1920 },
+      { src: "/images/events/smith-associates-art-house/summer-soiree-sarti-rosa-strawberry-spritz.webp", alt: "Sarti Rosa strawberry spritz served in a wine glass on the bar mat", width: 1080, height: 1920 },
+      { src: "/images/events/smith-associates-art-house/summer-soiree-sarti-aperol-bottles-citrus.webp", alt: "Sarti Rosa and Aperol bottles with lemons, mint, and grapefruit on the bar", width: 1440, height: 1920 },
+    ],
+  },
+  {
+    title: "Power Design Corporate Event",
+    category: "Brand Collaborations",
+    layout: "eight-portrait",
+    images: [
+      { src: "/images/events/power-design/power-design-corporate-event-bar-setup-space.webp", alt: "Corporate event space with black cocktail tables and full TB Mixology bar setup", width: 1440, height: 1920 },
+      { src: "/images/events/power-design/power-design-the-bar-menu-signature-mocktail.webp", alt: "The Bar menu sign with a raspberry peach spritzer signature mocktail", width: 1440, height: 1920 },
+      { src: "/images/events/power-design/power-design-employees-cheers-mocktails-office.webp", alt: "Three employees toasting mint-garnished mocktails at a corporate event", width: 1440, height: 1919 },
+      { src: "/images/events/power-design/power-design-employees-smiling-craft-mocktails.webp", alt: "Two employees smiling with craft mocktails at a company event", width: 1440, height: 1920 },
+      { src: "/images/events/power-design/power-design-guest-sipping-bulb-glass-cocktail.webp", alt: "Employee sipping a mocktail from a light-bulb glass at a corporate event", width: 1440, height: 1920 },
+      { src: "/images/events/power-design/power-design-coworkers-enjoying-drinks-lounge.webp", alt: "Two coworkers enjoying drinks in the office lounge at a corporate event", width: 1440, height: 1920 },
+      { src: "/images/events/power-design/power-design-team-group-photo-cocktails.webp", alt: "Four team members posing with cocktails at a Power Design company event", width: 982, height: 1310 },
+      { src: "/images/events/power-design/power-design-sips-worth-sharing-sign-cocktail.webp", alt: "Sips Worth Sharing signage with fresh flowers and a violet cocktail", width: 1030, height: 1373 },
+    ],
+  },
+  {
+    title: "LoveShackFancy Tampa",
+    category: "Brand Collaborations",
+    layout: "three-portrait",
+    images: [
+      { src: "/images/events/loveshackfancy/loveshackfancy-guests-cocktail-tray-boutique.webp", alt: "Guests taking cocktails from a silver tray inside the LoveShackFancy boutique", width: 1080, height: 1920 },
+      { src: "/images/events/loveshackfancy/loveshackfancy-malibu-pink-lemonade-cocktails.webp", alt: "Malibu Pink Lemonade cocktails garnished with dried flowers in branded cups", width: 1080, height: 1920 },
+      { src: "/images/events/loveshackfancy/loveshackfancy-tampa-pink-cocktails-tray.webp", alt: "Overhead tray of pink cocktails with orange slices and a LoveShackFancy Tampa napkin", width: 1080, height: 1920 },
+    ],
+  },
+  {
+    title: "BODYROK Tampa Bay",
+    category: "Brand Collaborations",
+    layout: "three-portrait",
+    images: [
+      { src: "/images/events/bodyrok/bodyrok-guests-cheers-functional-mocktails.webp", alt: "Three guests toasting functional mocktails at the BODYROK studio bar", width: 1280, height: 1920 },
+      { src: "/images/events/bodyrok/bodyrok-tb-mixology-branded-cocktail-cups.webp", alt: "Co-branded BODYROK Tampa Bay and TB Mixology cocktail cups held up close", width: 1280, height: 1920 },
+      { src: "/images/events/bodyrok/bodyrok-fitness-class-group-workout.webp", alt: "Group fitness class at BODYROK Tampa Bay before the cocktail service", width: 1280, height: 1920 },
+    ],
+  },
 ];
 
 export const menuExamples = [
@@ -218,6 +309,14 @@ export const menuExamples = [
   { src: "/menu-examples/cocktail-menu-corporate-tech-mocktail.webp", alt: "Corporate tech mocktail menu with blue hexagonal graphics", width: 900, height: 1200 },
   { src: "/menu-examples/cocktail-menu-christmas-candy-cane-border.webp", alt: "Christmas cocktail menu with candy cane striped border", width: 927, height: 1200 },
   { src: "/menu-examples/cocktail-menu-sports-illustrated-monochrome.webp", alt: "Sports themed cocktail menu with hand-drawn monochrome illustrations", width: 927, height: 1200 },
+  { src: "/menu-examples/summer-soiree-cocktail-menu-yellow-stripe.webp", alt: "Summer Soirée cocktail menu with yellow stripes and a wavy border", width: 1484, height: 1920 },
+  { src: "/menu-examples/la-dolce-forty-cocktail-menu-design.webp", alt: "La Dolce Forty pink striped birthday cocktail menu", width: 1484, height: 1920 },
+  { src: "/menu-examples/le-bar-burgundy-cocktail-wine-beer-menu.webp", alt: "Le Bar burgundy striped menu with cocktail, wine, and beer sections", width: 1484, height: 1920 },
+  { src: "/menu-examples/baby-shower-cocktail-menu-seashells-bows.webp", alt: "Baby shower cocktail menu with pastel seashells and bows", width: 1484, height: 1920 },
+  { src: "/menu-examples/blacktop-surf-shop-cocktail-menu.webp", alt: "Blacktop Surf Shop cocktail menu with orange and pink stripes", width: 1484, height: 1920 },
+  { src: "/menu-examples/tpa-lux-cocktail-menu-luxury-vehicles.webp", alt: "TPA LUX black cocktail menu with luxury vehicle sponsorship", width: 1484, height: 1920 },
+  { src: "/menu-examples/patriotic-fourth-of-july-bar-menu.webp", alt: "Patriotic Fourth of July bar menu with firework illustration", width: 1358, height: 1920 },
+  { src: "/menu-examples/soccer-watch-party-cocktail-menu.webp", alt: "Soccer watch party cocktail menu with stadium artwork and country flags", width: 1484, height: 1920 },
 ];
 
 export const cocktailPhotos = [

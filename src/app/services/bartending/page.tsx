@@ -92,17 +92,21 @@ export default function BartendingPage() {
           </FadeIn>
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {packages.map((pkg) => (
-                <PricingCard
+              {packages.map((pkg, i) => (
+                <div
                   key={pkg.guests}
-                  name={pkg.guests}
-                  price={pkg.starting}
-                  note={`${pkg.bartenders} · ${pkg.rate}`}
-                />
+                  className={i === packages.length - 1 && packages.length % 2 === 1 ? "sm:col-span-2" : undefined}
+                >
+                  <PricingCard
+                    name={pkg.guests}
+                    price={pkg.starting}
+                    note={pkg.bartenders}
+                  />
+                </div>
               ))}
             </div>
             <p className="text-center text-warm-gray font-body text-xs mt-4">
-              Based on a 4-hour event. Our pricing is built to ensure fast, seamless service.
+              Based on a 4-hour event. Does not include gratuity. Our pricing is built to ensure fast, seamless service.
             </p>
           </FadeIn>
 

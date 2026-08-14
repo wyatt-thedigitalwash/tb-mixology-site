@@ -225,3 +225,131 @@ Format: WebP (quality 100, max 1200px longest side, EXIF stripped)
 
 ---
 **Total: 124 images processed**
+
+---
+
+# New Photos 8-13 → events + menus
+
+Processed on: 2026-08-13
+Source: `public/new-photos-8-13/`
+Format: WebP (**quality 85**, max 1920px longest side, EXIF stripped, auto-oriented)
+
+> Note: earlier batches used quality 100. This batch used **quality 85** — visually
+> indistinguishable at render size but ~4x smaller. Source files totalled 70MB;
+> the converted set is 9.2MB. Largest output is 386KB vs. 1.5–2.5MB in earlier batches.
+
+## BODYROK → `public/images/events/bodyrok/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| 428E45E0-A8AF-48B0-BE36-2C780D1D93DD.JPG | bodyrok-fitness-class-group-workout.webp | 1280x1920 | 102KB | Group fitness class mid-lunge in dark BODYROK studio before cocktail service |
+| BD579426-FCD4-4415-B0F4-32E06170549F.JPG | bodyrok-guests-cheers-functional-mocktails.webp | 1280x1920 | 178KB | Three guests toasting green functional mocktails at pink-lit record wall bar |
+| C28B02C2-0705-43D6-BE68-EB7B115A20EF.JPG | bodyrok-tb-mixology-branded-cocktail-cups.webp | 1280x1920 | 58KB | Two co-branded BODYROK Tampa Bay x TB Mixology cocktail cups held up close |
+
+## La Dolce Forty → `public/images/events/la-dolce-forty/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| 730381679_…_n.jpg | la-dolce-forty-cocktail-menu-spritz-pair.webp | 1440x1920 | 136KB | La Dolce Forty menu sign beside orange and green spritzes at the bar |
+| 730417137_…_n.jpg | la-dolce-forty-guest-straw-hat-palm-trees.webp | 1125x1500 | 285KB | Guest in straw hat and sunglasses with a cocktail among palm trees |
+| 731046960_…_n.jpg | la-dolce-forty-bartender-outdoor-bar-disco-ball.webp | 1125x1500 | 233KB | TB Mixology bartender at white outdoor bar under disco ball and bougainvillea |
+| 731580645_…_n.jpg | la-dolce-forty-edible-flower-cocktails-cheers.webp | 1440x1920 | 241KB | Three cocktails topped with edible flowers held together over green lawn |
+| 731644483_…_n.jpg | la-dolce-forty-saxophonist-disco-performer-party.webp | 959x1278 | 134KB | Saxophonist and mirrorball performer entertaining guests at poolside party |
+| 733911930_…_n.jpg | la-dolce-forty-caviar-bump-service-guests.webp | 1440x1920 | 386KB | TB Mixology staff serving caviar bumps to guests at garden party |
+
+## LoveShackFancy → `public/images/events/loveshackfancy/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| copy_3AFD87FD-….JPEG | loveshackfancy-guests-cocktail-tray-boutique.webp | 1080x1920 | 322KB | Guests reaching for cocktails from silver tray inside LoveShackFancy boutique |
+| copy_43A4ACB6-….JPEG | loveshackfancy-malibu-pink-lemonade-cocktails.webp | 1080x1920 | 161KB | Malibu Pink Lemonade cocktails with dried flowers and co-branded cups |
+| copy_F28DD726-….JPEG | loveshackfancy-tampa-pink-cocktails-tray.webp | 1080x1920 | 197KB | Overhead tray of pink cocktails with orange slices and LoveShackFancy Tampa napkin |
+
+## Power Design Inc → `public/images/events/power-design/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| 734574516_…_n.jpg | power-design-the-bar-menu-signature-mocktail.webp | 1440x1920 | 121KB | The Bar menu sign with raspberry peach spritzer mocktail and pink straws |
+| 741735830_…_n.jpg | power-design-guest-sipping-bulb-glass-cocktail.webp | 1440x1920 | 285KB | Employee sipping a mocktail from a light-bulb glass at corporate event |
+| 741758003_…_n.jpg | power-design-employees-cheers-mocktails-office.webp | 1440x1919 | 275KB | Three employees holding up mint-garnished mocktails in the office |
+| 742103548_…_n.jpg | power-design-coworkers-enjoying-drinks-lounge.webp | 1440x1920 | 240KB | Two coworkers enjoying drinks in the office lounge area |
+| 742145444_…_n.jpg | power-design-corporate-event-bar-setup-space.webp | 1440x1920 | 223KB | Corporate event space with black cocktail tables and full bar setup |
+| 742429643_…_n.jpg | power-design-sips-worth-sharing-sign-cocktail.webp | 1030x1373 | 146KB | Sips Worth Sharing signage with flowers and a violet cocktail |
+| 743118126_…_n.jpg | power-design-employees-smiling-craft-mocktails.webp | 1440x1920 | 357KB | Two employees smiling with craft mocktails at company event |
+| 743119408_…_n.jpg | power-design-team-group-photo-cocktails.webp | 982x1310 | 208KB | Four team members posing with drinks in the Power Design warehouse space |
+
+*(Duplicate `742429643_…_n (1).jpg` was byte-identical to `742429643_…_n.jpg` and was not converted.)*
+
+## Smith & Associates — Art House (Summer Soirée) → `public/images/events/smith-associates-art-house/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| copy_01DC9B0C-….JPEG | summer-soiree-balcony-bar-waterfront-view.webp | 1440x1920 | 137KB | White mobile bar on highrise balcony with poppies, Aperol, and waterfront view |
+| copy_226894C0-….JPEG | summer-soiree-menu-poppies-balcony.webp | 1080x1920 | 193KB | Framed Summer Soirée menu with poppies and striped straws on balcony bar |
+| copy_4B3D9865-….JPEG | summer-soiree-bartender-pouring-prosecco-skyline.webp | 1080x1920 | 148KB | Bartender pouring prosecco into a pink strawberry spritz above the skyline |
+| copy_4BC3F2FA-….JPEG | summer-soiree-sarti-rosa-strawberry-spritz.webp | 1080x1920 | 96KB | Sarti Rosa strawberry spritz in a wine glass on the bar mat |
+| copy_5B8A0DCB-….JPEG | summer-soiree-guest-ordering-at-mobile-bar.webp | 1080x1920 | 213KB | Guest in blue floral dress ordering at the white mobile bar |
+| copy_A246059A-….JPEG | summer-soiree-sarti-aperol-bottles-citrus.webp | 1440x1920 | 162KB | Sarti Rosa and Aperol bottles with lemons, mint, and grapefruit on the bar |
+
+## Toast the Hostess → `public/images/events/toast-the-hostess/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| 731624285_…_n.jpg | toast-the-hostess-berry-cocktail-mint-lemon.webp | 1440x1920 | 154KB | Red berry cocktail with mint, lemon wheel, and cherry on marble table |
+| 732130708_…_n.jpg | toast-the-hostess-pouring-prosecco-cocktail-class.webp | 1440x1920 | 252KB | Host pouring prosecco into a coupe during a hosted cocktail class |
+| 732722345_…_n.jpg | toast-the-hostess-blackberry-cocktail-dried-citrus.webp | 1440x1920 | 169KB | Deep blackberry cocktail with dried citrus wheel and mint against ferns |
+| 732891648_…_n.jpg | toast-the-hostess-summer-menu-citrus-bowl.webp | 1440x1920 | 320KB | Summer menu card beside a bowl of lemons and limes with marigold garnish |
+| 733519693_…_n.jpg | toast-the-hostess-cocktail-kit-menu-instructions.webp | 1440x1920 | 307KB | Flat lay of cocktail kit with recipe instruction cards, berries, and bar tools |
+| 734277514_…_n.jpg | toast-the-hostess-guests-crafting-cocktails-table.webp | 1440x1920 | 269KB | Guests crafting strawberry cocktails together at the table with charcuterie |
+
+## Wedding — Champagne Tower → `public/images/events/wedding-champagne-tower/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| IMG_4922.jpeg | wedding-guest-drinking-champagne-bottle-reception.webp | 1024x1365 | 79KB | Guest in bow tie and suspenders drinking from a champagne bottle at reception |
+| IMG_4923.jpeg | wedding-couple-pouring-champagne-tower.webp | 1024x1365 | 102KB | Bride and groom pouring champagne into a coupe tower at sunset |
+| IMG_4924.jpeg | wedding-champagne-tower-pour-closeup.webp | 1024x1365 | 114KB | Close-up of champagne being poured into the top coupe of the tower |
+| IMG_4927.jpeg | wedding-couple-champagne-tower-floral-arch.webp | 1024x1366 | 104KB | Couple pouring the champagne tower beside a white floral arch |
+| IMG_4929.jpeg | wedding-champagne-cascading-coupe-tower.webp | 1024x1536 | 86KB | Champagne cascading down the stacked coupe tower |
+| IMG_4930.jpeg | wedding-bride-groom-celebrating-champagne-coupes.webp | 1024x1536 | 126KB | Bride raising her arm in celebration with the groom holding coupes at dusk |
+| IMG_4931.jpeg | wedding-bride-hand-ring-champagne-coupe.webp | 1024x1366 | 52KB | Bride's hand with wedding ring holding a fluted champagne coupe |
+| IMG_4934.jpeg | wedding-completed-champagne-coupe-tower.webp | 1024x1365 | 78KB | Completed champagne coupe tower with the couple's hands joined behind it |
+
+### Pool after-party (staged for review — see note below) → `…/wedding-champagne-tower/pool-after-party/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| IMG_4925.jpeg | wedding-bride-pool-champagne-celebration.webp | 1024x1365 | 149KB | Bride in the pool in her dress with champagne being poured |
+| IMG_4926.jpeg | wedding-guest-pool-champagne-celebration.webp | 1024x1365 | 172KB | Guest in the pool in formalwear with champagne being poured |
+| IMG_4928.jpeg | wedding-groom-pool-champagne-celebration.webp | 1024x1365 | 190KB | Groom in the pool in shirt and bow tie with champagne being poured |
+| IMG_4932.jpeg | wedding-guests-pool-after-party-champagne.webp | 1024x1365 | 146KB | Groomsmen in the pool during the late-night after-party |
+| IMG_4933.jpeg | wedding-guest-pool-champagne-pour-night.webp | 1024x1365 | 130KB | Guest in the pool at night receiving a champagne pour |
+| IMG_4935.jpeg | wedding-groom-pool-after-party-bowtie.webp | 1024x1365 | 156KB | Groom floating in the pool in soaked shirt and bow tie |
+
+> **Not recommended for the public galleries.** These are fun personal moments but
+> read as an after-party rather than as bartending work, and several show guests in
+> soaked formalwear. Kept in a subfolder so they are easy to include or delete.
+
+## Cocktail Menu Designs → `public/menu-examples/`
+
+| Original Filename | New Filename | Dimensions | Size | Description |
+|---|---|---|---|---|
+| ART HOUSE MENU.PNG | summer-soiree-cocktail-menu-yellow-stripe.webp | 1484x1920 | 103KB | Summer Soirée menu, yellow stripe with wavy border — Aperol/Sarti spritz |
+| Blue White Illustrated Elegant Striped Menu Document.JPG | patriotic-fourth-of-july-bar-menu.webp | 1358x1920 | 152KB | Patriotic Fourth of July bar menu with firework illustration |
+| Caitlin Brick Menu.PNG | le-bar-burgundy-cocktail-wine-beer-menu.webp | 1484x1920 | 93KB | Le Bar burgundy striped menu with cocktails, wine, and beer sections |
+| Courtney Robeck Menu.PNG | la-dolce-forty-cocktail-menu-design.webp | 1484x1920 | 58KB | La Dolce Forty pink striped menu design |
+| DAMKOEHLER BABY SHOWER MENU.PNG | baby-shower-cocktail-menu-seashells-bows.webp | 1484x1920 | 146KB | Baby shower cocktail menu with pastel seashells and bows |
+| PHILLIPS MENU.PNG | soccer-watch-party-cocktail-menu.webp | 1484x1920 | 150KB | Soccer watch-party menu with stadium art and country flags |
+| TPA LUX Cocktail Menu.PNG | tpa-lux-cocktail-menu-luxury-vehicles.webp | 1484x1920 | 111KB | TPA LUX black cocktail menu with 1 Exotics Luxury Vehicles sponsorship |
+| blacktop shores menu.PNG | blacktop-surf-shop-cocktail-menu.webp | 1484x1920 | 111KB | Blacktop Surf Shop x TB Mixology menu, orange and pink stripes |
+
+> Landed in `public/menu-examples/` alongside the existing 21 menu designs, and
+> appended to the `menuExamples` carousel that renders on `/drinks` and `/events`.
+>
+> Source filenames carried private client surnames (Damkoehler, Phillips, Brick,
+> Robeck). Renamed to describe the design instead so no client's name ends up in a
+> public URL. Note the original names were also unreliable: "ART HOUSE MENU" is the
+> Summer Soirée menu and "Courtney Robeck Menu" is the La Dolce Forty menu.
+
+---
+**Total: 178 images processed** (124 prior + 54 this batch)

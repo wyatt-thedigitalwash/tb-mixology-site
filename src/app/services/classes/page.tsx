@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SectionHeading from "@/components/SectionHeading";
+import PricingCard from "@/components/PricingCard";
 import Image from "next/image";
+import { User, Wrench, Leaf, Package, Truck, Clock, Martini } from "lucide-react";
 import { LocalBusinessJsonLd, BreadcrumbJsonLd, ServiceJsonLd } from "@/components/JsonLd";
+import { classPackages, classIncluded, classFormat, classAddOns } from "@/lib/data/classes";
+
+const includedIcons = [User, Wrench, Leaf, Package, Truck];
+const formatIcons = [Clock, Martini];
 
 export const metadata: Metadata = {
   title: "Cocktail Classes | TB Mixology — Tampa Bay Event Bartending",
@@ -82,6 +88,85 @@ export default function ClassesPage() {
                 for bachelorette parties, team events, brand activations, and
                 private gatherings.
               </p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included + Format */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading
+              label="The Experience"
+              title="What&rsquo;s Included"
+              subtitle="Every class comes with everything your group needs to shake, sip, and learn."
+            />
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {classIncluded.map((item, i) => {
+              const Icon = includedIcons[i];
+              return (
+                <FadeIn key={item.title} delay={i % 3 === 1 ? "delay-100" : i % 3 === 2 ? "delay-200" : ""}>
+                  <div className="border border-warm-gray/30 rounded-sm p-6 text-center hover:border-accent/50 transition-colors duration-200 ease-out h-full">
+                    <Icon size={28} className="text-accent mx-auto mb-4" strokeWidth={1.5} />
+                    <h3 className="font-body text-sm font-semibold text-primary mb-2">{item.title}</h3>
+                    <p className="font-body text-sm text-warm-gray leading-relaxed">{item.description}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+
+          <FadeIn>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-10 mt-10">
+              {classFormat.map((item, i) => {
+                const Icon = formatIcons[i];
+                return (
+                  <div key={item} className="flex items-center justify-center gap-3">
+                    <Icon size={20} className="text-accent" strokeWidth={1.5} />
+                    <span className="font-body text-sm text-primary">{item}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="max-w-5xl mx-auto px-6">
+          <FadeIn>
+            <SectionHeading label="Pricing" title="Classes by Group Size" />
+          </FadeIn>
+          <FadeIn>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {classPackages.map((pkg, i) => (
+                <div
+                  key={pkg.guests}
+                  className={i === classPackages.length - 1 && classPackages.length % 2 === 1 ? "sm:col-span-2" : undefined}
+                >
+                  <PricingCard
+                    name={pkg.guests}
+                    price={pkg.starting}
+                    note={pkg.mixologists}
+                  />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          <div className="mt-16">
+            <FadeIn>
+              <SectionHeading label="Extras" title="Class Add-Ons" />
+            </FadeIn>
+            <FadeIn>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {classAddOns.map((addon) => (
+                  <PricingCard key={addon.name} name={addon.name} price={addon.price} />
+                ))}
+              </div>
             </FadeIn>
           </div>
         </div>

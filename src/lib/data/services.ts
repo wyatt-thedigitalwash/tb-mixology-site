@@ -51,22 +51,20 @@ export const addOnServices = [
 
 export const barSetupAddOns = [
   { name: "Alcohol Purchase & Transport", price: "Cost + 10%" },
-  { name: "Glassware Rental", price: "$3\u2013$5/pp" },
-  { name: "Water Station", price: "$1/pp" },
-  { name: "Custom Wooden Bar Rental", price: "$200+" },
+  { name: "Glassware Rental", price: "$4\u2013$5/pp" },
+  { name: "Large Ice Cubes", price: "$100+" },
+  { name: "Water Station", price: "$100+" },
 ];
 
 export const serviceEnhancements = [
-  { name: "Additional Bartender", price: "$75/hr" },
-  { name: "Bar Back", price: "$50/hr" },
-  { name: "Caviar Service", price: "$25\u2013$40/pp" },
-  { name: "Champagne Toast", price: "Ask for pricing" },
+  { name: "Additional Bartender", price: "$100/hr" },
+  { name: "Bar Back", price: "$75/hr" },
+  { name: "Bar Rental", price: "$250" },
 ];
 
-export const barExtras = [
-  { name: "Smoker", price: "$25" },
-  { name: "Drink Bubbler", price: "$35" },
-  { name: "Citrus Branding", price: "$80+" },
-  { name: "Large Ice Cubes", price: "$50+" },
-  { name: "Dry Ice", price: "$50+" },
+export const experienceAddOns = [
+  { name: "All-Inclusive Caviar Service", price: "$25\u2013$40/pp" },
+  { name: "Smoker", price: "$100" },
+  { name: "Cocktail Bubble Machine", price: "$150" },
+  { name: "Citrus Branding", price: "$150+" },
 ];

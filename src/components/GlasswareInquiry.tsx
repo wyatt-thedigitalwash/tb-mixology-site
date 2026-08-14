@@ -57,7 +57,7 @@ export default function GlasswareInquiry() {
         <div className="mt-8 space-y-4">
           <PricingCard
             name="Glassware Rental (Add-On)"
-            price="$3–$5/pp"
+            price="$4–$5/pp"
             note="Based on guest count and glassware selection. Includes delivery, setup, and pickup."
           />
           <div className="text-center">

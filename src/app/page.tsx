@@ -154,18 +154,22 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-secondary">
         <div className="max-w-5xl mx-auto px-6">
           <FadeIn>
-            <SectionHeading label="Pricing" title="Bartending Packages" subtitle="Pricing based on a 4-hour event. Built to ensure fast, seamless service." />
+            <SectionHeading label="Pricing" title="Bartending Packages" subtitle="Pricing based on a 4-hour event and does not include gratuity. Built to ensure fast, seamless service." />
           </FadeIn>
 
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {packages.map((pkg) => (
-                <PricingCard
+              {packages.map((pkg, i) => (
+                <div
                   key={pkg.guests}
-                  name={pkg.guests}
-                  price={pkg.starting}
-                  note={`${pkg.bartenders} · ${pkg.rate}`}
-                />
+                  className={i === packages.length - 1 && packages.length % 2 === 1 ? "sm:col-span-2" : undefined}
+                >
+                  <PricingCard
+                    name={pkg.guests}
+                    price={pkg.starting}
+                    note={pkg.bartenders}
+                  />
+                </div>
               ))}
             </div>
           </FadeIn>

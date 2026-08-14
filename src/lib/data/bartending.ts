@@ -1,26 +1,27 @@
 export const packages = [
   {
-    guests: "1\u201325 Guests",
+    guests: "Up to 25 Guests",
     bartenders: "1 Bartender",
-    rate: "$125/hr + $100 service fee",
-    starting: "Starting at $600",
+    starting: "Starting at $800",
   },
   {
-    guests: "26\u201350 Guests",
-    bartenders: "1\u20132 Bartenders",
-    rate: "$200\u2013$250/hr + $200 service fee",
-    starting: "Starting at $1,000",
+    guests: "26–50 Guests",
+    bartenders: "1–2 Bartenders",
+    starting: "Starting at $950",
   },
   {
-    guests: "51\u201380 Guests",
+    guests: "51–75 Guests",
+    bartenders: "1–2 Bartenders",
+    starting: "Starting at $1,350",
+  },
+  {
+    guests: "76–100 Guests",
     bartenders: "2 Bartenders",
-    rate: "$300\u2013$350/hr + $200 service fee",
     starting: "Starting at $1,600",
   },
   {
-    guests: "81\u2013100+ Guests",
-    bartenders: "2\u20133+ Bartenders + Bar Back",
-    rate: "$400+/hr + $300 service fee",
+    guests: "100+ Guests",
+    bartenders: "2–3 Bartenders",
     starting: "Starting at $1,900",
   },
 ];
@@ -34,6 +35,6 @@ export const included = [
   { title: "Ice & Coolers", description: "Everything to keep your drinks perfectly chilled" },
   { title: "Custom Printed Menus", description: "Branded cocktail menus for your bar display" },
   { title: "Cups & Dry Goods", description: "High-end 12oz cups, napkins, straws & garnish picks" },
-  { title: "All Bar Tools", description: "Shakers, jiggers, strainers \u2014 everything we need" },
+  { title: "All Bar Tools", description: "Shakers, jiggers, strainers — everything we need" },
   { title: "Tables, Linens or Bar", description: "Bar setup with tables & linens or wooden bar rental" },
 ];
